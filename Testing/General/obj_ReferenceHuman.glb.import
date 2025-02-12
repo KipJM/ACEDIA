@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cn37sc72ho4rr"
-path="res://.godot/imported/msh_ReferenceHuman.glb-79f08316ea9ca44f6741185ffdc6b6d0.scn"
+path="res://.godot/imported/obj_ReferenceHuman.glb-e81a47759e8ec0f956f2785a19ac00ad.scn"
 
 [deps]
 
-source_file="res://Testing/General/msh_ReferenceHuman.glb"
-dest_files=["res://.godot/imported/msh_ReferenceHuman.glb-79f08316ea9ca44f6741185ffdc6b6d0.scn"]
+source_file="res://Testing/General/obj_ReferenceHuman.glb"
+dest_files=["res://.godot/imported/obj_ReferenceHuman.glb-e81a47759e8ec0f956f2785a19ac00ad.scn"]
 
 [params]
 
@@ -31,6 +31,18 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"meshes": {
+"msh_ReferenceHuman_female_v006lowresUV": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://Testing/General/obj_humanoid.res"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
