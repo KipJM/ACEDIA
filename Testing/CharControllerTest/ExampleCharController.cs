@@ -1,4 +1,5 @@
 using Godot;
+using static Godot.GD;
 
 namespace Pins.Testing.CharControllerTest
 {
