@@ -12,25 +12,30 @@ public enum PlayerState
 	Locked // Fully locked
 }
 
+public enum MovementState
+{
+	Walking,
+	Sprinting,
+	Squeezing
+}
+
 public partial class Player : CharacterBody3D
 {
-	[Export] public PlayerState State
-	{
-		get => _state;
-		set => SetState(value);
-	}
-	private PlayerState _state = PlayerState.Normal;
+	[Export] public PlayerState PlayerState;
+	[Export] public MovementState MovementState;
+	[Export] public bool IsFeetMoving;
 	
 	[ExportGroup("Subsystems")] 
 	[Export] private PlayerLook _look;
 	[Export] private PlayerMove _move;
 
-	[ExportGroup("Universal References")] 
+	[ExportGroup("References")] 
 	[Export] public Node3D Neck;
 	[Export] public Node3D Head;
+	[Export] public Node3D Eyes;
 	[Export] public Camera3D Camera;
 	
-	[ExportSubgroup("Easing")]
+	[ExportGroup("Easing")]
 	[Export] public float LerpSpeed = 10.0f;
 
 	public CharacterBody3D Body;
@@ -55,18 +60,15 @@ public partial class Player : CharacterBody3D
 			Input.SetMouseMode(Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured);
 		}
 	}
-
-
-	public void InSqueeze()
-	{
-		_move.IsSqueezing = true;
-	}
 	
-	// Change player state
-	private void SetState(PlayerState value)
+	public void OnStartSqueeze()
 	{
-		_state = value;
-		
+		MovementState = MovementState.Squeezing;
+	}
+
+	public void OnEndSqueeze()
+	{
+		MovementState = MovementState.Walking;
 	}
 	
 }

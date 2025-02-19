@@ -1,4 +1,5 @@
-﻿using Godot;
+﻿using System;
+using Godot;
 
 namespace Pins.Universal.Player.CharController;
 
@@ -9,7 +10,6 @@ public partial class PlayerMove : Node3D
     [Export] private float _walkingSpeed = 5.0f;
     [Export] private float _sprintingSpeed = 8.0f;
     [Export] private float _squeezeSpeed = 3.0f;
-    [Export] public bool IsSqueezing = false;
 
 	
     public float CurrentSpeed = 5.0f;
@@ -17,12 +17,35 @@ public partial class PlayerMove : Node3D
     
     public override void _PhysicsProcess(double delta)
     {
-        // Switch between walking and sprinting
-        float targetSpeed = Input.IsActionPressed("sprint") ? _sprintingSpeed : _walkingSpeed;
-        // Squeeze override sprinting and walking
-        if (IsSqueezing) targetSpeed = _squeezeSpeed;
+        if (Player.MovementState != MovementState.Squeezing)
+        {
+            if (Input.IsActionPressed("sprint"))
+            {
+                Player.MovementState = MovementState.Sprinting;
+            }
+            else
+            {
+                Player.MovementState = MovementState.Walking;
+            }
+        }
+
+
+        float targetSpeed = 0;
+        switch (Player.MovementState)
+        {
+            case MovementState.Walking:
+                targetSpeed = _walkingSpeed;
+                break;
+            case MovementState.Sprinting:
+                targetSpeed = _sprintingSpeed;
+                break;
+            case MovementState.Squeezing:
+                targetSpeed = _squeezeSpeed;
+                break;
+        }
+        
         // Stop moving if movement is locked
-        if (Player.State is PlayerState.LimitedViewOnly or PlayerState.Locked) targetSpeed = 0;
+        if (Player.PlayerState is PlayerState.LimitedViewOnly or PlayerState.Locked) targetSpeed = 0;
 		
         CurrentSpeed = (float)Mathf.Lerp(CurrentSpeed, targetSpeed, delta * Player.LerpSpeed);
         
@@ -36,7 +59,7 @@ public partial class PlayerMove : Node3D
         Vector2 inputDir = Input.GetVector(
             "move_left", "move_right", "move_forward", "move_backward");
 
-        if (Player.State is PlayerState.ForwardOnly)
+        if (Player.PlayerState is PlayerState.ForwardOnly)
         {
             inputDir.Y = Mathf.Clamp(inputDir.Y, -1.0f, 0f); // Only allows moving forward
         }
@@ -58,11 +81,18 @@ public partial class PlayerMove : Node3D
                 X = Mathf.MoveToward(Player.Body.Velocity.X, 0, CurrentSpeed),  
                 Z = Mathf.MoveToward(Player.Body.Velocity.Z, 0, CurrentSpeed)
             };
-        } 
+        }
+        
+        // IsFeetMoving
+        if ((Player.PlayerState is not (PlayerState.LimitedViewOnly or PlayerState.Locked)) && (Player.Body.IsOnFloor()) && (Player.Body.Velocity.LengthSquared() > 0.5) && (!_direction.IsZeroApprox()))
+        {
+            Player.IsFeetMoving = true;
+        }
+        else
+        {
+            Player.IsFeetMoving = false;
+        }
 		
         Player.Body.MoveAndSlide();
-		
-        // Reset squeeze
-        IsSqueezing = false;
     }
 }
