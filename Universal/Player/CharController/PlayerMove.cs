@@ -17,6 +17,8 @@ public partial class PlayerMove : Node3D
     
     public override void _PhysicsProcess(double delta)
     {
+        var actualVelocity = Player.Body.Velocity;
+        
         if (Player.MovementState != MovementState.Squeezing)
         {
             if (Input.IsActionPressed("sprint"))
@@ -84,15 +86,12 @@ public partial class PlayerMove : Node3D
         }
         
         // IsFeetMoving
-        if ((Player.PlayerState is not (PlayerState.LimitedViewOnly or PlayerState.Locked)) && (Player.Body.IsOnFloor()) && (Player.Body.Velocity.LengthSquared() > 0.5) && (!_direction.IsZeroApprox()))
-        {
-            Player.IsFeetMoving = true;
-        }
-        else
-        {
-            Player.IsFeetMoving = false;
-        }
-		
+        Player.IsFeetMoving = (Player.PlayerState is not (PlayerState.LimitedViewOnly or PlayerState.Locked)) &&
+                              (Player.Body.IsOnFloor()) && 
+                              (actualVelocity.LengthSquared() > 0.5) &&
+                              (!_direction.IsZeroApprox());
+        
+        // GD.PrintRich($@"[b]A:{Player.PlayerState is not (PlayerState.LimitedViewOnly or PlayerState.Locked)}[b]B:{(Player.Body.IsOnFloor())}[b]C:{(Player.Body.Velocity.LengthSquared() > 0.5)}[b]D:{(!_direction.IsZeroApprox())}");
         Player.Body.MoveAndSlide();
     }
 }

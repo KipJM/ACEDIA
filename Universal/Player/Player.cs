@@ -50,17 +50,9 @@ public partial class Player : CharacterBody3D
 		//PlayerMove init
 		_move.Player = this;
 		
-		Input.SetMouseMode(Input.MouseModeEnum.Captured);
 	}
 
-	public override void _Input(InputEvent @event)
-	{
-		if (Input.IsActionJustPressed("pause"))
-		{
-			Input.SetMouseMode(Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured);
-		}
-	}
-	
+
 	public void OnStartSqueeze()
 	{
 		MovementState = MovementState.Squeezing;
