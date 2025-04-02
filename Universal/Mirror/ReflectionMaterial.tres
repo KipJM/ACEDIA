@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c4p4jr823j1gw"]
+
+[ext_resource type="Shader" uid="uid://cto3ohioalh8n" path="res://Universal/Mirror/planar_reflection.gdshader" id="1_wmetb"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = -10
+shader = ExtResource("1_wmetb")
+shader_parameter/albedo = Color(0.290196, 0.52549, 0.670588, 1)
+shader_parameter/proximity_fade_distance = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/refraction = 14.325
+shader_parameter/refraction_texture_channel = Vector4(1, 1, 1, 1)
+shader_parameter/normal_scale = 0.0
+shader_parameter/normal_uv_mult = 0.0
+shader_parameter/distortion_strength = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/reflection_strength = 0.01
