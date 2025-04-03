@@ -106,6 +106,8 @@ pause={
 [layer_names]
 
 3d_physics/layer_2="SqueezeArea"
+3d_physics/layer_3="CameraView"
+3d_physics/layer_4="ViewReceiver"
 
 [physics]
 

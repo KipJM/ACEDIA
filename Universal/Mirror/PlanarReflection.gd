@@ -5,8 +5,14 @@ var reflect_camera : Camera3D
 var reflect_viewport: SubViewport
 @export var main_cam : Camera3D = null
 @export var reflection_camera_resolution: Vector2i = Vector2i(1920, 1080)
+@export var debug_ui: TextureRect
+
 
 var seen = false
+
+func _ready(): # TODO REMOVE
+	init_mirror();
+	seen = false;
 
 # Called when the node enters the scene tree for the first time.
 func init_mirror():
@@ -18,13 +24,41 @@ func init_mirror():
 	reflect_camera.cull_mask = 1;
 	reflect_camera.fov = main_cam.fov
 	reflect_camera.environment = main_cam.environment
-	reflect_camera.attributes = main_cam.attributes
 	reflect_camera.doppler_tracking = main_cam.doppler_tracking
 	reflect_camera.projection = main_cam.projection
-	reflect_camera.current = true;
 	
-# 	materialToSet.setup_local_to_scene()
-# 	self.mesh.surface_set_material(0, materialToSet);
+	# Cam attributes
+	var main_cam_attr = main_cam.attributes
+	if main_cam_attr is CameraAttributesPhysical:
+		print("physical!")
+		var attrPhys = CameraAttributesPhysical.new()
+		attrPhys.frustum_focus_distance = main_cam_attr.frustum_focus_distance
+		attrPhys.frustum_focal_length = main_cam_attr.frustum_focal_length
+		attrPhys.frustum_near = main_cam_attr.frustum_near
+		attrPhys.frustum_far = main_cam_attr.frustum_far
+		
+		attrPhys.exposure_multiplier = main_cam_attr.exposure_multiplier
+		attrPhys.auto_exposure_enabled = false;
+		
+		reflect_camera.attributes = attrPhys
+	elif main_cam_attr is CameraAttributesPractical:
+		print("Practical!")
+		var attrPrac = CameraAttributesPractical.new()
+		attrPrac.dof_blur_far_enabled = false;
+		attrPrac.dof_blur_near_enabled = false;
+		attrPrac.exposure_multiplier = main_cam_attr.exposure_multiplier
+		attrPrac.auto_exposure_enabled = false;
+		
+		reflect_camera.attributes = attrPrac
+	else:
+		print(main_cam_attr)
+	reflect_camera.current = true;
+
+	var mat:ShaderMaterial = self.get_surface_override_material(0);
+	mat.set_shader_parameter("reflection_screen_texture", reflect_viewport.get_texture());
+	
+	if debug_ui != null:
+		debug_ui.texture = reflect_viewport.get_texture()
 	
 	reflect_camera.make_current();
 
@@ -50,30 +84,31 @@ func _process(_delta):
 	reflect_camera.global_transform.origin = mirrored_pos
 
 	reflect_camera.basis = Basis(
-		main_cam.basis.x.normalized().bounce(reflection_plane.normal).normalized(),
-		main_cam.basis.y.normalized().bounce(reflection_plane.normal).normalized(),
-		main_cam.basis.z.normalized().bounce(reflection_plane.normal).normalized()
+		main_cam.global_basis.x.normalized().bounce(reflection_plane.normal).normalized(),
+		main_cam.global_basis.y.normalized().bounce(reflection_plane.normal).normalized(),
+		main_cam.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
 	)
-	var mat:ShaderMaterial = self.get_surface_override_material(0);
-	mat.set_shader_parameter("reflection_screen_texture", reflect_viewport.get_texture());
+	
+	DebugDraw3D.scoped_config().set_thickness(0.001);
+	# DEBUG
+	DebugDraw3D.draw_box(reflect_camera.global_position, reflect_camera.global_basis.get_rotation_quaternion(), Vector3.ONE * 0.2, Color.GREEN, true)
 
 func update_viewport() -> void:
 	reflect_viewport.size = get_viewport().size
 
 
-func _on_screen_entered() -> void:
-	
-	if (!seen): # Probably will cause lag
-		print("Init")
-		# Init
-		init_mirror();
+func _on_screen_entered(area: Area3D) -> void:
+	if (!seen): # Enable cam
+		print("Seen!")
+		reflect_camera.make_current()
 		seen = true;
 
 
-func _on_screen_exited() -> void:
-	if(seen): # Good for testing, remove l8r
+func _on_screen_exited(area: Area3D) -> void:
+	if(seen): 
 		print("Clear")
-		# Free memory
-		reflect_viewport.queue_free()
-		reflect_camera.queue_free()
+		# Stop camera to save compute resources
+		# Unfortunately VRAM is still needed :O
+		# Unallocating/allocating takes too much time :|
+		reflect_camera.clear_current()
 		seen = false;
