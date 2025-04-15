@@ -25,7 +25,7 @@ func init_mirror():
 	reflect_camera.fov = main_cam.fov
 	reflect_camera.environment = main_cam.environment
 	reflect_camera.doppler_tracking = main_cam.doppler_tracking
-	reflect_camera.projection = Camera3D.PROJECTION_FRUSTUM
+	reflect_camera.projection = Camera3D.PROJECTION_PERSPECTIVE
 	
 	# Cam attributes
 	var main_cam_attr = main_cam.attributes
@@ -71,7 +71,7 @@ func _process(_delta):
 	if (!main_cam):
 		return
 
-	var reflection_transform = global_transform * Transform3D().rotated(Vector3.RIGHT, PI/2);
+	var reflection_transform = global_transform #* Transform3D().rotated(Vector3.RIGHT, PI/2);
 	var plane_origin = reflection_transform.origin;
 	var plane_normal = reflection_transform.basis.z.normalized();
 	var reflection_plane = Plane(plane_normal, plane_origin.dot(plane_normal))
@@ -83,35 +83,34 @@ func _process(_delta):
 	
 	reflect_camera.global_transform.origin = mirrored_pos
 
-	#reflect_camera.basis = Basis(
-		#main_cam.global_basis.x.normalized().bounce(reflection_plane.normal).normalized(),
-		#main_cam.global_basis.y.normalized().bounce(reflection_plane.normal).normalized(),
-		#main_cam.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
-	#)
+	reflect_camera.basis = Basis(
+		main_cam.global_basis.x.normalized().bounce(reflection_plane.normal).normalized(),
+		main_cam.global_basis.y.normalized().bounce(reflection_plane.normal).normalized(),
+		main_cam.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
+	)
 
 	# https://github.com/Norodix/GodotMirror/blob/master/addons/Mirror/Mirror/Mirror.gd
 	
 	# Transform the mirror camera to the opposite side of the mirror plane
 	var MirrorNormal = global_transform.basis.z	
 	var MirrorTransform =  Mirror_transform(MirrorNormal, global_transform.origin)
-	reflect_camera.global_transform = MirrorTransform * main_cam.global_transform
+	#reflect_camera.global_transform = MirrorTransform * main_cam.global_transform
 	
 	# Look perpendicular into the mirror plane for frostum camera
-	reflect_camera.global_transform = reflect_camera.global_transform.looking_at(
-			reflect_camera.global_transform.origin/2 + main_cam.global_transform.origin/2, \
-			global_transform.basis.y
-		)
+		
 	var cam2mirror_offset = global_transform.origin - reflect_camera.global_transform.origin
 	var near = abs((cam2mirror_offset).dot(MirrorNormal)) # near plane distance
-	near += 0.05 # avoid rendering own surface
+	near += 0.01 # avoid rendering own surface
 
 	# transform offset to camera's local coordinate system (frostum offset uses local space)
 	var cam2mirror_camlocal = reflect_camera.global_transform.basis.inverse() * cam2mirror_offset
-	var frostum_offset =  Vector2(cam2mirror_camlocal.x, cam2mirror_camlocal.y)
-	reflect_camera.set_frustum(mesh.size.x * scale.x, frostum_offset, near, 10000)
+	var frostum_offset = Vector2.ZERO#Vector2(cam2mirror_camlocal.x, cam2mirror_camlocal.y)
+	#reflect_camera.set_frustum(mesh.size.x, frostum_offset, near, 10000)
+	reflect_camera.near = near
 	
-	DebugDraw3D.scoped_config().set_thickness(0.001);
 	# DEBUG
+	DebugDraw3D.scoped_config().set_thickness(0.01);
+	DebugDraw3D.draw_camera_frustum(reflect_camera, Color.GREEN)
 	DebugDraw3D.draw_box(reflect_camera.global_position, reflect_camera.global_basis.get_rotation_quaternion(), Vector3.ONE * 0.2, Color.GREEN, true) 
 
 
@@ -132,7 +131,8 @@ func Mirror_transform(n : Vector3, d : Vector3) -> Transform3D:
 
 
 func update_viewport() -> void:
-	reflect_viewport.size = get_viewport().size * resolution_scale
+	reflect_viewport.size = mesh.size * resolution_scale
+	print(mesh.size)
 
 
 func _on_screen_entered(area: Area3D) -> void:
