@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	reflect_cam.global_transform.origin = mirrored_pos;
 	
 	# rot
-	reflect_cam.global_basis = Basis.FLIP_Y * Basis.FLIP_X * Basis.FLIP_Z * global_basis;
+	reflect_cam.global_basis = (Basis.FLIP_Y * Basis.FLIP_X * Basis.FLIP_Z * global_basis);
 	
 	# near plane
 	var distance = -reflection_plane.distance_to(reflect_cam.global_position)

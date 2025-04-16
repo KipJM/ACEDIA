@@ -101,7 +101,6 @@ default_value_enabled = true
 default_value = 1.0
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_gl1r2"]
-output_port_for_preview = 0
 input_name = "screen_uv"
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_xm7rq"]
