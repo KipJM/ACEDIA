@@ -33,39 +33,42 @@ func _process(delta: float) -> void:
 	)
 	
 	# near plane
-	var distance = -reflection_plane.distance_to(reflect_cam.global_position)
+	#var distance = -reflection_plane.distance_to(reflect_cam.global_position)
 	
-	# Horizontal
-	var horiz_near: float;
-	var fov_h = deg_to_rad(reflect_cam.get_camera_projection().get_fov())
-	if reflect_cam.rotation.y > 0:
-		# plane-left frustum (camera ->)
-		var left_rot = abs(reflect_cam.rotation.y - (fov_h / 2))
-		var left_near = distance * (1/cos(left_rot)) * cos(fov_h/2)
-		
-		horiz_near = left_near
-	else:	
-		# plane-right frustum (camera <-)
-		var right_rot = abs(reflect_cam.rotation.y + (fov_h / 2))
-		var right_near = distance * (1/cos(right_rot)) * cos(fov_h/2)
-		
-		horiz_near = right_near
+	var camera_planes = reflect_cam.get_frustum();
+	var left_plane   = camera_planes[2]
+	var right_plane  = camera_planes[4]
+	var top_plane    = camera_planes[3]
+	var bottom_plane = camera_planes[5]
 	
-	# Vertical
-	var vert_near: float;
-	var fov_v = deg_to_rad(reflect_cam.fov)
+	var point_bl = reflection_plane.intersect_3(bottom_plane, left_plane) # yaoi
+	var point_br = reflection_plane.intersect_3(bottom_plane, right_plane)
+	var point_tl = reflection_plane.intersect_3(top_plane, left_plane)
+	var point_tr = reflection_plane.intersect_3(top_plane, right_plane)
 	
-	if reflect_cam.rotation.x < 0:
-		# plane-up frustum (camera v)
-		var up_rot = abs(reflect_cam.rotation.x + (fov_v / 2))
-		var up_near = distance * (1/cos(up_rot)) * cos(fov_v/2)
-		
-		vert_near = up_near;
-	else:
-		# plane-right frustum (camera v)
-		var down_rot = abs((fov_v / 2) - reflect_cam.rotation.x)
-		var down_near = distance * (1/cos(down_rot)) * cos(fov_v/2)
-		
-		vert_near = down_near
+	# find min distance point (that's in frustum)
+	var forward = -reflect_cam.global_basis.z
+	var min_vector: Vector3
+	for point in [point_bl, point_br, point_tl, point_tr]:
+		var point_vector: Vector3 = point - reflect_cam.global_position;
+		if forward.dot(point_vector) > 0:
+			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SPHERE, 0.2, Color.GREEN)
+			if !min_vector || point_vector.length_squared() <= min_vector.length_squared():
+				min_vector = point_vector
+		else:
+			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.RED)
 	
-	reflect_cam.near = min(horiz_near, vert_near)
+	# Frustum not in view
+	if !min_vector:
+		return
+
+	DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, min_vector, 1, Color.WHITE, 0.2)
+
+	# Turn point distance into near plane distance
+	var fov_w_half = deg_to_rad(reflect_cam.get_camera_projection().get_fov())/2
+	var fov_h_half = deg_to_rad(reflect_cam.fov)/2
+	
+	var unit_frustum_point: Vector3 = Vector3(1/tan(fov_w_half), 1/tan(fov_h_half), 1.0);
+	var unit_frustum_distance = unit_frustum_point.length()
+	
+	reflect_cam.near = min_vector.length() / unit_frustum_distance
