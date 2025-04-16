@@ -4,7 +4,9 @@ class_name PlanarReflector
 var reflect_camera : Camera3D
 var reflect_viewport: SubViewport
 @export var main_camera : Camera3D = null
-@export var resolution_scale : float = 1
+@export var far : float = 100
+@export var resolution_scale_min : Vector2
+@export var resolution_scale_max : float = 100
 @export var debug_ui: TextureRect
 
 var seen = false
@@ -41,19 +43,27 @@ func init_mirror():
 
 func update_viewport() -> void:
 	reflect_camera.projection = Camera3D.PROJECTION_FRUSTUM
-	print(mesh.size)
-	reflect_viewport.size = mesh.size * resolution_scale
 	reflect_camera.size = mesh.size.y
 	
-	reflect_camera.far = 4000 # Arbitrary
+	# Dynamic scaling
+	var scale_factor = 1 - clamp(reflect_camera.near / resolution_scale_min.x, 0, 1)
+	#print(scale_factor)
+	
+	var resolution_scale = lerp(resolution_scale_min.y, resolution_scale_max, scale_factor)
+	reflect_viewport.size = mesh.size * resolution_scale
+	
+	print(reflect_viewport.size)
+	
+	reflect_camera.far = far # Arbitrary
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta: float) -> void: # DEBUG
 	if (!seen):
 		return
 	if (!main_camera):
 		return
 
+	update_viewport()
 	update_reflect_cam()
 	
 	# DEBUG
@@ -63,6 +73,7 @@ func _process(_delta):
 
 
 func update_reflect_cam():
+	
 	# Mirror position
 	var reflection_transform = global_transform;
 	var plane_origin = reflection_transform.origin;
@@ -78,13 +89,12 @@ func update_reflect_cam():
 	reflect_camera.global_transform.origin = mirrored_pos;
 	
 	# rot
-	reflect_camera.global_basis = Basis.FLIP_Y * Basis.FLIP_X * Basis.FLIP_Z * global_basis;
-	reflect_camera.rotate_x(PI)
+	reflect_camera.global_basis = (Basis.FLIP_Y * Basis.FLIP_X * Basis.FLIP_Z * global_basis).rotated(Vector3.RIGHT, PI);
 	
 	# near plane
 	var distance = -reflection_plane.distance_to(reflect_camera.global_position)
-	reflect_camera.near = distance;
-	
+	reflect_camera.near = distance + 0.001; # Fix Clipping
+		
 	# offset
 	var offset = to_local(reflect_camera.global_position)
 	reflect_camera.frustum_offset = -Vector2(offset.x, offset.y)
