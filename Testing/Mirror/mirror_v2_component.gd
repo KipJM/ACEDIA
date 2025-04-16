@@ -96,7 +96,7 @@ func _process(delta: float) -> void:
 	var fov_h_half = deg_to_rad(reflect_cam.fov)/2
 	
 	# Plane near
-	if false:
+	if -min_vector.z > -min_mesh_vector.z:
 		DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, reflect_cam.basis.inverse() * min_vector, 1, Color.WHITE, 0.2)
 		
 		#var unit_frustum_point: Vector3 = Vector3(1/tan(fov_w_half), 1/tan(fov_h_half), 1.0);
