@@ -4,14 +4,14 @@ class_name PlanarReflector
 var reflect_camera : Camera3D
 var reflect_viewport: SubViewport
 @export var main_camera : Camera3D = null
-@export var far : float = 100
-@export var resolution_scale_min : Vector2
-@export var resolution_scale_max : float = 100
+
+@export var resolution_scale: float
+@export var far : float = 4000
 @export var debug_ui: TextureRect
 
 var seen = false
 
-func _ready(): # TODO REMOVE
+func _ready():
 	init_mirror();
 	seen = false;
 
@@ -23,12 +23,11 @@ func init_mirror():
 	reflect_viewport.add_child(reflect_camera);
 	
 	reflect_camera.cull_mask = 1;
-	
 	reflect_camera.environment = main_camera.environment
 	
 	reflect_camera.doppler_tracking = Camera3D.DOPPLER_TRACKING_DISABLED
 	reflect_camera.keep_aspect = Camera3D.KEEP_HEIGHT
-	reflect_camera.projection = Camera3D.PROJECTION_FRUSTUM
+	reflect_camera.projection = Camera3D.PROJECTION_PERSPECTIVE
 
 	reflect_camera.current = true;
 
@@ -42,18 +41,9 @@ func init_mirror():
 	update_viewport()
 
 func update_viewport() -> void:
-	reflect_camera.projection = Camera3D.PROJECTION_FRUSTUM
-	reflect_camera.size = mesh.size.y
-	
-	# Dynamic scaling
-	var scale_factor = 1 - clamp(reflect_camera.near / resolution_scale_min.x, 0, 1)
-	#print(scale_factor)
-	
-	var resolution_scale = lerp(resolution_scale_min.y, resolution_scale_max, scale_factor)
-	reflect_viewport.size = mesh.size * resolution_scale
-	
-	print(reflect_viewport.size)
-	
+	reflect_viewport.size = get_viewport().size * resolution_scale
+	#print(reflect_viewport.size)
+	reflect_camera.fov = main_camera.fov
 	reflect_camera.far = far # Arbitrary
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,7 +54,10 @@ func _process(delta: float) -> void: # DEBUG
 		return
 
 	update_viewport()
-	update_reflect_cam()
+	if update_reflect_cam():
+		reflect_camera.current = true;
+	else:
+		reflect_camera.current = false; # Not in view
 	
 	# DEBUG
 	DebugDraw3D.scoped_config().set_thickness(0.01);
@@ -72,8 +65,7 @@ func _process(delta: float) -> void: # DEBUG
 	DebugDraw3D.draw_box(reflect_camera.global_position, reflect_camera.global_basis.get_rotation_quaternion(), Vector3.ONE * 0.2, Color.GREEN, true) 
 
 
-func update_reflect_cam():
-	
+func update_reflect_cam() -> bool:
 	# Mirror position
 	var reflection_transform = global_transform;
 	var plane_origin = reflection_transform.origin;
@@ -89,17 +81,54 @@ func update_reflect_cam():
 	reflect_camera.global_transform.origin = mirrored_pos;
 	
 	# rot
-	reflect_camera.global_basis = (Basis.FLIP_Y * Basis.FLIP_X * Basis.FLIP_Z * global_basis).rotated(Vector3.RIGHT, PI);
-	
-	# near plane
-	var distance = -reflection_plane.distance_to(reflect_camera.global_position)
-	reflect_camera.near = distance + 0.001; # Fix Clipping
-		
-	# offset
-	var offset = to_local(reflect_camera.global_position)
-	reflect_camera.frustum_offset = -Vector2(offset.x, offset.y)
-	
+	reflect_camera.global_transform.origin = mirrored_pos
 
+	reflect_camera.basis = Basis(
+		main_camera.global_basis.x.normalized().bounce(reflection_plane.normal).normalized(),
+		main_camera.global_basis.y.normalized().bounce(reflection_plane.normal).normalized(),
+		main_camera.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
+	)
+	
+	# near plane	
+	var camera_planes = reflect_camera.get_frustum();
+	var left_plane   = camera_planes[2]
+	var right_plane  = camera_planes[4]
+	var top_plane    = camera_planes[3]
+	var bottom_plane = camera_planes[5]
+	
+	var point_bl = reflection_plane.intersect_3(bottom_plane, left_plane) # yaoi
+	var point_br = reflection_plane.intersect_3(bottom_plane, right_plane)
+	var point_tl = reflection_plane.intersect_3(top_plane, left_plane)
+	var point_tr = reflection_plane.intersect_3(top_plane, right_plane)
+	
+	# find min distance point (that's in frustum)
+	var forward = -reflect_camera.global_basis.z
+	var min_vector: Vector3
+	for point in [point_bl, point_br, point_tl, point_tr]:
+		var point_vector: Vector3 = point - reflect_camera.global_position;
+		if forward.dot(point_vector) > 0:
+			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SPHERE, 0.2, Color.GREEN)
+			if !min_vector || point_vector.length_squared() <= min_vector.length_squared():
+				min_vector = point_vector
+		else:
+			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.RED)
+	
+	# Frustum not in view
+	if !min_vector:
+		return false
+
+	DebugDraw3D.draw_arrow_ray(reflect_camera.global_position, min_vector, 1, Color.WHITE, 0.2)
+
+	# Turn point distance into near plane distance
+	var fov_w_half = deg_to_rad(reflect_camera.get_camera_projection().get_fov())/2
+	var fov_h_half = deg_to_rad(reflect_camera.fov)/2
+	
+	var unit_frustum_point: Vector3 = Vector3(1/tan(fov_w_half), 1/tan(fov_h_half), 1.0);
+	var unit_frustum_distance = unit_frustum_point.length()
+	
+	reflect_camera.near = min_vector.length() / unit_frustum_distance
+	
+	return true
 
 func _on_screen_entered(area: Area3D) -> void:
 	if (!seen): # Enable cam

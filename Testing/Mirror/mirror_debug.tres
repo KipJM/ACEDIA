@@ -173,8 +173,8 @@ void fragment() {
 	float n_out13p4 = n_out13p0.a;
 
 
-// Input:34
-	vec2 n_out34p0 = UV;
+// Input:6
+	vec2 n_out6p0 = SCREEN_UV;
 
 
 	vec4 n_out8p0;
@@ -187,7 +187,7 @@ void fragment() {
 
 
 // Mix:33
-	vec2 n_out33p0 = mix(n_out34p0, vec2(n_out8p0.xy), vec2(n_out32p0));
+	vec2 n_out33p0 = mix(n_out6p0, vec2(n_out8p0.xy), vec2(n_out32p0));
 
 
 	vec4 n_out3p0;
@@ -313,4 +313,4 @@ nodes/fragment/33/node = SubResource("VisualShaderNodeMix_w6nog")
 nodes/fragment/33/position = Vector2(-2040, -1480)
 nodes/fragment/34/node = SubResource("VisualShaderNodeInput_w6nog")
 nodes/fragment/34/position = Vector2(-3280, -1860)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 4, 0, 5, 0, 4, 1, 7, 0, 8, 2, 8, 0, 0, 9, 9, 0, 0, 10, 10, 0, 11, 2, 11, 0, 13, 0, 14, 0, 13, 1, 13, 4, 0, 1, 18, 0, 15, 2, 15, 0, 17, 0, 19, 0, 17, 1, 17, 0, 0, 2, 20, 0, 22, 2, 22, 0, 23, 0, 21, 0, 23, 1, 23, 0, 0, 3, 27, 0, 25, 2, 25, 0, 11, 0, 25, 0, 15, 0, 25, 0, 8, 0, 25, 0, 22, 0, 24, 0, 28, 0, 28, 0, 25, 0, 26, 0, 28, 1, 29, 0, 0, 0, 13, 0, 29, 0, 4, 0, 29, 1, 30, 0, 29, 2, 32, 0, 33, 2, 8, 0, 33, 1, 33, 0, 3, 0, 34, 0, 33, 0)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 4, 0, 5, 0, 4, 1, 7, 0, 8, 2, 8, 0, 0, 9, 9, 0, 0, 10, 10, 0, 11, 2, 11, 0, 13, 0, 14, 0, 13, 1, 13, 4, 0, 1, 18, 0, 15, 2, 15, 0, 17, 0, 19, 0, 17, 1, 17, 0, 0, 2, 20, 0, 22, 2, 22, 0, 23, 0, 21, 0, 23, 1, 23, 0, 0, 3, 27, 0, 25, 2, 25, 0, 11, 0, 25, 0, 15, 0, 25, 0, 8, 0, 25, 0, 22, 0, 24, 0, 28, 0, 28, 0, 25, 0, 26, 0, 28, 1, 29, 0, 0, 0, 13, 0, 29, 0, 4, 0, 29, 1, 30, 0, 29, 2, 32, 0, 33, 2, 8, 0, 33, 1, 33, 0, 3, 0, 6, 0, 33, 0)
