@@ -32,8 +32,8 @@ func _process(delta: float) -> void:
 		cam.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
 	)
 	
-	# near plane
-	#var distance = -reflection_plane.distance_to(reflect_cam.global_position)
+	
+	#==  Dynamic near plane calculation a.k.a. Hell
 	
 	var camera_planes = reflect_cam.get_frustum();
 	var right_plane   = camera_planes[4] # from observer POV
@@ -64,10 +64,6 @@ func _process(delta: float) -> void:
 	var corner_tl = reflection_plane.intersect_3(top_plane, left_plane)
 	var corner_tr = reflection_plane.intersect_3(top_plane, right_plane)
 	
-	# find min distance point (that's in frustum)
-	var forward = -reflect_cam.global_basis.z
-	DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, Vector3.FORWARD, 2, Color.DARK_OLIVE_GREEN, 0.02)
-	
 	var check_point_in_view = func(point: Vector3): 
 		# meet at least three
 		var conditions_met = 0;
@@ -91,10 +87,10 @@ func _process(delta: float) -> void:
 		return ((-mesh_size_half.x < point_local.x && point_local.x < mesh_size_half.x) &&
 		(-mesh_size_half.y < point_local.y && point_local.y < mesh_size_half.y))
 	
+	
 	var point_vectors: Array[Vector3];
 
-	var point_list = [
-		point_bl, point_br, point_tl, point_tr, point_lb, point_lt, point_rb, point_rt, 
+	var point_list = [point_bl, point_br, point_tl, point_tr, point_lb, point_lt, point_rb, point_rt, 
 		mesh_bl, mesh_br, mesh_tl, mesh_tr]
 	for i in len(point_list):
 		var point = point_list[i]
@@ -112,14 +108,12 @@ func _process(delta: float) -> void:
 			"mesh_bl", "mesh_br", "mesh_tl", "mesh_tr", 
 			"corner_bl", "corner_br", "corner_tl", "corner_tr"][i])
 	
-	var corner_list = [
-		corner_bl, corner_br, corner_tl, corner_tr
-	]
+	var corner_list = [corner_bl, corner_br, corner_tl, corner_tr]
 	for i in len(corner_list):
 		var point = corner_list[i]
 		if !point:
 			continue
-		
+			
 		var point_vector: Vector3 = reflect_cam.to_local(point);
 		if check_point_in_mesh.call(point):
 			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.GREEN)
@@ -127,17 +121,14 @@ func _process(delta: float) -> void:
 		else:
 			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.RED)
 		DebugDraw3D.draw_text(point - Vector3.FORWARD * 0.1, ["corner_bl", "corner_br", "corner_tl", "corner_tr"][i])
-			
 	
-	# Turn point distance into near plane distance
-	# Plane near
+	if len(point_vectors) < 1:
+		return # not in view
 	
+	# Find shortest near plane that doesn't remove any content
 	point_vectors.sort_custom(func(a: Vector3, b: Vector3): return -a.z < -b.z)
-	#print()
-	#for point_vector in point_vectors:
-		#print(-point_vector.z)
-
 	var target_vector = point_vectors[0]
 	DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, (reflect_cam.global_basis.inverse() * target_vector), 1, Color.WHITE, 0.2)
-		
 	reflect_cam.near = -target_vector.z
+	
+	#==
