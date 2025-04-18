@@ -99,7 +99,7 @@ func update_reflect_cam() -> bool:
 	)
 	
 	#==  Dynamic near plane calculation a.k.a. Hell
-    	
+		
 	var camera_planes = reflect_camera.get_frustum();
 	var right_plane   = camera_planes[4] # from observer POV
 	var left_plane  = camera_planes[2] # from observer POV

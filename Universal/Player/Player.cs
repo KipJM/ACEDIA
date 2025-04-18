@@ -1,4 +1,5 @@
 using Godot;
+using NathanHoad;
 using Pins.Universal.Player.CharController;
 
 namespace Pins.Universal.Player;
@@ -55,11 +56,14 @@ public partial class Player : CharacterBody3D
 
 	public void OnStartSqueeze()
 	{
+		GD.Print($"RUM: {InputHelper.LastKnownJoypadIndex}");
+		InputHelper.StartRumbleSmall(int.Parse(InputHelper.LastKnownJoypadIndex));
 		MovementState = MovementState.Squeezing;
 	}
 
 	public void OnEndSqueeze()
 	{
+		InputHelper.StopRumble(int.Parse(InputHelper.LastKnownJoypadIndex));
 		MovementState = MovementState.Walking;
 	}
 	

@@ -15,6 +15,10 @@ run/main_scene="res://Testing/CharControllerTest/scn_CharControllerTest.tscn"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 
+[autoload]
+
+InputHelper="*res://addons/input_helper/input_helper.gd"
+
 [display]
 
 window/size/extend_to_title=true
@@ -30,7 +34,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/post_processing/plugin.cfg")
+enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/post_processing/plugin.cfg")
 
 [global_group]
 
