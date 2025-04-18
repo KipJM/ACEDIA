@@ -36,74 +36,97 @@ func _process(delta: float) -> void:
 	#var distance = -reflection_plane.distance_to(reflect_cam.global_position)
 	
 	var camera_planes = reflect_cam.get_frustum();
-	var left_plane   = camera_planes[2]
-	var right_plane  = camera_planes[4]
+	var right_plane   = camera_planes[4] # from observer POV
+	var left_plane  = camera_planes[2] # from observer POV
 	var top_plane    = camera_planes[3]
 	var bottom_plane = camera_planes[5]
 	
-	var point_bl = reflection_plane.intersect_3(bottom_plane, left_plane) # yaoi
-	var point_br = reflection_plane.intersect_3(bottom_plane, right_plane)
-	var point_tl = reflection_plane.intersect_3(top_plane, left_plane)
-	var point_tr = reflection_plane.intersect_3(top_plane, right_plane)
-	
 	# mesh points (for high accuracy dynamic near and frustum culling)
 	var mesh_size_half = Vector3(mesh.size.x/2, mesh.size.y/2, 0)
-	var mesh_bl = to_global(Vector3(-mesh_size_half.x, -mesh_size_half.y, 0))
+	var mesh_bl = to_global(Vector3(-mesh_size_half.x, -mesh_size_half.y, 0)) # yaoi
 	var mesh_br = to_global(Vector3( mesh_size_half.x, -mesh_size_half.y, 0))
 	var mesh_tl = to_global(Vector3(-mesh_size_half.x,  mesh_size_half.y, 0))
 	var mesh_tr = to_global(Vector3( mesh_size_half.x,  mesh_size_half.y, 0))
+	
+	# plane points (arghh I don't even) 
+	var point_bl = bottom_plane.intersects_segment(mesh_bl, mesh_tl)
+	var point_br = bottom_plane.intersects_segment(mesh_br, mesh_tr)
+	var point_tl = top_plane.intersects_segment(mesh_bl, mesh_tl)
+	var point_tr = top_plane.intersects_segment(mesh_br, mesh_tr)
+	
+	var point_lb = left_plane.intersects_segment(mesh_bl, mesh_br)
+	var point_lt = left_plane.intersects_segment(mesh_tl, mesh_tr)
+	var point_rb = right_plane.intersects_segment(mesh_bl, mesh_br)
+	var point_rt = right_plane.intersects_segment(mesh_tl, mesh_tr)
 	
 	# find min distance point (that's in frustum)
 	var forward = -reflect_cam.global_basis.z
 	DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, Vector3.FORWARD, 2, Color.DARK_OLIVE_GREEN, 0.02)
 	
-	var min_vector: Vector3 = Vector3.ONE * 100000
-	for point in [point_bl, point_br, point_tl, point_tr]:
+	var check_point_in_view = func(point: Vector3): 
+		# meet at least three
+		var conditions_met = 0;
+		if top_plane.is_point_over(point): 
+			if !top_plane.has_point(point):
+				return false;
+		if bottom_plane.is_point_over(point):
+			if !bottom_plane.has_point(point):
+				return false;
+		if left_plane.is_point_over(point):
+			if !left_plane.has_point(point):
+				return false;
+		if right_plane.is_point_over(point):
+			if !right_plane.has_point(point):
+				return false;
+		
+		return true;
+		
+	
+	var point_vectors: Array[Vector3];
+
+	var point_list = [point_bl, point_br, point_tl, point_tr, point_lb, point_lt, point_rb, point_rt]
+	for i in len(point_list):
+		var point = point_list[i]
+		if !point:
+			continue
+			
 		var point_vector: Vector3 = reflect_cam.to_local(point);
 		DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, point_vector, 2, Color.PURPLE, 0.02)
-		if -point_vector.z > 0:
+		if check_point_in_view.call(point):
 			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SPHERE, 0.2, Color.GREEN)
-			
-			if point_vector.length_squared() <= min_vector.length_squared():
-				min_vector = point_vector
+			point_vectors.append(point_vector);
 		else:
 			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SPHERE, 0.2, Color.RED)
+		DebugDraw3D.draw_text(point - Vector3.FORWARD * 0.1, ["point_bl", "point_br", "point_tl", "point_tr", "point_lb", "point_lt", "point_rb", "point_rt"][i])
 	
-	if min_vector == Vector3.ONE * 100000:
-		#print("Hidden (Plane)")
-		return
 	
-	var min_mesh_vector: Vector3 = Vector3.ONE * 100000
-	for point in [mesh_bl, mesh_br, mesh_tl, mesh_tr]:
+	var mesh_point_list = [mesh_bl, mesh_br, mesh_tl, mesh_tr]
+	for i in len(mesh_point_list):
+		var point = mesh_point_list[i]
 		var point_vector: Vector3 = reflect_cam.to_local(point);
-		DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, point_vector, 2, Color.PINK, 0.02)
-		if -point_vector.z > 0:
+		DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, point_vector, 2, Color.PURPLE, 0.02)
+		if check_point_in_view.call(point): #DEBUG
 			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.GREEN)
-			
-			if point_vector.length_squared() <= min_mesh_vector.length_squared():
-				min_mesh_vector = point_vector
+			point_vectors.append(point_vector);
 		else:
 			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.RED)
+		DebugDraw3D.draw_text(point - Vector3.FORWARD * 0.1, ["mesh_bl", "mesh_br", "mesh_tl", "mesh_tr"][i])
 	
 	
-	# Frustum not in view
-	if min_mesh_vector == Vector3.ONE * 100000:
-		#print("Hidden (Mesh)")
-		return
+	# Not enough points for dynamic near
+	#if point_vectors.size() < 4:
+		#print("Hidden (Plane)")
+		#return
 
 	# Turn point distance into near plane distance
-	var fov_w_half = deg_to_rad(reflect_cam.get_camera_projection().get_fov())/2
-	var fov_h_half = deg_to_rad(reflect_cam.fov)/2
-	
 	# Plane near
-	if -min_vector.z > -min_mesh_vector.z:
-		DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, reflect_cam.basis.inverse() * min_vector, 1, Color.WHITE, 0.2)
+	
+	point_vectors.sort_custom(func(a: Vector3, b: Vector3): return -a.z < -b.z)
+	#print()
+	#for point_vector in point_vectors:
+		#print(-point_vector.z)
+
+	var target_vector = point_vectors[0]
+	DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, (reflect_cam.global_basis.inverse() * target_vector), 1, Color.WHITE, 0.2)
 		
-		#var unit_frustum_point: Vector3 = Vector3(1/tan(fov_w_half), 1/tan(fov_h_half), 1.0);
-		#var unit_frustum_distance = unit_frustum_point.length()
-		#print(min_vector.z)
-		reflect_cam.near = -min_vector.z
-	else:
-		DebugDraw3D.draw_arrow_ray(reflect_cam.global_position, reflect_cam.basis.inverse() * min_mesh_vector, 1, Color.BLACK, 0.2)
-		# Mesh near
-		reflect_cam.near = -min_mesh_vector.z
+	reflect_cam.near = -target_vector.z
