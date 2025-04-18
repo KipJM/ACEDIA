@@ -3,11 +3,17 @@ class_name PlanarReflector
 
 var reflect_camera : Camera3D
 var reflect_viewport: SubViewport
+
 @export var main_camera : Camera3D = null
 
+@export_group("Display")
 @export var resolution_scale: float
 @export var far : float = 4000
+
+@export_group("Debug")
+@export var debug_enabled: bool = false
 @export var debug_ui: TextureRect
+@export var debug_frustum_script: GDScript
 
 var seen = false
 
@@ -34,20 +40,25 @@ func init_mirror():
 	var mat:ShaderMaterial = self.get_surface_override_material(0);
 	mat.set_shader_parameter("reflection_screen_texture", reflect_viewport.get_texture());
 	
-	if debug_ui != null:
-		debug_ui.texture = reflect_viewport.get_texture()
+	if debug_enabled:
+		if debug_ui != null:
+			debug_ui.texture = reflect_viewport.get_texture()
+		
+		if debug_frustum_script != null:
+			reflect_camera.set_script(debug_frustum_script);
+			reflect_camera.set_process(true);
 	
 	reflect_camera.make_current();
 	update_viewport()
 
 func update_viewport() -> void:
 	reflect_viewport.size = get_viewport().size * resolution_scale
-	#print(reflect_viewport.size)
+	
 	reflect_camera.fov = main_camera.fov
 	reflect_camera.far = far # Arbitrary
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void: # DEBUG
+func _process(_delta: float) -> void: # DEBUG
 	if (!seen):
 		return
 	if (!main_camera):
@@ -60,9 +71,7 @@ func _process(delta: float) -> void: # DEBUG
 		reflect_camera.current = false; # Not in view
 	
 	# DEBUG
-	DebugDraw3D.scoped_config().set_thickness(0.01);
-	DebugDraw3D.draw_camera_frustum(reflect_camera, Color.GREEN)
-	DebugDraw3D.draw_box(reflect_camera.global_position, reflect_camera.global_basis.get_rotation_quaternion(), Vector3.ONE * 0.2, Color.GREEN, true) 
+	
 
 
 func update_reflect_cam() -> bool:
@@ -89,46 +98,115 @@ func update_reflect_cam() -> bool:
 		main_camera.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
 	)
 	
-	# near plane	
+	#==  Dynamic near plane calculation a.k.a. Hell
+    	
 	var camera_planes = reflect_camera.get_frustum();
-	var left_plane   = camera_planes[2]
-	var right_plane  = camera_planes[4]
+	var right_plane   = camera_planes[4] # from observer POV
+	var left_plane  = camera_planes[2] # from observer POV
 	var top_plane    = camera_planes[3]
 	var bottom_plane = camera_planes[5]
 	
-	var point_bl = reflection_plane.intersect_3(bottom_plane, left_plane) # yaoi
-	var point_br = reflection_plane.intersect_3(bottom_plane, right_plane)
-	var point_tl = reflection_plane.intersect_3(top_plane, left_plane)
-	var point_tr = reflection_plane.intersect_3(top_plane, right_plane)
+	# mesh points (for high accuracy dynamic near and frustum culling)
+	var mesh_size_half = Vector3(mesh.size.x/2, mesh.size.y/2, 0)
+	var mesh_bl = to_global(Vector3(-mesh_size_half.x, -mesh_size_half.y, 0)) # yaoi
+	var mesh_br = to_global(Vector3( mesh_size_half.x, -mesh_size_half.y, 0))
+	var mesh_tl = to_global(Vector3(-mesh_size_half.x,  mesh_size_half.y, 0))
+	var mesh_tr = to_global(Vector3( mesh_size_half.x,  mesh_size_half.y, 0))
 	
-	# find min distance point (that's in frustum)
-	var forward = -reflect_camera.global_basis.z
-	var min_vector: Vector3
-	for point in [point_bl, point_br, point_tl, point_tr]:
-		var point_vector: Vector3 = point - reflect_camera.global_position;
-		if forward.dot(point_vector) > 0:
-			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SPHERE, 0.2, Color.GREEN)
-			if !min_vector || point_vector.length_squared() <= min_vector.length_squared():
-				min_vector = point_vector
+	# plane points (arghh I don't even) 
+	var point_bl = bottom_plane.intersects_segment(mesh_bl, mesh_tl)
+	var point_br = bottom_plane.intersects_segment(mesh_br, mesh_tr)
+	var point_tl = top_plane.intersects_segment(mesh_bl, mesh_tl)
+	var point_tr = top_plane.intersects_segment(mesh_br, mesh_tr)
+	
+	var point_lb = left_plane.intersects_segment(mesh_bl, mesh_br)
+	var point_lt = left_plane.intersects_segment(mesh_tl, mesh_tr)
+	var point_rb = right_plane.intersects_segment(mesh_bl, mesh_br)
+	var point_rt = right_plane.intersects_segment(mesh_tl, mesh_tr)
+	
+	var corner_bl = reflection_plane.intersect_3(bottom_plane, left_plane)
+	var corner_br = reflection_plane.intersect_3(bottom_plane, right_plane)
+	var corner_tl = reflection_plane.intersect_3(top_plane, left_plane)
+	var corner_tr = reflection_plane.intersect_3(top_plane, right_plane)
+	
+	var check_point_in_view = func(point: Vector3): 
+		# meet at least three
+		if top_plane.is_point_over(point): 
+			if !top_plane.has_point(point):
+				return false;
+		if bottom_plane.is_point_over(point):
+			if !bottom_plane.has_point(point):
+				return false;
+		if left_plane.is_point_over(point):
+			if !left_plane.has_point(point):
+				return false;
+		if right_plane.is_point_over(point):
+			if !right_plane.has_point(point):
+				return false;
+		
+		return true;
+		
+	var check_point_in_mesh = func(point: Vector3):
+		var point_local = to_local(point)
+		return ((-mesh_size_half.x < point_local.x && point_local.x < mesh_size_half.x) &&
+		(-mesh_size_half.y < point_local.y && point_local.y < mesh_size_half.y))
+	
+	
+	var point_vectors: Array[Vector3];
+
+	var point_list = [point_bl, point_br, point_tl, point_tr, point_lb, point_lt, point_rb, point_rt, 
+		mesh_bl, mesh_br, mesh_tl, mesh_tr]
+	for i in len(point_list):
+		var point = point_list[i]
+		if !point:
+			continue
+			
+		var point_vector: Vector3 = reflect_camera.to_local(point);
+		if check_point_in_view.call(point) && -point_vector.z > 0:
+			if debug_enabled:
+				DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.GREEN)
+			point_vectors.append(point_vector);
 		else:
-			DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.RED)
+			if debug_enabled:
+				DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.RED)
+				
+		if debug_enabled:
+			DebugDraw3D.draw_text(point - Vector3.FORWARD * 0.1, [
+				"point_bl", "point_br", "point_tl", "point_tr", "point_lb", "point_lt", "point_rb", "point_rt", 
+				"mesh_bl", "mesh_br", "mesh_tl", "mesh_tr", 
+				"corner_bl", "corner_br", "corner_tl", "corner_tr"][i])
 	
-	# Frustum not in view
-	if !min_vector:
-		return false
-
-	DebugDraw3D.draw_arrow_ray(reflect_camera.global_position, min_vector, 1, Color.WHITE, 0.2)
-
-	# Turn point distance into near plane distance
-	var fov_w_half = deg_to_rad(reflect_camera.get_camera_projection().get_fov())/2
-	var fov_h_half = deg_to_rad(reflect_camera.fov)/2
 	
-	var unit_frustum_point: Vector3 = Vector3(1/tan(fov_w_half), 1/tan(fov_h_half), 1.0);
-	var unit_frustum_distance = unit_frustum_point.length()
+	var corner_list = [corner_bl, corner_br, corner_tl, corner_tr]
+	for i in len(corner_list):
+		var point = corner_list[i]
+		if !point:
+			continue
+			
+		var point_vector: Vector3 = reflect_camera.to_local(point);
+		if check_point_in_mesh.call(point) && -point_vector.z > 0:
+			if debug_enabled:
+				DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.GREEN)
+			point_vectors.append(point_vector);
+		else:
+			if debug_enabled:
+				DebugDraw3D.draw_points([point], DebugDraw3D.POINT_TYPE_SQUARE, 0.2, Color.RED)
+		
+		if debug_enabled:
+			DebugDraw3D.draw_text(point - Vector3.FORWARD * 0.1, ["corner_bl", "corner_br", "corner_tl", "corner_tr"][i])
 	
-	reflect_camera.near = min_vector.length() / unit_frustum_distance
+	if len(point_vectors) < 1:
+		return false# not in view
 	
+	# Find shortest near plane that doesn't remove any content
+	point_vectors.sort_custom(func(a: Vector3, b: Vector3): return -a.z < -b.z)
+	var target_vector = point_vectors[0]
+	if debug_enabled:
+		DebugDraw3D.draw_arrow_ray(reflect_camera.global_position, (reflect_camera.global_basis.inverse() * target_vector), 1, Color.WHITE, 0.2)
+	
+	reflect_camera.near = -target_vector.z
 	return true
+	#==
 
 func _on_screen_entered(area: Area3D) -> void:
 	if (!seen): # Enable cam
