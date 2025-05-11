@@ -1,14 +1,14 @@
 extends MeshInstance3D
 class_name PlanarReflector
 
-var reflect_camera : Camera3D
+var reflect_camera: Camera3D
 var reflect_viewport: SubViewport
 
-@export var main_camera : Camera3D = null
+@export var main_camera: Camera3D = null
 
 @export_group("Display")
 @export var resolution_scale: float
-@export var far : float = 4000
+@export var far: float = 4000
 
 @export_group("Debug")
 @export var debug_enabled: bool = false
@@ -28,7 +28,15 @@ func init_mirror():
 	reflect_camera = Camera3D.new();
 	reflect_viewport.add_child(reflect_camera);
 	
-	reflect_camera.cull_mask = 1;
+	reflect_camera.cull_mask = main_camera.cull_mask;
+	
+	# Mirror- hidden
+	reflect_camera.set_cull_mask_value(19, false)
+	
+	# Player - hidden
+	reflect_camera.set_cull_mask_value(20, true)
+	
+	
 	reflect_camera.environment = main_camera.environment
 	
 	reflect_camera.doppler_tracking = Camera3D.DOPPLER_TRACKING_DISABLED
@@ -59,16 +67,16 @@ func update_viewport() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void: # DEBUG
-	if (!seen):
-		return
+	#if (!seen):
+		#return
 	if (!main_camera):
 		return
 
 	update_viewport()
 	if update_reflect_cam():
-		reflect_camera.current = true;
+		reflect_camera.make_current()
 	else:
-		reflect_camera.current = false; # Not in view
+		reflect_camera.clear_current() # Not In View
 	
 	# DEBUG
 	
@@ -208,19 +216,19 @@ func update_reflect_cam() -> bool:
 	return true
 	#==
 
-func _on_screen_entered(area: Area3D) -> void:
-	if (!seen): # Enable cam
-		print("Seen!")
-		reflect_camera.make_current()
-		update_viewport() # just to be safe
-		seen = true;
-
-
-func _on_screen_exited(area: Area3D) -> void:
-	if(seen): 
-		print("Clear")
-		# Stop camera to save compute resources
-		# Unfortunately VRAM is still needed :O
-		# Unallocating/allocating takes too much time :|
-		reflect_camera.clear_current()
-		seen = false;
+#func _on_screen_entered(area: Area3D) -> void:
+	#if (!seen): # Enable cam
+		#print("Seen!")
+		#reflect_camera.make_current()
+		#update_viewport() # just to be safe
+		#seen = true;
+#
+#
+#func _on_screen_exited(area: Area3D) -> void:
+	#if(seen): 
+		#print("Clear")
+		## Stop camera to save compute resources
+		## Unfortunately VRAM is still needed :O
+		## Unallocating/allocating takes too much time :|
+		#reflect_camera.clear_current()
+		#seen = false;

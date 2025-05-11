@@ -6,6 +6,7 @@ extends Control
 
 func _ready() -> void:
 	InputHelper.device_changed.connect(_on_device_changed)
+	_on_device_changed(InputHelper.device, 0)
 
 func _on_device_changed(device: String, device_index: int) -> void:
 	print(device)
