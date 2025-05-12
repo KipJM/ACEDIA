@@ -1,0 +1,60 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=11 format=3 uid="uid://bfpd388m4qco6"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a1833"]
+animation = &"Locomotion/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3rfk3"]
+animation = &"Locomotion/run_f"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0s6jw"]
+animation = &"Locomotion/run_r"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pfbqo"]
+animation = &"Locomotion/run_l"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bcejq"]
+animation = &"Locomotion/run_f"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c1ffq"]
+animation = &"Locomotion/walk_f"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_epcix"]
+animation = &"Locomotion/walk_l"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lqr7l"]
+animation = &"Locomotion/walk_r"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1rdgn"]
+animation = &"Locomotion/walk_f"
+play_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_s4tko"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_a1833")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_3rfk3")
+blend_point_1/pos = Vector2(0, 8)
+blend_point_2/node = SubResource("AnimationNodeAnimation_0s6jw")
+blend_point_2/pos = Vector2(8, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_pfbqo")
+blend_point_3/pos = Vector2(-8, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_bcejq")
+blend_point_4/pos = Vector2(0, -8)
+blend_point_5/node = SubResource("AnimationNodeAnimation_c1ffq")
+blend_point_5/pos = Vector2(0, 5)
+blend_point_6/node = SubResource("AnimationNodeAnimation_epcix")
+blend_point_6/pos = Vector2(-5, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_lqr7l")
+blend_point_7/pos = Vector2(5, 0)
+blend_point_8/node = SubResource("AnimationNodeAnimation_1rdgn")
+blend_point_8/pos = Vector2(0, -5)
+min_space = Vector2(-8, -8)
+max_space = Vector2(8, 8)
+sync = true
+
+[resource]
+graph_offset = Vector2(-1251.75, 15.1748)
+nodes/Locomotion/node = SubResource("AnimationNodeBlendSpace2D_s4tko")
+nodes/Locomotion/position = Vector2(-600, 76.9231)
+nodes/output/position = Vector2(46.1538, 92.3077)
+node_connections = [&"output", 0, &"Locomotion"]
