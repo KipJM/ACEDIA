@@ -42,7 +42,7 @@ func init_mirror():
 	reflect_camera.doppler_tracking = Camera3D.DOPPLER_TRACKING_DISABLED
 	reflect_camera.keep_aspect = Camera3D.KEEP_HEIGHT
 	reflect_camera.projection = Camera3D.PROJECTION_PERSPECTIVE
-
+	
 	reflect_camera.current = true;
 
 	var mat:ShaderMaterial = self.get_surface_override_material(0);

@@ -1,0 +1,64 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=12 format=3 uid="uid://bfpd388m4qco6"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x607l"]
+animation = &"locomotion_library/run_l_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k2k8s"]
+animation = &"locomotion_library/idle_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ihoag"]
+animation = &"locomotion_library/run_f_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0sp4x"]
+animation = &"locomotion_library/run_l_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_px5io"]
+animation = &"locomotion_library/run_r_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tdtmn"]
+animation = &"locomotion_library/run_f_IN_PLACE_remap"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tob77"]
+animation = &"locomotion_library/walk_f_IN_PLACE_remap"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s4pfs"]
+animation = &"locomotion_library/walk_f_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uwuee"]
+animation = &"locomotion_library/walk_l_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_joi8s"]
+animation = &"locomotion_library/walk_r_IN_PLACE_remap"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_x607l"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_k2k8s")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ihoag")
+blend_point_1/pos = Vector2(0, 4.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_0sp4x")
+blend_point_2/pos = Vector2(-4.03, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_px5io")
+blend_point_3/pos = Vector2(4.03, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_tdtmn")
+blend_point_4/pos = Vector2(0, -4.1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_tob77")
+blend_point_5/pos = Vector2(0, -2.03)
+blend_point_6/node = SubResource("AnimationNodeAnimation_s4pfs")
+blend_point_6/pos = Vector2(0, 2.03)
+blend_point_7/node = SubResource("AnimationNodeAnimation_uwuee")
+blend_point_7/pos = Vector2(-2.1, 0)
+blend_point_8/node = SubResource("AnimationNodeAnimation_joi8s")
+blend_point_8/pos = Vector2(2.1, 0)
+min_space = Vector2(-4.5, -4.5)
+max_space = Vector2(4.5, 4.5)
+
+[resource]
+graph_offset = Vector2(-1116.92, -4.61538)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_x607l")
+nodes/Animation/position = Vector2(-769.231, 261.538)
+nodes/Locomotion/node = SubResource("AnimationNodeBlendSpace2D_x607l")
+nodes/Locomotion/position = Vector2(-584.615, 15.3846)
+nodes/output/position = Vector2(-61.5385, 92.3077)
+node_connections = [&"output", 0, &"Locomotion"]

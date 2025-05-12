@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dqgsshodowdq0"]
+
+[ext_resource type="Shader" uid="uid://ciihwnfp7omqq" path="res://Universal/Player/mainChar/shader_person.tres" id="1_ycfpv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ycfpv")
+shader_parameter/speed_mult = 1.0
+shader_parameter/mag_distinct = 0.015
+shader_parameter/mag_organic = 0.032
+shader_parameter/mix_style = 0.585
