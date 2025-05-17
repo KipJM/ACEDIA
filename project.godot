@@ -21,6 +21,8 @@ InputHelper="*res://addons/input_helper/input_helper.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/extend_to_title=true
 
 [dotnet]
@@ -115,6 +117,7 @@ pause={
 
 [physics]
 
+3d/physics_engine="Jolt Physics"
 common/physics_interpolation=true
 
 [rendering]
