@@ -4,7 +4,8 @@ class_name PlanarReflector
 var reflect_camera: Camera3D
 var reflect_viewport: SubViewport
 
-@export var main_camera: Camera3D = null
+@export var player: CharacterBody3D = null; # Preferred. Will automatically use camera of player is _main_camera is not set.
+@export var camera_override: Camera3D = null # Camera override
 
 @export_group("Display")
 @export var resolution_scale: float
@@ -15,20 +16,21 @@ var reflect_viewport: SubViewport
 @export var debug_ui: TextureRect
 @export var debug_frustum_script: GDScript
 
-var seen = false
+var _main_camera: Camera3D;
 
 func _ready():
 	init_mirror();
-	seen = false;
 
 # Called when the node enters the scene tree for the first time.
-func init_mirror():
+func init_mirror():	
+	update_camera()
+	
 	reflect_viewport = SubViewport.new();
 	add_child(reflect_viewport);
 	reflect_camera = Camera3D.new();
 	reflect_viewport.add_child(reflect_camera);
 	
-	reflect_camera.cull_mask = main_camera.cull_mask;
+	reflect_camera.cull_mask = _main_camera.cull_mask;
 	
 	# Mirror- hidden
 	reflect_camera.set_cull_mask_value(19, false)
@@ -37,7 +39,7 @@ func init_mirror():
 	reflect_camera.set_cull_mask_value(20, true)
 	
 	
-	reflect_camera.environment = main_camera.environment
+	reflect_camera.environment = _main_camera.environment
 	
 	reflect_camera.doppler_tracking = Camera3D.DOPPLER_TRACKING_DISABLED
 	reflect_camera.keep_aspect = Camera3D.KEEP_HEIGHT
@@ -59,20 +61,29 @@ func init_mirror():
 	reflect_camera.make_current();
 	update_viewport()
 
+func update_camera() -> void:
+	if (camera_override == null):
+	# Auto find camera from player
+		_main_camera = player.Camera;
+	else:
+		_main_camera = camera_override;
+
 func update_viewport() -> void:
+	update_camera()
+	
 	reflect_viewport.size = get_viewport().size * resolution_scale
 	
-	reflect_camera.fov = main_camera.fov
+	reflect_camera.fov = _main_camera.fov
 	reflect_camera.far = far # Arbitrary
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void: # DEBUG
-	#if (!seen):
-		#return
-	if (!main_camera):
+	if (!player and !camera_override):
 		return
-
+	
 	update_viewport()
+	
 	if update_reflect_cam():
 		reflect_camera.make_current()
 	else:
@@ -89,7 +100,7 @@ func update_reflect_cam() -> bool:
 	var plane_normal = reflection_transform.basis.z.normalized();
 	var reflection_plane = Plane(plane_normal, plane_origin.dot(plane_normal))
 	
-	var cam_pos = main_camera.global_position
+	var cam_pos = _main_camera.global_position
 	
 	var proj_pos := reflection_plane.project(cam_pos)
 	var mirrored_pos = cam_pos + (proj_pos - cam_pos) * 2.0
@@ -101,9 +112,9 @@ func update_reflect_cam() -> bool:
 	reflect_camera.global_transform.origin = mirrored_pos
 
 	reflect_camera.basis = Basis(
-		main_camera.global_basis.x.normalized().bounce(reflection_plane.normal).normalized(),
-		main_camera.global_basis.y.normalized().bounce(reflection_plane.normal).normalized(),
-		main_camera.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
+		_main_camera.global_basis.x.normalized().bounce(reflection_plane.normal).normalized(),
+		_main_camera.global_basis.y.normalized().bounce(reflection_plane.normal).normalized(),
+		_main_camera.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
 	)
 	
 	#==  Dynamic near plane calculation a.k.a. Hell

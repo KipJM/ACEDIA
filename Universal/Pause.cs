@@ -2,7 +2,7 @@ using Godot;
 
 namespace Pins.Universal;
 
-public partial class Pause : Node3D
+public partial class Pause : RichTextLabel
 {
     [Export]
     private RichTextLabel _pausedLabel;
