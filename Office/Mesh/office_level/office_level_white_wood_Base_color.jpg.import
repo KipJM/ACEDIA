@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://coks5s38x64sl"
+path.s3tc="res://.godot/imported/office_level_white_wood_Base_color.jpg-f7c7ecfa75a2c0aea79fda71c0157d73.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "baefe5a918268e52bd0c8723937a96aa"
+}
+
+[deps]
+
+source_file="res://Office/Mesh/office_level/office_level_white_wood_Base_color.jpg"
+dest_files=["res://.godot/imported/office_level_white_wood_Base_color.jpg-f7c7ecfa75a2c0aea79fda71c0157d73.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

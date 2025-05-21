@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b0qbopg32ncuk"
+path.s3tc="res://.godot/imported/office_level_WoodFloor051_4K-JPG_NormalGL.jpg-9c056a17d1c889f9ecc710b2be6f03db.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "cee528158d343366bc95f38d06745367"
+}
+
+[deps]
+
+source_file="res://Office/Mesh/office_level/office_level_WoodFloor051_4K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/office_level_WoodFloor051_4K-JPG_NormalGL.jpg-9c056a17d1c889f9ecc710b2be6f03db.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Office/office_level_WoodFloor051_4K-JPG_NormalGL.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

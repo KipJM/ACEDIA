@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://do72756cuggck"
+path.s3tc="res://.godot/imported/office_level_Metal_basecolor.jpg-377133657ada0fb7cc0924bc269e7fde.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ea5833605948acb24070a84a2ea33f37"
+}
+
+[deps]
+
+source_file="res://Office/Mesh/office_level/office_level_Metal_basecolor.jpg"
+dest_files=["res://.godot/imported/office_level_Metal_basecolor.jpg-377133657ada0fb7cc0924bc269e7fde.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

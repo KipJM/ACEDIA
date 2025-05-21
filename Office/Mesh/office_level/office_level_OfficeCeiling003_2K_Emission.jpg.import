@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://di5lqye4ioldq"
+path.s3tc="res://.godot/imported/office_level_OfficeCeiling003_2K_Emission.jpg-ee397faa2768399a05cfb5229d635f30.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "8154b8fca2b052c24f46102591acb55a"
+}
+
+[deps]
+
+source_file="res://Office/Mesh/office_level/office_level_OfficeCeiling003_2K_Emission.jpg"
+dest_files=["res://.godot/imported/office_level_OfficeCeiling003_2K_Emission.jpg-ee397faa2768399a05cfb5229d635f30.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
