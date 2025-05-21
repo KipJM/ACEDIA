@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dkjjla1j7abfr"
+path.s3tc="res://.godot/imported/office_level_WhiteFabric_RGH.png-1060966ed340b966d3e06e8056b966b2.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "b7bdd5e1c23c39d691c53aca0783ca7e"
+}
+
+[deps]
+
+source_file="res://Office/office_level_WhiteFabric_RGH.png"
+dest_files=["res://.godot/imported/office_level_WhiteFabric_RGH.png-1060966ed340b966d3e06e8056b966b2.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
