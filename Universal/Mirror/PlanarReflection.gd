@@ -32,10 +32,10 @@ func init_mirror():
 	
 	reflect_camera.cull_mask = _main_camera.cull_mask;
 	
-	# Mirror- hidden
+	# Hidden for Mirror
 	reflect_camera.set_cull_mask_value(19, false)
 	
-	# Player - hidden
+	# Hidden for Player
 	reflect_camera.set_cull_mask_value(20, true)
 	
 	

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ff32k50opswh"
-path.s3tc="res://.godot/imported/texture_02.png-b7735978e112f30fecd99444b6665ac0.s3tc.ctex"
+uid="uid://fhrwgmknvaax"
+path.s3tc="res://.godot/imported/desktop.png-bd738ee478adccaf60d23065a13dae70.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Testing/General/Prototype Textures/Red/texture_02.png"
-dest_files=["res://.godot/imported/texture_02.png-b7735978e112f30fecd99444b6665ac0.s3tc.ctex"]
+source_file="res://Office/Mesh/office_level/materials/desktop.png"
+dest_files=["res://.godot/imported/desktop.png-bd738ee478adccaf60d23065a13dae70.s3tc.ctex"]
 
 [params]
 

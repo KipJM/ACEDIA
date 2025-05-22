@@ -3,8 +3,8 @@
 [ext_resource type="Shader" uid="uid://vjipkaujhhgq" path="res://Universal/Shaders/randomColor.tres" id="1_bap6m"]
 
 [sub_resource type="Gradient" id="Gradient_7vykj"]
-offsets = PackedFloat32Array(0, 0.174342, 0.440789, 0.740132, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.25, 0.25, 0.25, 1, 0.4592, 0.52472, 0.56, 1, 0.3854, 0.43898, 0.47, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.174342, 0.440789, 0.641447, 0.851974)
+colors = PackedColorArray(0.03, 0.03, 0.03, 1, 0.25, 0.25, 0.25, 1, 0.4592, 0.52472, 0.56, 1, 0.3854, 0.43898, 0.47, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_k8ejd"]
 gradient = SubResource("Gradient_7vykj")
@@ -15,5 +15,5 @@ shader = ExtResource("1_bap6m")
 shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_k8ejd")
 shader_parameter/Metallic = 0.105
 shader_parameter/Roughness = 0.0
-shader_parameter/emissionStrength = 1.67
-shader_parameter/emissionStrength2 = 1.495
+shader_parameter/emissionStrength = 0.8
+shader_parameter/emissionStrength2 = 2.0

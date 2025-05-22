@@ -15,3 +15,5 @@ shader = ExtResource("1_wwgkc")
 shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_y1vwv")
 shader_parameter/Metallic = 0.09
 shader_parameter/Roughness = 0.77
+shader_parameter/emissionStrength = 0.0
+shader_parameter/emissionStrength2 = 0.0
