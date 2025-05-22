@@ -1,0 +1,80 @@
+[gd_resource type="VisualShader" load_steps=8 format=3 uid="uid://vjipkaujhhgq"]
+
+[ext_resource type="Script" uid="uid://246oclpxtdlc" path="res://addons/shaderV/tools/random/randomFloat.gd" id="1_1xmkb"]
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_gn1j4"]
+parameter_name = "Metallic"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_jttyj"]
+parameter_name = "Roughness"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_2rtmw"]
+parameter_name = "Texture2DParameter"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_m2h64"]
+source = 5
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_1xmkb"]
+input_name = "node_position_world"
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_022ip"]
+initialized = true
+script = ExtResource("1_1xmkb")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D Texture2DParameter : source_color;
+uniform float Metallic;
+uniform float Roughness;
+
+
+
+void fragment() {
+// Input:6
+	vec3 n_out6p0 = NODE_POSITION_WORLD;
+
+
+	float n_out7p0;
+// RandomFloat:7
+	{
+		n_out7p0 = fract(sin(dot(n_out6p0.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+	}
+
+
+	vec4 n_out5p0;
+// Texture2D:5
+	n_out5p0 = texture(Texture2DParameter, vec2(n_out7p0));
+
+
+// FloatParameter:2
+	float n_out2p0 = Metallic;
+
+
+// FloatParameter:3
+	float n_out3p0 = Roughness;
+
+
+// Output:0
+	ALBEDO = vec3(n_out5p0.xyz);
+	METALLIC = n_out2p0;
+	ROUGHNESS = n_out3p0;
+
+
+}
+"
+nodes/fragment/2/node = SubResource("VisualShaderNodeFloatParameter_gn1j4")
+nodes/fragment/2/position = Vector2(-100, 220)
+nodes/fragment/3/node = SubResource("VisualShaderNodeFloatParameter_jttyj")
+nodes/fragment/3/position = Vector2(-100, 420)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture2DParameter_2rtmw")
+nodes/fragment/4/position = Vector2(-680, -40)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_m2h64")
+nodes/fragment/5/position = Vector2(-140, -160)
+nodes/fragment/6/node = SubResource("VisualShaderNodeInput_1xmkb")
+nodes/fragment/6/position = Vector2(-960, -340)
+nodes/fragment/7/node = SubResource("VisualShaderNodeCustom_022ip")
+nodes/fragment/7/position = Vector2(-380, -280)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 2, 3, 0, 0, 3, 4, 0, 5, 2, 5, 0, 0, 0, 6, 0, 7, 0, 7, 0, 5, 0)

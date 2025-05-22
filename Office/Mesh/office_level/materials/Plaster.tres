@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bjj8fvvc3xgg3"]
+
+[ext_resource type="Texture2D" uid="uid://dxx2ktclexxqa" path="res://Office/Mesh/office_level/office_level_2K-plasteR_8-diffuse.jpg" id="1_olem1"]
+[ext_resource type="Texture2D" uid="uid://b6u6w3hokqfun" path="res://Office/Mesh/office_level/office_level_2K-plasteR_8-normal.jpg" id="2_fhtnw"]
+
+[resource]
+resource_name = "Plaster"
+albedo_texture = ExtResource("1_olem1")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_fhtnw")

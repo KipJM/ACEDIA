@@ -33,6 +33,172 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"BLACK": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/BLACK.tres"
+},
+"Brushed Aluminum.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Brushed Aluminum.001.tres"
+},
+"Carpet": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Carpet.tres"
+},
+"Concrete": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Concrete.tres"
+},
+"Concrete Wall": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Concrete Wall.tres"
+},
+"Fabric 131": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Fabric 131.tres"
+},
+"Flower Vase_Color": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Flower Vase_Color.tres"
+},
+"Marble tiles.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Marble tiles.001.tres"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Material.002.tres"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Metal.tres"
+},
+"Office Ceiling": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Office Ceiling.tres"
+},
+"Office Ceiling.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Office Ceiling.001.tres"
+},
+"Office Chair_Fabric": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Office Chair_Fabric.tres"
+},
+"Office Chair_Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Office Chair_Metal.tres"
+},
+"Office Chair_Painted Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Office Chair_Painted Metal.tres"
+},
+"Office Chair_Plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Office Chair_Plastic.tres"
+},
+"Painted Plaster Wall.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Painted Plaster Wall.002.tres"
+},
+"Plaster": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Plaster.tres"
+},
+"Plaster.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Plaster.002.tres"
+},
+"Plastic Desktop": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Plastic Desktop.tres"
+},
+"Plastic White 11": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Plastic White 11.tres"
+},
+"Plastic White 13": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Plastic White 13.tres"
+},
+"Plastic grey material": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Plastic grey material.tres"
+},
+"Plastic white material": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Plastic white material.tres"
+},
+"Silver Metal with Subtle Dimples": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Silver Metal with Subtle Dimples.tres"
+},
+"Unlit Black": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Unlit Black.tres"
+},
+"White Wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/White Wood.tres"
+},
+"Wood Light.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Wood Light.001.tres"
+},
+"Wood Parquet": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Wood Parquet.tres"
+},
+"Wood floor": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Wood floor.tres"
+},
+"Zig-zag grey plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/Zig-zag grey plastic.tres"
+},
+"breakDoor_frame": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/breakDoor_frame.tres"
+},
+"files": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/files.tres"
+},
+"hallDoor_frame": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/hallDoor_frame.tres"
+},
+"label": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/label.tres"
+},
+"mouse_base": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/mouse_base.tres"
+},
+"mouse_body": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/mouse_body.tres"
+},
+"mouse_clicker": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/mouse_clicker.tres"
+},
+"mouse_wheel": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/mouse_wheel.tres"
+},
+"nichel": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/nichel.tres"
+},
+"roundTable_table": {
+"use_external/enabled": true,
+"use_external/path": "res://Office/Mesh/office_level/materials/roundTable_table.tres"
+}
+},
 "nodes": {
 "PATH:Scene Collection/Office_level/Ceiling": {
 "generate/occluder": 1

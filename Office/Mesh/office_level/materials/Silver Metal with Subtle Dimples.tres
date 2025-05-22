@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dxtke73yv15oi"]
+
+[ext_resource type="Texture2D" uid="uid://sh1yykdiyyfa" path="res://Office/Mesh/office_level/office_level_Metal_plate_minor_holes_Base_Color.jpg" id="1_brpu2"]
+[ext_resource type="Texture2D" uid="uid://jp52ji7sgi0h" path="res://Office/Mesh/office_level/office_level_Metal_plate_minor_holes_Metallic-Metal_plate_minor_holes_Roughness.png" id="2_bjutq"]
+[ext_resource type="Texture2D" uid="uid://blnyhs70ol2md" path="res://Office/Mesh/office_level/office_level_Metal_plate_minor_holes_Normal.jpg" id="3_mh4wm"]
+
+[resource]
+resource_name = "Silver Metal with Subtle Dimples"
+albedo_texture = ExtResource("1_brpu2")
+metallic = 1.0
+metallic_texture = ExtResource("2_bjutq")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_bjutq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_mh4wm")

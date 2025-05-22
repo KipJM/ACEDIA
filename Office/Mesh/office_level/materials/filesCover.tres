@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://damxvd1dgfnvf"]
+
+[ext_resource type="Shader" uid="uid://vjipkaujhhgq" path="res://Universal/Shaders/randomColor.tres" id="1_wwgkc"]
+
+[sub_resource type="Gradient" id="Gradient_t435d"]
+offsets = PackedFloat32Array(0, 0.305921, 0.555921, 0.746711, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.334115, 0.500264, 0.446804, 1, 0.527535, 0.446288, 0.32527, 1, 0.235085, 0.169469, 0.194915, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y1vwv"]
+gradient = SubResource("Gradient_t435d")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wwgkc")
+shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_y1vwv")
+shader_parameter/Metallic = 0.09
+shader_parameter/Roughness = 0.77

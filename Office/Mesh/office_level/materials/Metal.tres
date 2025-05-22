@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://ck48ax6eenqp3"]
+
+[ext_resource type="Texture2D" uid="uid://do72756cuggck" path="res://Office/Mesh/office_level/office_level_Metal_basecolor.jpg" id="1_knlfe"]
+[ext_resource type="Texture2D" uid="uid://cm2q4j2ove8f5" path="res://Office/Mesh/office_level/office_level_Metal_roughness.png" id="2_1x0wy"]
+[ext_resource type="Texture2D" uid="uid://cflse0ta2n2ty" path="res://Office/Mesh/office_level/office_level_Metal_normal.jpg" id="3_afd7g"]
+
+[resource]
+resource_name = "Metal"
+albedo_texture = ExtResource("1_knlfe")
+metallic = 1.0
+metallic_texture = ExtResource("2_1x0wy")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_1x0wy")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_afd7g")

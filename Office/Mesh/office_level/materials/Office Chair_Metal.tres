@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://6r2exq0csnmc"]
+
+[resource]
+resource_name = "Office Chair_Metal"
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+metallic = 1.0

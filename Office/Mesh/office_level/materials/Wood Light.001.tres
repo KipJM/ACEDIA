@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bgxftu5q6p10v"]
+
+[ext_resource type="Texture2D" uid="uid://bxw83wfcja3ug" path="res://Office/Mesh/office_level/office_level_wood-78_diffuse-light.jpg" id="1_rrk36"]
+[ext_resource type="Texture2D" uid="uid://hy6gkmiqk55b" path="res://Office/Mesh/office_level/office_level_wood-78_smooth.png" id="2_rc6lq"]
+[ext_resource type="Texture2D" uid="uid://6tno05i2mi8j" path="res://Office/Mesh/office_level/office_level_wood-78_bump.jpg" id="3_bgbyh"]
+
+[resource]
+resource_name = "Wood Light.001"
+albedo_texture = ExtResource("1_rrk36")
+metallic = 0.2
+metallic_texture = ExtResource("2_rc6lq")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_rc6lq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_bgbyh")

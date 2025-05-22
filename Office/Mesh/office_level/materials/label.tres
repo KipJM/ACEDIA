@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://8ldpjd5o2u3q"]
+
+[sub_resource type="Gradient" id="Gradient_78aix"]
+offsets = PackedFloat32Array(0, 0.0723684, 0.164474, 0.217105, 0.503289, 0.506579, 0.519737, 0.532895, 0.546053, 0.559211, 0.565789, 0.598684, 0.598694, 0.621711, 0.802632, 0.822368, 0.835526)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r8iij"]
+gradient = SubResource("Gradient_78aix")
+
+[resource]
+resource_name = "label"
+albedo_texture = SubResource("GradientTexture1D_r8iij")
+roughness = 0.5

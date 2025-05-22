@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=53 format=3 uid="uid://ciihwnfp7omqq"]
 
-[ext_resource type="Script" uid="uid://dpbnxeg7f3ujn" path="res://addons/shaderV/rgba/noise/perlin3d.gd" id="1_jolgs"]
-[ext_resource type="Script" uid="uid://jgt170hho8a8" path="res://addons/shaderV/tools/TimeScaled.gd" id="2_6yop2"]
+[ext_resource type="Script" uid="uid://dpbnxeg7f3ujn" path="res://addons/shaderV/rgba/noise/perlin3d.gd" id="1_3ygwm"]
+[ext_resource type="Script" uid="uid://jgt170hho8a8" path="res://addons/shaderV/tools/TimeScaled.gd" id="2_2a81m"]
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_jolgs"]
 parameter_name = "Albedo"
@@ -46,13 +46,13 @@ operator = 2
 default_input_values = [1, Vector3(90, 30, 20), 2, 50.0, 3, 0.0]
 linked_parent_graph_frame = 18
 initialized = true
-script = ExtResource("1_jolgs")
+script = ExtResource("1_3ygwm")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_6yop2"]
 default_input_values = [1, Vector3(23, 912, 52), 2, 50.0, 3, 0.0]
 linked_parent_graph_frame = 18
 initialized = true
-script = ExtResource("1_jolgs")
+script = ExtResource("1_3ygwm")
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_4oe1u"]
 linked_parent_graph_frame = 18
@@ -70,13 +70,13 @@ operator = 1
 default_input_values = [0, 0.4]
 linked_parent_graph_frame = 18
 initialized = true
-script = ExtResource("2_6yop2")
+script = ExtResource("2_2a81m")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_jjq8p"]
 default_input_values = [0, 0.6]
 linked_parent_graph_frame = 18
 initialized = true
-script = ExtResource("2_6yop2")
+script = ExtResource("2_2a81m")
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_jolgs"]
 size = Vector2(2395.8, 1090.4)
@@ -108,37 +108,37 @@ operator = 1
 default_input_values = [0, 0.5]
 linked_parent_graph_frame = 19
 initialized = true
-script = ExtResource("2_6yop2")
+script = ExtResource("2_2a81m")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_eonk2"]
 default_input_values = [0, 0.4]
 linked_parent_graph_frame = 19
 initialized = true
-script = ExtResource("2_6yop2")
+script = ExtResource("2_2a81m")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_d0xta"]
 default_input_values = [0, 0.6]
 linked_parent_graph_frame = 19
 initialized = true
-script = ExtResource("2_6yop2")
+script = ExtResource("2_2a81m")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_r13po"]
 default_input_values = [1, Vector3(0, 0, 0), 2, 50.0, 3, 0.0]
 linked_parent_graph_frame = 19
 initialized = true
-script = ExtResource("1_jolgs")
+script = ExtResource("1_3ygwm")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_m1b7o"]
 default_input_values = [1, Vector3(90, 30, 20), 2, 50.0, 3, 0.0]
 linked_parent_graph_frame = 19
 initialized = true
-script = ExtResource("1_jolgs")
+script = ExtResource("1_3ygwm")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_d40h4"]
 default_input_values = [1, Vector3(23, 912, 52), 2, 50.0, 3, 0.0]
 linked_parent_graph_frame = 19
 initialized = true
-script = ExtResource("1_jolgs")
+script = ExtResource("1_3ygwm")
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_flgkm"]
 linked_parent_graph_frame = 19
@@ -206,13 +206,13 @@ default_input_values = [1, 0.0, 2, 2.0, 3, 0.0, 4, 1.0]
 default_input_values = [1, Vector3(0, 0, 0), 2, 50.0, 3, 0.0]
 linked_parent_graph_frame = 18
 initialized = true
-script = ExtResource("1_jolgs")
+script = ExtResource("1_3ygwm")
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_i2c20"]
 default_input_values = [0, 0.5]
 linked_parent_graph_frame = 18
 initialized = true
-script = ExtResource("2_6yop2")
+script = ExtResource("2_2a81m")
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_fhkuj"]
 linked_parent_graph_frame = 18

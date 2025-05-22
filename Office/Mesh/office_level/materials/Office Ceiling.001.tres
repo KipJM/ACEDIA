@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cano7alyedeju"]
+
+[ext_resource type="Texture2D" uid="uid://bwjhr212j2dch" path="res://Office/Mesh/office_level/office_level_OfficeCeiling003_2K_Color.jpg" id="1_7m8kh"]
+[ext_resource type="Texture2D" uid="uid://di5lqye4ioldq" path="res://Office/Mesh/office_level/office_level_OfficeCeiling003_2K_Emission.jpg" id="2_n8w7j"]
+[ext_resource type="Texture2D" uid="uid://yochhd37m43m" path="res://Office/Mesh/office_level/office_level_OfficeCeiling003_2K_Metalness-OfficeCeiling003_2K_Roughness.png" id="3_m05a4"]
+[ext_resource type="Texture2D" uid="uid://37eyqvy8ash" path="res://Office/Mesh/office_level/office_level_OfficeCeiling003_2K_Normal.jpg" id="4_rtloe"]
+
+[resource]
+resource_name = "Office Ceiling.001"
+albedo_texture = ExtResource("1_7m8kh")
+metallic = 1.0
+metallic_texture = ExtResource("3_m05a4")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_m05a4")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("2_n8w7j")
+normal_enabled = true
+normal_texture = ExtResource("4_rtloe")

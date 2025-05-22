@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://pb7w4i8ltrgt"]
+
+[resource]
+resource_name = "mouse_base"
+albedo_color = Color(0.207307, 0.207307, 0.207307, 1)
+roughness = 0.5

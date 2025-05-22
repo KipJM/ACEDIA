@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7rsi6smuaptb"]
+
+[resource]
+resource_name = "hallDoor_frame"
+albedo_color = Color(0.317065, 0.317065, 0.317065, 1)
+roughness = 0.182081

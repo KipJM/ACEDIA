@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bh5ikjab2uxnj"]
+
+[sub_resource type="Gradient" id="Gradient_idtj1"]
+offsets = PackedFloat32Array(0, 0.0723684, 0.164474, 0.217105, 0.276316, 0.345395, 0.631579, 0.661184, 0.677632, 0.703947, 0.720395, 0.75, 0.766447, 0.789474, 0.802632, 0.822368, 0.835526)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_in4ix"]
+gradient = SubResource("Gradient_idtj1")
+
+[resource]
+resource_name = "files"
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+albedo_texture = SubResource("GradientTexture1D_in4ix")

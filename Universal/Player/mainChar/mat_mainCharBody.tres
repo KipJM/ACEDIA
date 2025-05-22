@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dqgsshodowdq0"]
 
-[ext_resource type="Shader" uid="uid://ciihwnfp7omqq" path="res://Universal/Player/mainChar/shader_person.tres" id="1_ycfpv"]
+[ext_resource type="Shader" uid="uid://ciihwnfp7omqq" path="res://Universal/Shaders/shader_person.tres" id="1_ycfpv"]
 
 [resource]
 render_priority = 0

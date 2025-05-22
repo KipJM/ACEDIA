@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxqr6c7m8v1fn"]
+
+[resource]
+resource_name = "Office Chair_Painted Metal"
+albedo_color = Color(0.225039, 0.225039, 0.225039, 1)
+metallic = 1.0
+roughness = 0.483402
