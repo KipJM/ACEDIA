@@ -6,6 +6,7 @@
 
 [resource]
 resource_name = "Wood floor"
+albedo_color = Color(0.703933, 0.668094, 0.726372, 1)
 albedo_texture = ExtResource("1_5myao")
 metallic_texture = ExtResource("2_taybh")
 metallic_texture_channel = 2

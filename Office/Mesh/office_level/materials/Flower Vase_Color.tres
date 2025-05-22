@@ -12,5 +12,7 @@ metallic_texture = ExtResource("2_6oldb")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_6oldb")
 roughness_texture_channel = 1
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("1_jf2oo")
 normal_enabled = true
 normal_texture = ExtResource("3_wrabe")

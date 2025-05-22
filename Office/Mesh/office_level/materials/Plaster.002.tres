@@ -5,6 +5,7 @@
 
 [resource]
 resource_name = "Plaster.002"
+albedo_color = Color(0.720467, 0.720468, 0.720467, 1)
 albedo_texture = ExtResource("1_uupg1")
 roughness = 0.5
 normal_enabled = true

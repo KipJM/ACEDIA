@@ -3,4 +3,6 @@
 [resource]
 resource_name = "Material.002"
 albedo_color = Color(0, 0, 0, 1)
-roughness = 0.389764
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)

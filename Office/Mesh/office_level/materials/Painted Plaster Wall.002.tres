@@ -1,12 +1,11 @@
-[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bunxuxuc7x1l1"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bunxuxuc7x1l1"]
 
-[ext_resource type="Texture2D" uid="uid://c4sjeuan6207r" path="res://Office/Mesh/office_level/office_level_painted_plaster_wall_08_color.jpg" id="1_ot1cn"]
 [ext_resource type="Texture2D" uid="uid://c0tjc6terw52u" path="res://Office/Mesh/office_level/office_level_painted_plaster_wall_08_roughness.png" id="2_4c64m"]
 [ext_resource type="Texture2D" uid="uid://ri7dtl14vr3w" path="res://Office/Mesh/office_level/office_level_painted_plaster_wall_08_normal.jpg" id="3_wpws0"]
 
 [resource]
 resource_name = "Painted Plaster Wall.002"
-albedo_texture = ExtResource("1_ot1cn")
+albedo_color = Color(0.59, 0.576135, 0.5723, 1)
 metallic_texture = ExtResource("2_4c64m")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_4c64m")
