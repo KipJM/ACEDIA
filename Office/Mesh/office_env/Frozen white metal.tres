@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://d2lsmpn6je5ot"]
+
+[ext_resource type="Texture2D" uid="uid://ce1moyhkuawqc" path="res://Office/Mesh/office_env/office_environment_DefaultMaterial_BaseColor.jpg" id="1_w0n8b"]
+[ext_resource type="Texture2D" uid="uid://bkqbrx8oqg435" path="res://Office/Mesh/office_env/office_environment_DefaultMaterial_Roughness.png" id="2_uku7t"]
+[ext_resource type="Texture2D" uid="uid://5ue3cvm1vevy" path="res://Office/Mesh/office_env/office_environment_DefaultMaterial_Normal.jpg" id="3_626xw"]
+
+[resource]
+resource_name = "Frozen white metal"
+albedo_texture = ExtResource("1_w0n8b")
+metallic = 1.0
+metallic_texture = ExtResource("2_uku7t")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_uku7t")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_626xw")

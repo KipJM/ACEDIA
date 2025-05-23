@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://61uteq0ecpyp"]
+
+[ext_resource type="Texture2D" uid="uid://b1y3feaycg0xk" path="res://Office/Mesh/office_env/office_environment__albedo002.png" id="1_ttf8g"]
+
+[resource]
+resource_name = "Material_1"
+albedo_texture = ExtResource("1_ttf8g")

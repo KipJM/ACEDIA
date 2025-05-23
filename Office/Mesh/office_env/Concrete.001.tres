@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dlsbh45jqtton"]
+
+[ext_resource type="Texture2D" uid="uid://bc3h0v1ba0we8" path="res://Office/Mesh/office_env/office_environment_betonambientocclusion.jpg" id="1_mjv6u"]
+[ext_resource type="Texture2D" uid="uid://5d4l5uoq7niu" path="res://Office/Mesh/office_env/office_environment_betonroughness.png" id="2_dbpr6"]
+[ext_resource type="Texture2D" uid="uid://bo6l0e8s7qo7e" path="res://Office/Mesh/office_env/office_environment_betonnormal.jpg" id="3_2a0bu"]
+
+[resource]
+resource_name = "Concrete.001"
+albedo_texture = ExtResource("1_mjv6u")
+metallic_texture = ExtResource("2_dbpr6")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_dbpr6")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("3_2a0bu")

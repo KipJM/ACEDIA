@@ -5,10 +5,11 @@
 
 [resource]
 resource_name = "Concrete"
-albedo_color = Color(0.89865, 0.9, 0.873, 1)
+albedo_color = Color(0.815438, 0.803, 0.787266, 1)
 metallic_texture = ExtResource("2_g1fjr")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_g1fjr")
 roughness_texture_channel = 1
 normal_enabled = true
+normal_scale = 5.21
 normal_texture = ExtResource("3_le8k0")
