@@ -25,3 +25,7 @@ fog_aerial_perspective = 0.586
 fog_sky_affect = 0.0
 fog_height = -20.54
 fog_height_density = 0.0144
+adjustment_enabled = true
+adjustment_brightness = 0.97
+adjustment_contrast = 1.19
+adjustment_saturation = 0.9

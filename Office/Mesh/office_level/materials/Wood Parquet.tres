@@ -6,6 +6,7 @@
 
 [resource]
 resource_name = "Wood Parquet"
+albedo_color = Color(0.668204, 0.7806, 0.841866, 1)
 albedo_texture = ExtResource("1_r0bkm")
 metallic = 1.0
 metallic_texture = ExtResource("2_5q6w0")

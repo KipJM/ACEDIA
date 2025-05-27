@@ -5,7 +5,7 @@
 
 [resource]
 resource_name = "Plaster"
-albedo_color = Color(0.55, 0.54615, 0.5115, 1)
+albedo_color = Color(0.55, 0.54945, 0.5445, 1)
 albedo_texture = ExtResource("1_olem1")
 roughness = 0.5
 normal_enabled = true
