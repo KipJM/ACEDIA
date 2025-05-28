@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dmqb50dx3gsvd"]
+
+[ext_resource type="Texture2D" uid="uid://dkng34gomxnwj" path="res://Office/VendingMachine/office_vendingMachine_018_sceneAnim_plastic-generic_diffuse.jpg" id="1_lskg6"]
+[ext_resource type="Texture2D" uid="uid://cme7aet80puc5" path="res://Office/VendingMachine/office_vendingMachine_018_sceneAnim_plastic-smudge-smoothness copy.png" id="2_38p3h"]
+[ext_resource type="Texture2D" uid="uid://tlqnmoeefqoj" path="res://Office/VendingMachine/office_vendingMachine_018_sceneAnim_plastic-texture-normal-4.jpg" id="3_bej6m"]
+
+[resource]
+resource_name = "Plastic White 14"
+albedo_color = Color(0.60093, 0.60093, 0.60093, 1)
+albedo_texture = ExtResource("1_lskg6")
+metallic = 0.372727
+metallic_texture = ExtResource("2_38p3h")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_38p3h")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("3_bej6m")
+uv1_scale = Vector3(5, 5, 5)

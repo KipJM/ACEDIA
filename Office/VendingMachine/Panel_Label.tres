@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://buhohowoorjm4"]
+
+[resource]
+resource_name = "Panel_Label"
+albedo_color = Color(0.526087, 0.434685, 0.360736, 1)
+roughness = 0.85

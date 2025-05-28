@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmqf2fed67ita"]
+
+[resource]
+resource_name = "blueAnimals_glow"
+albedo_color = Color(0, 0.387528, 0.906521, 1)
+metallic = 0.3
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.146252, 0.351429, 1, 1)
+emission_energy_multiplier = 0.35
+rim_enabled = true
+rim_tint = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+backlight = Color(1, 1, 1, 1)

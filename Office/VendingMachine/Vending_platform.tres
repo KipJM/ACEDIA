@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c00i6fsaljboy"]
+
+[resource]
+resource_name = "Vending_platform"
+cull_mode = 2
+albedo_color = Color(0.347549, 0.347549, 0.347549, 1)
+metallic = 1.0
+roughness = 0.5

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cyqfhu5g8pyym"]
+
+[resource]
+resource_name = "Metal.001"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+metallic = 1.0
+roughness = 0.359259

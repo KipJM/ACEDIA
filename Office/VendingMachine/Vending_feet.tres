@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://duqdho600yo3l"]
+
+[resource]
+resource_name = "Vending_feet"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.785185

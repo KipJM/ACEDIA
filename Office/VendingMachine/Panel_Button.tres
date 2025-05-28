@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cnrh2qa2a6kot"]
+
+[resource]
+resource_name = "Panel_Button"
+cull_mode = 2
+albedo_color = Color(0.567069, 0.567069, 0.567069, 1)
+metallic = 1.0
+roughness = 0.203704
