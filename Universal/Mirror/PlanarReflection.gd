@@ -18,9 +18,12 @@ var reflect_viewport: SubViewport
 
 var _main_camera: Camera3D;
 
+var reflection_enabled:bool = false
+
 func _ready():
 	init_mirror();
-
+	reflect_camera.clear_current() # wait for reflection_enabled
+	
 # Called when the node enters the scene tree for the first time.
 func init_mirror():	
 	update_camera()
@@ -78,7 +81,10 @@ func update_viewport() -> void:
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void: # DEBUG
+func _process(_delta: float) -> void:
+	if (!reflection_enabled):
+		return
+	
 	if (!player and !camera_override):
 		return
 	
@@ -227,19 +233,17 @@ func update_reflect_cam() -> bool:
 	return true
 	#==
 
-#func _on_screen_entered(area: Area3D) -> void:
-	#if (!seen): # Enable cam
-		#print("Seen!")
-		#reflect_camera.make_current()
-		#update_viewport() # just to be safe
-		#seen = true;
+func _on_enabler_entered(body: Node3D) -> void:
+	if (!reflection_enabled): # Enable cam
+		print("Seen!")
+		reflection_enabled = true;
 #
 #
-#func _on_screen_exited(area: Area3D) -> void:
-	#if(seen): 
-		#print("Clear")
-		## Stop camera to save compute resources
-		## Unfortunately VRAM is still needed :O
-		## Unallocating/allocating takes too much time :|
-		#reflect_camera.clear_current()
-		#seen = false;
+func _on_enabler_exited(body: Node3D) -> void:
+	if(reflection_enabled): 
+		print("Clear")
+		# Stop camera to save compute resources
+		# Unfortunately VRAM is still needed :O
+		# Unallocating/allocating takes too much time :|
+		reflect_camera.clear_current()
+		reflection_enabled = false;
