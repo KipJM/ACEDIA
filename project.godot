@@ -18,6 +18,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 [autoload]
 
 InputHelper="*res://addons/input_helper/input_helper.gd"
+PromptManager="*res://addons/input_prompts/input_prompt_manager.gd"
 
 [display]
 
@@ -36,7 +37,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/post_processing/plugin.cfg")
+enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/input_prompts/plugin.cfg", "res://addons/post_processing/plugin.cfg")
 
 [global_group]
 
