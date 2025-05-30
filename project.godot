@@ -120,6 +120,7 @@ pause={
 3d_physics/layer_4="ViewReceiver"
 3d_physics/layer_9="Player"
 3d_physics/layer_10="PlayerDetector"
+3d_physics/layer_11="Interactable"
 
 [physics]
 

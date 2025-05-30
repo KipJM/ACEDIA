@@ -26,10 +26,13 @@ public partial class Player : CharacterBody3D
 	[Export] public MovementState MovementState;
 	[Export] public bool IsFeetMoving;
 	
+	[Export] public bool IsInteractionHovering;
+	
 	[ExportGroup("Subsystems")] 
 	[Export] private PlayerLook _look;
 	[Export] private PlayerMove _move;
-
+	[Export] private PlayerInteraction _interaction;
+	
 	[ExportGroup("References")] 
 	[Export] public Node3D Neck;
 	[Export] public Node3D Head;
@@ -38,9 +41,12 @@ public partial class Player : CharacterBody3D
 	
 	[ExportGroup("Easing")]
 	[Export] public float LerpSpeed = 10.0f;
-
+	
 	public CharacterBody3D Body;
 
+	[Signal]
+	public delegate void InteractionStartEventHandler();
+	
 	public override void _Ready()
 	{
 		Body = this;
@@ -51,8 +57,8 @@ public partial class Player : CharacterBody3D
 		//PlayerMove init
 		_move.Player = this;
 		
+		_interaction.Player = this;
 	}
-
 
 	public void OnStartSqueeze()
 	{
@@ -66,5 +72,4 @@ public partial class Player : CharacterBody3D
 		InputHelper.StopRumble(int.Parse(InputHelper.LastKnownJoypadIndex));
 		MovementState = MovementState.Walking;
 	}
-	
 }

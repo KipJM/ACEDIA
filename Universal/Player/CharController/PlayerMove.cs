@@ -51,7 +51,7 @@ public partial class PlayerMove : Node3D
 		
         CurrentSpeed = (float)Mathf.Lerp(CurrentSpeed, targetSpeed, delta * Player.LerpSpeed);
         
-        // Add the gravity.
+        // Add gravity
         if (!Player.Body.IsOnFloor())
         {
             Player.Body.Velocity += Player.Body.GetGravity() * (float)delta;

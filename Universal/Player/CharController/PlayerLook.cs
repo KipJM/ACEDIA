@@ -83,7 +83,7 @@ public partial class PlayerLook : Node3D
             case MovementState.Squeezing:
                 _bobbingCurrentIntensity = _bobbingSqueezeIntensity;
                 _bobbingIndex += _bobbingSqueezeSpeed * (float)delta;
-                break;
+                break;  
         }
 
         if (Player.IsFeetMoving)
