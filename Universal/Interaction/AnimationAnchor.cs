@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using Godot;
+using MEC;
 using Pins.Universal.Player;
 
 namespace Pins.Universal.Interaction;
@@ -13,6 +16,13 @@ public partial class AnimationAnchor : Node3D
     [ExportGroup("Animation Settings")] 
     [Export] private PlayerState _playerState;
     [Export] private double _lerpDuration;
+    [ExportSubgroup("Animation")]
+    [Export] private StringName _animationName;
+    [Export] private double _wait;
+
+    [ExportGroup("Additional Animation")] 
+    [Export] private AnimationPlayer _externalPlayer;
+    [Export] private StringName _externalAnimName;
     
     private PlayerAnimator _animator;
 
@@ -24,6 +34,34 @@ public partial class AnimationAnchor : Node3D
     
     public void StartAnimationSequence()
     {
-        _animator.PrepareForAnimation(_bodyAnchor, _useHeadBone ? _animator.HeadBone : _headAnchor, _playerState, _lerpDuration);
+        _animator.PrepareForAnimation(_bodyAnchor, _useHeadBone ? _animator.HeadBone : _headAnchor, _playerState, _lerpDuration, OnPreparationFinished);
+    }
+
+    // Auto callback from PlayerAnimator
+    public void OnPreparationFinished()
+    {
+        // Timer
+        Timing.RunCoroutine(Timer(_wait, RunAnimation).CancelWith(this));
+    }
+
+    [Signal]
+    public delegate void AnimationStartEventHandler();
+    
+    public void RunAnimation()
+    {
+        _animator.EnableAnimation(_animationName);
+        EmitSignalAnimationStart();
+    }
+    
+    IEnumerator<double> Timer(double time, Action action)
+    {
+        yield return Timing.WaitForSeconds(time);
+        action.Invoke();
+    }
+    
+    //External
+    public void PlayExternalAnimation()
+    {
+        _externalPlayer.Play(_externalAnimName);
     }
 }

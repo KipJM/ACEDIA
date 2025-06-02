@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
-nodes/import_as_skeleton_bones=true
+nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -29,7 +29,7 @@ skins/use_named_skins=true
 animation/import=true
 animation/fps=60.0
 animation/trimming=false
-animation/remove_immutable_tracks=true
+animation/remove_immutable_tracks=false
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
@@ -38,7 +38,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "res://Office/VendingMachine/Mainchar_anim/Animation.res",
-"settings/loop_mode": 1,
+"settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
@@ -1832,6 +1832,15 @@ _subresources={
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
 "slices/amount": 0
+}
+},
+"nodes": {
+"PATH:root/Skeleton3D": {
+"retarget/bone_map": Resource("res://Universal/Player/mainChar/mainChar_bonemap.tres"),
+"retarget/bone_renamer/unique_node/make_unique": false,
+"retarget/bone_renamer/unique_node/skeleton_name": "mainChar",
+"retarget/remove_tracks/unimportant_positions": false,
+"retarget/rest_fixer/fix_silhouette/enable": true
 }
 }
 }

@@ -1,6 +1,10 @@
+using System;
 using System.Collections.Generic;
+using System.Numerics;
 using Godot;
 using MEC;
+using Vector2 = Godot.Vector2;
+using Vector3 = Godot.Vector3;
 
 namespace Pins.Universal.Player;
 
@@ -51,15 +55,26 @@ public partial class PlayerAnimator : Node3D
     private void UpdateAnchors()
     {
         Player.Body.GlobalTransform = _bodyTransform.GlobalTransform;
-        Player.AnimatedHead.Transform = _headTransform.Transform;
+        if (_headTransform == HeadBone)
+        {
+            Player.AnimatedHead.GlobalTransform = _headTransform.GlobalTransform;
+            // Player.AnimatedHead.Rotation = -Player.AnimatedHead.Rotation;
+        }
+        else
+        {
+            Player.AnimatedHead.Transform = _headTransform.Transform;
+        }
+    }
+
+    public void EnableAnimation(StringName key, bool value = true)
+    {
+        _playerAnimationTree.Set(key, true);
     }
     
-    // Lerp
-    
-    [Signal]
-    public delegate void AnimationReadyEventHandler();
+    // Prep
 
-    public void PrepareForAnimation(Node3D bodyTransform, Node3D headTransform, PlayerState targetState, double duration)
+    public void PrepareForAnimation(Node3D bodyTransform, Node3D headTransform, PlayerState targetState,
+        double duration, Action onPreparationFinished)
     {
         _bodyTransform = bodyTransform;
         _headTransform = headTransform;
@@ -72,10 +87,10 @@ public partial class PlayerAnimator : Node3D
         // [IF STATIC] Head (   R) -> 0
         
         // Start transition
-        Timing.RunCoroutine(LerpToAnchor(duration, targetState == PlayerState.Locked).CancelWith(this));
+        Timing.RunCoroutine(LerpToAnchor(duration, targetState == PlayerState.Locked, onPreparationFinished).CancelWith(this));
     }
 
-    IEnumerator<double> LerpToAnchor(double duration, bool toLocked)
+    IEnumerator<double> LerpToAnchor(double duration, bool toLocked, Action onPreparationFinished)
     {
         double currentTime = 0;
         while (currentTime < duration)
@@ -84,9 +99,17 @@ public partial class PlayerAnimator : Node3D
 
             Player.Body.GlobalTransform =
                 Player.Body.GlobalTransform.InterpolateWith(_bodyTransform.GlobalTransform, weight);
-            
-            Player.AnimatedHead.Transform =
-                Player.AnimatedHead.Transform.InterpolateWith(_headTransform.Transform, weight); // WARN: Local transform
+
+            if (_headTransform == HeadBone)
+            {
+                Player.AnimatedHead.GlobalTransform =
+                    Player.AnimatedHead.GlobalTransform.InterpolateWith(_headTransform.GlobalTransform, weight);
+            }
+            else
+            {
+                Player.AnimatedHead.Transform =
+                    Player.AnimatedHead.Transform.InterpolateWith(_headTransform.Transform, weight); // WARN: Local transform
+            }
 
             Player.Camera.Rotation = Player.Camera.Rotation.Lerp(Vector3.Zero, weight);
             
@@ -99,12 +122,12 @@ public partial class PlayerAnimator : Node3D
             yield return Timing.WaitForOneFrame;
             currentTime += GetProcessDeltaTime();
         }
-        AnimationPrepared();
+        AnimationPrepared(onPreparationFinished);
     }
 
-    private void AnimationPrepared()
+    private void AnimationPrepared(Action onPreparationFinished)
     {
         _isAnimationControlActive = true;
-        EmitSignalAnimationReady();
+        onPreparationFinished.Invoke();
     }
 }

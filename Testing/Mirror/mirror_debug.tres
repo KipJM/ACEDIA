@@ -109,6 +109,8 @@ op_type = 2
 operator = 2
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_gl1r2"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
+op_type = 0
 operator = 1
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_w6nog"]
@@ -221,7 +223,7 @@ void fragment() {
 
 
 // VectorOp:43
-	vec3 n_out43p0 = vec3(n_out8p0.xyz) - vec3(n_out44p0);
+	vec2 n_out43p0 = vec2(n_out8p0.xy) - vec2(n_out44p0);
 
 
 // FloatParameter:32
@@ -229,7 +231,7 @@ void fragment() {
 
 
 // VectorOp:46
-	vec3 n_out46p0 = n_out43p0 * vec3(n_out32p0);
+	vec3 n_out46p0 = vec3(n_out43p0, 0.0) * vec3(n_out32p0);
 
 
 // VectorOp:45
@@ -316,7 +318,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1434.06, -530.417)
 nodes/fragment/0/position = Vector2(860, 140)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_gl1r2")
 nodes/fragment/2/position = Vector2(-1680, -1460)
