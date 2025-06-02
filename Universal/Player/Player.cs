@@ -31,9 +31,11 @@ public partial class Player : CharacterBody3D
 	[ExportGroup("Subsystems")] 
 	[Export] private PlayerLook _look;
 	[Export] private PlayerMove _move;
+	[Export] public PlayerAnimator Animator;
 	[Export] private PlayerInteraction _interaction;
-	
+
 	[ExportGroup("References")] 
+	[Export] public Node3D AnimatedHead;
 	[Export] public Node3D Neck;
 	[Export] public Node3D Head;
 	[Export] public Node3D Eyes;
@@ -58,6 +60,7 @@ public partial class Player : CharacterBody3D
 		_move.Player = this;
 		
 		_interaction.Player = this;
+		Animator.Player = this;
 	}
 
 	public void OnStartSqueeze()

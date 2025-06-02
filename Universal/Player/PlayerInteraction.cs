@@ -1,4 +1,5 @@
 using Godot;
+using Pins.Universal.Interaction;
 
 namespace Pins.Universal.Player;
 
@@ -14,15 +15,22 @@ public partial class PlayerInteraction : Node3D
     public override void _Process(double delta)
     {
         base._Process(delta);
-        Player.IsInteractionHovering = InteractorRay.IsColliding();
 
-        if (Player.IsInteractionHovering)
+        Player.IsInteractionHovering = false;
+        if (InteractorRay.IsColliding())
         {
-            if (Input.IsActionJustPressed(InteractAction))
+            InteractionReceiver receiver = (InteractionReceiver)InteractorRay.GetCollider();
+
+            if (receiver.Listening)
             {
-                GD.Print("INTERACT");
-                // InteractorRay.GetCollider().Call("Interact"); //TODO
-                Player.EmitSignal(Player.SignalName.InteractionStart);
+                Player.IsInteractionHovering = true;
+
+                if (Input.IsActionJustPressed(InteractAction))
+                {
+                    GD.Print("INTERACT");
+                    InteractorRay.GetCollider().Call("Interact"); //TODO
+                    Player.EmitSignal(Player.SignalName.InteractionStart);
+                }
             }
         }
     }
