@@ -135,6 +135,7 @@ public partial class PlayerAnimator : Node3D
 
             if (Player.PlayerState != PlayerState.Normal)
             {
+                // Guide player view to object of interest
                 Player.Neck.Rotation = nekRot.Lerp(Vector3.Zero, weight);
                 Player.Head.Rotation = hdRot.Lerp(Vector3.Zero, weight);
 

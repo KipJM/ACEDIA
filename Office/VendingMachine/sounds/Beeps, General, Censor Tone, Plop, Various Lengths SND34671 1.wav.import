@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpuescd1rqqmi"
+path="res://.godot/imported/Beeps, General, Censor Tone, Plop, Various Lengths SND34671 1.wav-87f82471cf1c6250f4bed03b6aed30b2.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Beeps, General, Censor Tone, Plop, Various Lengths SND34671 1.wav"
+dest_files=["res://.godot/imported/Beeps, General, Censor Tone, Plop, Various Lengths SND34671 1.wav-87f82471cf1c6250f4bed03b6aed30b2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

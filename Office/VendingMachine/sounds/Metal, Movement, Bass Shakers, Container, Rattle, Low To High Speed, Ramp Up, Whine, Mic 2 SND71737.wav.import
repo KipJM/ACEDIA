@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cngo73evdi27g"
+path="res://.godot/imported/Metal, Movement, Bass Shakers, Container, Rattle, Low To High Speed, Ramp Up, Whine, Mic 2 SND71737.wav-0de19f9d34151bdab1bb260ba7a75c28.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Metal, Movement, Bass Shakers, Container, Rattle, Low To High Speed, Ramp Up, Whine, Mic 2 SND71737.wav"
+dest_files=["res://.godot/imported/Metal, Movement, Bass Shakers, Container, Rattle, Low To High Speed, Ramp Up, Whine, Mic 2 SND71737.wav-0de19f9d34151bdab1bb260ba7a75c28.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

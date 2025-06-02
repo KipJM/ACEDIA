@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr6u2vch07hj6"
+path="res://.godot/imported/Objects, Packaging, Plastic Bag, Mostly Sealed, Small Opening, Withdraw Contents SND134703 1.wav-ca1e379e282a0c031ce29fc3d03ebb81.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Objects, Packaging, Plastic Bag, Mostly Sealed, Small Opening, Withdraw Contents SND134703 1.wav"
+dest_files=["res://.godot/imported/Objects, Packaging, Plastic Bag, Mostly Sealed, Small Opening, Withdraw Contents SND134703 1.wav-ca1e379e282a0c031ce29fc3d03ebb81.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

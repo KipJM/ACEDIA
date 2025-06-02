@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c47g53esa4b0f"
+path="res://.godot/imported/Beeps, Medical, Machine, Heart Monitor, Designed, Old Device, Flatline SND133712.wav-467ccbaf8cec0d0e774573c691bd3e69.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Beeps, Medical, Machine, Heart Monitor, Designed, Old Device, Flatline SND133712.wav"
+dest_files=["res://.godot/imported/Beeps, Medical, Machine, Heart Monitor, Designed, Old Device, Flatline SND133712.wav-467ccbaf8cec0d0e774573c691bd3e69.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

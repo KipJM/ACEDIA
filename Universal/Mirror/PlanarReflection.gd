@@ -32,6 +32,7 @@ func init_mirror():
 	add_child(reflect_viewport);
 	reflect_camera = Camera3D.new();
 	reflect_viewport.add_child(reflect_camera);
+	reflect_viewport.audio_listener_enable_3d = false
 	
 	reflect_camera.cull_mask = _main_camera.cull_mask;
 	

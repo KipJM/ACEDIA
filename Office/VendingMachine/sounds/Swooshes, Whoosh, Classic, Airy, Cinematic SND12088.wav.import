@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lk0ujuwkufdj"
+path="res://.godot/imported/Swooshes, Whoosh, Classic, Airy, Cinematic SND12088.wav-0d3f7f5e464e516808305536c0864614.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Swooshes, Whoosh, Classic, Airy, Cinematic SND12088.wav"
+dest_files=["res://.godot/imported/Swooshes, Whoosh, Classic, Airy, Cinematic SND12088.wav-0d3f7f5e464e516808305536c0864614.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br87lo72q1fnv"
+path="res://.godot/imported/Machines, Industrial, Factory, Machinery, Mechanical, Lifter, Electronic 01 SND133839.wav-f3d744dbb9848564519d313fbcdd3b11.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Machines, Industrial, Factory, Machinery, Mechanical, Lifter, Electronic 01 SND133839.wav"
+dest_files=["res://.godot/imported/Machines, Industrial, Factory, Machinery, Mechanical, Lifter, Electronic 01 SND133839.wav-f3d744dbb9848564519d313fbcdd3b11.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

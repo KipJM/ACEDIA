@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dopjjhry03qlr"
+path="res://.godot/imported/Toys, Electronic, Mechanical Spider, Small Motor, Turn On, Off  SND134699 1.wav-90def3756c621cfc4394e53810f87301.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Toys, Electronic, Mechanical Spider, Small Motor, Turn On, Off  SND134699 1.wav"
+dest_files=["res://.godot/imported/Toys, Electronic, Mechanical Spider, Small Motor, Turn On, Off  SND134699 1.wav-90def3756c621cfc4394e53810f87301.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n8h2w8flfaip"
+path="res://.godot/imported/Communications, Audio Visual, Tascam Portastudio 414 MKII, Fast Forward & Rewind, Button MKH416 (Shotgun) SND129962.wav-491f924daf45540fa53501eda1a8b798.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Communications, Audio Visual, Tascam Portastudio 414 MKII, Fast Forward & Rewind, Button MKH416 (Shotgun) SND129962.wav"
+dest_files=["res://.godot/imported/Communications, Audio Visual, Tascam Portastudio 414 MKII, Fast Forward & Rewind, Button MKH416 (Shotgun) SND129962.wav-491f924daf45540fa53501eda1a8b798.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

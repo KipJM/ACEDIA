@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ojuby45wetcv"
+path="res://.godot/imported/Objects, Jewelry, Necklace, Drop In Purse, Take Out, Rummage 01 SND120525 1.wav-affd05daf6ff874c25aa6b23bf63fc00.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Objects, Jewelry, Necklace, Drop In Purse, Take Out, Rummage 01 SND120525 1.wav"
+dest_files=["res://.godot/imported/Objects, Jewelry, Necklace, Drop In Purse, Take Out, Rummage 01 SND120525 1.wav-affd05daf6ff874c25aa6b23bf63fc00.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

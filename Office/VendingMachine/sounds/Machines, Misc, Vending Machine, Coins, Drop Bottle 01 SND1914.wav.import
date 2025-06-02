@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3d6611x2bibk"
+path="res://.godot/imported/Machines, Misc, Vending Machine, Coins, Drop Bottle 01 SND1914.wav-1bf9b2caf7a927cd2a3c7dd789161b3c.sample"
+
+[deps]
+
+source_file="res://Office/VendingMachine/sounds/Machines, Misc, Vending Machine, Coins, Drop Bottle 01 SND1914.wav"
+dest_files=["res://.godot/imported/Machines, Misc, Vending Machine, Coins, Drop Bottle 01 SND1914.wav-1bf9b2caf7a927cd2a3c7dd789161b3c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
