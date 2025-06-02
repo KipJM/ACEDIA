@@ -18,7 +18,6 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 [autoload]
 
 InputHelper="*res://addons/input_helper/input_helper.gd"
-PromptManager="*res://addons/input_prompts/input_prompt_manager.gd"
 
 [display]
 
@@ -131,4 +130,5 @@ common/physics_interpolation=true
 
 anti_aliasing/quality/msaa_3d=1
 environment/screen_space_reflection/roughness_quality=2
+global_illumination/sdfgi/frames_to_converge=4
 occlusion_culling/use_occlusion_culling=true
