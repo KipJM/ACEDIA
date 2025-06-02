@@ -12,6 +12,10 @@ public partial class AnimationAnchor : Node3D
     [Export] private Node3D _bodyAnchor;
     [Export] private Node3D _headAnchor;
     [Export] private bool _useHeadBone;
+    [ExportGroup("Look")] 
+    [Export] private float _vLimitMax;
+    [Export] private float _vLimitMin;
+    [Export] private float _hLimit;
 
     [ExportGroup("Animation Settings")] 
     [Export] private PlayerState _playerState;
@@ -34,7 +38,9 @@ public partial class AnimationAnchor : Node3D
     
     public void StartAnimationSequence()
     {
-        _animator.PrepareForAnimation(_bodyAnchor, _useHeadBone ? _animator.HeadBone : _headAnchor, _playerState, _lerpDuration, OnPreparationFinished);
+        _animator.PrepareForAnimation(_bodyAnchor, 
+            _useHeadBone ? _animator.HeadBone : _headAnchor,
+            _playerState, _lerpDuration, OnPreparationFinished, _vLimitMax, _vLimitMin, _hLimit);
     }
 
     // Auto callback from PlayerAnimator

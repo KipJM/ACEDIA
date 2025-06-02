@@ -29,7 +29,7 @@ public partial class Player : CharacterBody3D
 	[Export] public bool IsInteractionHovering;
 	
 	[ExportGroup("Subsystems")] 
-	[Export] private PlayerLook _look;
+	[Export] public PlayerLook Look;
 	[Export] private PlayerMove _move;
 	[Export] public PlayerAnimator Animator;
 	[Export] private PlayerInteraction _interaction;
@@ -54,7 +54,7 @@ public partial class Player : CharacterBody3D
 		Body = this;
 		
 		// PlayerLook init
-		_look.Player = this;
+		Look.Player = this;
 		
 		//PlayerMove init
 		_move.Player = this;

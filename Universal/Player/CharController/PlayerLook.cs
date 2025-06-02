@@ -15,8 +15,8 @@ public partial class PlayerLook : Node3D
     [Export(PropertyHint.Range,"-90,0")] public float LookClampVMin = -90;
     [Export(PropertyHint.Range,"0,90")] public float LookClampVMax = 90;
     [ExportSubgroup("Horizontal")]
-    [Export(PropertyHint.Range,"-90,0")] public float LookClampHMin = -90;
-    [Export(PropertyHint.Range,"0,90")] public float LookClampHMax = 90;
+    // [Export(PropertyHint.Range,"-90,0")] public float LookClampHMin = -90;
+    [Export(PropertyHint.Range,"0,90")] public float LookClampH = 90;
 
     [ExportGroup("Tilt")] 
     [Export] public Curve TiltCurve;
@@ -136,13 +136,13 @@ public partial class PlayerLook : Node3D
             // Clamp X look
             Player.Neck.Rotation = Player.Neck.Rotation with
             {
-                Y = float.Clamp(Player.Neck.Rotation.Y, Mathf.DegToRad(LookClampHMin), Mathf.DegToRad(LookClampHMax)),
+                Y = float.Clamp(Player.Neck.Rotation.Y, Mathf.DegToRad(-LookClampH), Mathf.DegToRad(LookClampH)),
             };
             
             // Tilt Head
             Player.Camera.Rotation = Player.Camera.Rotation with
             {
-                Z = Mathf.DegToRad(Math.Sign(-Player.Neck.Rotation.Y) * TiltCurve.Sample(Math.Abs(Player.Neck.RotationDegrees.Y)) * TiltAmount)
+                Z = Mathf.DegToRad(Math.Sign(-Player.Neck.Rotation.Y) * TiltCurve.Sample(Math.Abs(Player.Neck.RotationDegrees.Y)/LookClampH) * TiltAmount)
             };
         }
         else

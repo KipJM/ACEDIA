@@ -35,9 +35,9 @@ import_script/path=""
 _subresources={
 "animations": {
 "Scene": {
-"save_to_file/enabled": false,
-"save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "",
+"save_to_file/enabled": true,
+"save_to_file/keep_custom_tracks": true,
+"save_to_file/path": "res://Office/VendingMachine/anim_vending.res",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
