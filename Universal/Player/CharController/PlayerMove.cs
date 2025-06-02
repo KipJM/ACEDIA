@@ -61,20 +61,37 @@ public partial class PlayerMove : Node3D
         Vector2 inputDir = Input.GetVector(
             "move_left", "move_right", "move_forward", "move_backward");
 
-        if (Player.PlayerState is PlayerState.ForwardOnly)
-        {
-            inputDir.Y = Mathf.Clamp(inputDir.Y, -1.0f, 0f); // Only allows moving forward
-        }
+        // if (Player.PlayerState is PlayerState.ForwardOnly)
+        // {
+        //     inputDir.Y = Mathf.Clamp(inputDir.Y, -1.0f, 0f); // Only allows moving forward
+        // }
         
         _direction = _direction.Lerp(
             Player.Neck.GetGlobalTransform().Basis * new Vector3(inputDir.X, 0, inputDir.Y), (float)(delta * Player.LerpSpeed));
         
         if (_direction != Vector3.Zero)
         {
-            Player.Body.Velocity = Player.Body.Velocity with {
-                X = _direction.X * CurrentSpeed,  
-                Z = _direction.Z * CurrentSpeed  
-            };
+            if (Player.PlayerState != PlayerState.ForwardOnly || (-Player.Body.GlobalBasis.Z).Dot(_direction)>=0)
+            {
+                Player.Body.Velocity = Player.Body.Velocity with
+                {
+                    X = _direction.X * CurrentSpeed,
+                    Z = _direction.Z * CurrentSpeed
+                };
+            }
+            else
+            {
+                // Only allow moving forward
+                var localDirection = Player.Body.GetGlobalBasis().Inverse() * (_direction * CurrentSpeed);
+                localDirection.Z = 0;
+                var finalDirection = Player.Body.GlobalBasis * localDirection;
+                
+                Player.Body.Velocity = Player.Body.Velocity with
+                {
+                    X = finalDirection.X,
+                    Z = finalDirection.Z
+                };
+            }
         }
         else
         {

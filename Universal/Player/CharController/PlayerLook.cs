@@ -19,6 +19,7 @@ public partial class PlayerLook : Node3D
     [Export(PropertyHint.Range,"0,90")] public float LookClampHMax = 90;
 
     [ExportGroup("Tilt")] 
+    [Export] public Curve TiltCurve;
     [Export] public float TiltAmount = 3f;
 
     [ExportGroup("Head Bobbing")] 
@@ -141,7 +142,7 @@ public partial class PlayerLook : Node3D
             // Tilt Head
             Player.Camera.Rotation = Player.Camera.Rotation with
             {
-                Z = Mathf.DegToRad(-Player.Neck.Rotation.Y * TiltAmount)
+                Z = Mathf.DegToRad(Math.Sign(-Player.Neck.Rotation.Y) * TiltCurve.Sample(Math.Abs(Player.Neck.RotationDegrees.Y)) * TiltAmount)
             };
         }
         else
