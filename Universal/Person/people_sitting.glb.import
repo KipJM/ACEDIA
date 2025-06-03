@@ -1,0 +1,541 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bdbep208y2k7l"
+path="res://.godot/imported/people_sitting.glb-7b09a62e15f0a4cd768cd7a6f5b27048.scn"
+
+[deps]
+
+source_file="res://Universal/Person/people_sitting.glb"
+dest_files=["res://.godot/imported/people_sitting.glb-7b09a62e15f0a4cd768cd7a6f5b27048.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://bjwf76olti1to"
+}
+},
+"meshes": {
+"people_sitting_female_v006lowresUV": {
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_female_v006lowresUV.res"
+},
+"people_sitting_male_v008Eyes": {
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_male_v008Eyes.res"
+},
+"people_sitting_male_v008Eyes_001": {
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_male_v008Eyes_001.res"
+},
+"people_sitting_tmp_o_444": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_444.res"
+},
+"people_sitting_tmp_o_448": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_448.res"
+},
+"people_sitting_tmp_o_450": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_450.res"
+},
+"people_sitting_tmp_o_451": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_451.res"
+},
+"people_sitting_tmp_o_455": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_455.res"
+},
+"people_sitting_tmp_o_457": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_457.res"
+},
+"people_sitting_tmp_o_458": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_458.res"
+},
+"people_sitting_tmp_o_459": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_459.res"
+},
+"people_sitting_tmp_o_460": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_460.res"
+},
+"people_sitting_tmp_o_466": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_466.res"
+},
+"people_sitting_tmp_o_468": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_468.res"
+},
+"people_sitting_tmp_o_470": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_470.res"
+},
+"people_sitting_tmp_o_472": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_472.res"
+},
+"people_sitting_tmp_o_475": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_475.res"
+},
+"people_sitting_tmp_o_476": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_476.res"
+},
+"people_sitting_tmp_o_480": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_480.res"
+},
+"people_sitting_tmp_o_482": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_482.res"
+},
+"people_sitting_tmp_o_483": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_483.res"
+},
+"people_sitting_tmp_o_487": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_487.res"
+},
+"people_sitting_tmp_o_490": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_490.res"
+},
+"people_sitting_tmp_o_493": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_493.res"
+},
+"people_sitting_tmp_o_497": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_497.res"
+},
+"people_sitting_tmp_o_498": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_498.res"
+},
+"people_sitting_tmp_o_500": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_500.res"
+},
+"people_sitting_tmp_o_501": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_501.res"
+},
+"people_sitting_tmp_o_502": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_502.res"
+},
+"people_sitting_tmp_o_504": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_504.res"
+},
+"people_sitting_tmp_o_505": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_505.res"
+},
+"people_sitting_tmp_o_506": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_506.res"
+},
+"people_sitting_tmp_o_507": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_507.res"
+},
+"people_sitting_tmp_o_509": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_509.res"
+},
+"people_sitting_tmp_o_510": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_510.res"
+},
+"people_sitting_tmp_o_514": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_514.res"
+},
+"people_sitting_tmp_o_517": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_517.res"
+},
+"people_sitting_tmp_o_518": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_518.res"
+},
+"people_sitting_tmp_o_523": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_523.res"
+},
+"people_sitting_tmp_o_525": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_525.res"
+},
+"people_sitting_tmp_o_526": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_526.res"
+},
+"people_sitting_tmp_o_528": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_528.res"
+},
+"people_sitting_tmp_o_529": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_529.res"
+},
+"people_sitting_tmp_o_530": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_530.res"
+},
+"people_sitting_tmp_o_534": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_534.res"
+},
+"people_sitting_tmp_o_535": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_535.res"
+},
+"people_sitting_tmp_o_538": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_538.res"
+},
+"people_sitting_tmp_o_539": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_539.res"
+},
+"people_sitting_tmp_o_541": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_541.res"
+},
+"people_sitting_tmp_o_542": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_542.res"
+},
+"people_sitting_tmp_o_543": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_543.res"
+},
+"people_sitting_tmp_o_545": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_545.res"
+},
+"people_sitting_tmp_o_546": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_546.res"
+},
+"people_sitting_tmp_o_547": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_547.res"
+},
+"people_sitting_tmp_o_549": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_549.res"
+},
+"people_sitting_tmp_o_551": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_551.res"
+},
+"people_sitting_tmp_o_552": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_552.res"
+},
+"people_sitting_tmp_o_553": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_553.res"
+},
+"people_sitting_tmp_o_556": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_556.res"
+},
+"people_sitting_tmp_o_559": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_559.res"
+},
+"people_sitting_tmp_o_560": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_560.res"
+},
+"people_sitting_tmp_o_563": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Universal/Person/peeps_sitting/people_sitting_tmp_o_563.res"
+}
+},
+"nodes": {
+"PATH:GEO-body_male_realistic": {
+"import/skip_import": true
+},
+"PATH:GEO-body_male_realistic/GEO-body_male_realistic_eye_L": {
+"import/skip_import": true
+},
+"PATH:GEO-body_male_realistic/GEO-body_male_realistic_eye_R": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
