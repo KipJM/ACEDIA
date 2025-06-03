@@ -6,9 +6,9 @@
 render_priority = 0
 shader = ExtResource("1_ycfpv")
 shader_parameter/speed_mult = 0.55
-shader_parameter/mag_distinct = 0.031
+shader_parameter/mag_distinct = 0.041
 shader_parameter/mag_organic = 0.045
-shader_parameter/mix_style = 1.0
+shader_parameter/mix_style = 0.905
 shader_parameter/Albedo = Color(0.67, 0.4556, 0.55208, 1)
 shader_parameter/fresnel_color = Color(0.647395, 0.647395, 0.647395, 1)
 shader_parameter/fresnel_power = 0.14
