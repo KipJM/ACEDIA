@@ -27,6 +27,9 @@ public partial class Player : CharacterBody3D
 	[Export] public bool IsFeetMoving;
 	
 	[Export] public bool IsInteractionHovering;
+
+	[ExportGroup("Level Settings")] 
+	[Export] public Material PlayerMaterial;
 	
 	[ExportGroup("Subsystems")] 
 	[Export] public PlayerLook Look;
@@ -35,6 +38,7 @@ public partial class Player : CharacterBody3D
 	[Export] private PlayerInteraction _interaction;
 
 	[ExportGroup("References")] 
+	[Export] public MeshInstance3D PlayerMesh;
 	[Export] public Node3D AnimatedHead;
 	[Export] public Node3D Neck;
 	[Export] public Node3D Head;
@@ -61,6 +65,12 @@ public partial class Player : CharacterBody3D
 		
 		_interaction.Player = this;
 		Animator.Player = this;
+		
+		// Set Player Material
+		if (PlayerMaterial != null)
+		{
+			PlayerMesh.SetSurfaceOverrideMaterial(0, PlayerMaterial);
+		}
 	}
 
 	public void OnStartSqueeze()

@@ -3,9 +3,8 @@
 [ext_resource type="Shader" uid="uid://11xb830uaw04" path="res://Universal/Person/shdr_peeps.tres" id="1_v4rpu"]
 
 [sub_resource type="Gradient" id="Gradient_3egf4"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.5574, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.3465, 0.3603, 0.45, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.396476, 0.726872, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.419549, 0.385346, 0.411815, 1, 0.3465, 0.3603, 0.45, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_c8d0e"]
 gradient = SubResource("Gradient_3egf4")

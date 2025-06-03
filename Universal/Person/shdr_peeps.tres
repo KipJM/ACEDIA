@@ -42,6 +42,9 @@ op_type = 3
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_i0ej6"]
 parameter_name = "albedo_gradient"
+texture_type = 1
+color_default = 1
+texture_repeat = 1
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_arcw4"]
 output_port_for_preview = 0
@@ -281,7 +284,7 @@ uniform float mag_distinct;
 uniform float mag_organic;
 uniform float mix_min;
 uniform float mix_max;
-uniform sampler2D albedo_gradient;
+uniform sampler2D albedo_gradient : source_color, hint_default_black, repeat_enable;
 uniform vec4 fresnel_color : source_color;
 uniform float fresnel_power;
 uniform float metallic;
@@ -634,7 +637,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(59.1403, 74.2521)
+graph_offset = Vector2(-1835.32, -938.877)
 modes/diffuse = 3
 nodes/vertex/0/position = Vector2(3200, 240)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_gval5")
