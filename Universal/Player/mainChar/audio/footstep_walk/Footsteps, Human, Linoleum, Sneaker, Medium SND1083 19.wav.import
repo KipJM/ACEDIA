@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dssjjb85sn28d"
+path="res://.godot/imported/Footsteps, Human, Linoleum, Sneaker, Medium SND1083 19.wav-9ccd04e1f0c199333cfb81675ac5970e.sample"
+
+[deps]
+
+source_file="res://Universal/Player/mainChar/audio/footstep_walk/Footsteps, Human, Linoleum, Sneaker, Medium SND1083 19.wav"
+dest_files=["res://.godot/imported/Footsteps, Human, Linoleum, Sneaker, Medium SND1083 19.wav-9ccd04e1f0c199333cfb81675ac5970e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -55,7 +55,7 @@ public partial class AnimationAnchor : Node3D
     
     public void RunAnimation()
     {
-        _animator.EnableAnimation(_animationName);
+        _animator.GotoAnimation(_animationName);
         EmitSignalAnimationStart();
     }
     

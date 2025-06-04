@@ -1,8 +1,5 @@
 [gd_resource type="AnimationNodeStateMachine" load_steps=15 format=3 uid="uid://cbxl4yt3l0e26"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1slo6"]
-animation = &"lib_vending/Animation"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_shihl"]
 animation = &"locomotion_library/idle_IN_PLACE_remap"
 
@@ -54,13 +51,14 @@ blend_point_8/pos = Vector2(2.1, 0)
 min_space = Vector2(-4, -4.1)
 max_space = Vector2(4, 4.1)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1slo6"]
+animation = &"lib_vending/Animation"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dc4kj"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1rxrg"]
 xfade_time = 1.0
-advance_mode = 2
-advance_condition = &"switch_vending"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v4axc"]
 xfade_time = 1.0
@@ -68,10 +66,10 @@ switch_mode = 2
 advance_mode = 2
 
 [resource]
-states/End/position = Vector2(1187.33, 99.1111)
-states/lib_vending_Animation/node = SubResource("AnimationNodeAnimation_1slo6")
-states/lib_vending_Animation/position = Vector2(655.111, 228)
+states/End/position = Vector2(1011.33, 100)
 states/locomotion/node = SubResource("AnimationNodeBlendSpace2D_shihl")
-states/locomotion/position = Vector2(656, 101.333)
-transitions = ["Start", "locomotion", SubResource("AnimationNodeStateMachineTransition_dc4kj"), "locomotion", "lib_vending_Animation", SubResource("AnimationNodeStateMachineTransition_1rxrg"), "lib_vending_Animation", "locomotion", SubResource("AnimationNodeStateMachineTransition_v4axc")]
-graph_offset = Vector2(-40, -8)
+states/locomotion/position = Vector2(656, 100)
+states/trans_vending/node = SubResource("AnimationNodeAnimation_1slo6")
+states/trans_vending/position = Vector2(656, 233)
+transitions = ["Start", "locomotion", SubResource("AnimationNodeStateMachineTransition_dc4kj"), "locomotion", "trans_vending", SubResource("AnimationNodeStateMachineTransition_1rxrg"), "trans_vending", "locomotion", SubResource("AnimationNodeStateMachineTransition_v4axc")]
+graph_offset = Vector2(79, 42)

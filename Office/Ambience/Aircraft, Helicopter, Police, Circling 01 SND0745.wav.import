@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsjvartwc6cob"
+path="res://.godot/imported/Aircraft, Helicopter, Police, Circling 01 SND0745.wav-5e414d15bdf0c91676e4b9232ccbcb6e.sample"
+
+[deps]
+
+source_file="res://Office/Ambience/Aircraft, Helicopter, Police, Circling 01 SND0745.wav"
+dest_files=["res://.godot/imported/Aircraft, Helicopter, Police, Circling 01 SND0745.wav-5e414d15bdf0c91676e4b9232ccbcb6e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

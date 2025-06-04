@@ -5,7 +5,7 @@
 [sub_resource type="Gradient" id="Gradient_rljsa"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.00414938, 0.561549, 1)
-colors = PackedColorArray(0.961479, 0.000381292, 0.000203304, 1, 0.677007, 0.398493, 0.239115, 1, 0.393203, 7.21961e-07, 1.20327e-07, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.68, 0.2822, 0.238, 1, 0.393203, 7.21961e-07, 1.20327e-07, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_80kap"]
 gradient = SubResource("Gradient_rljsa")
@@ -25,4 +25,4 @@ shader_parameter/metallic = 0.57
 shader_parameter/roughness = 0.0
 shader_parameter/specular = 0.87
 shader_parameter/emission_color = Color(0, 0, 0, 1)
-shader_parameter/emission_strength = 1.0
+shader_parameter/emission_strength = 3.62

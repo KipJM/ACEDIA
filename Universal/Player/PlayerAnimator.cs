@@ -69,9 +69,10 @@ public partial class PlayerAnimator : Node3D
         }
     }
 
-    public void EnableAnimation(StringName key, bool value = true)
+    public void GotoAnimation(StringName key)
     {
-        _playerAnimationTree.Set(key, true);
+        AnimationNodeStateMachinePlayback playback = (AnimationNodeStateMachinePlayback)_playerAnimationTree.Get("parameters/playback");
+        playback.Travel(key);
     }
     
     // Prep
@@ -107,8 +108,8 @@ public partial class PlayerAnimator : Node3D
         Transform3D headGSt = _headTransform.GlobalTransform;
         Transform3D headSt = _headTransform.Transform;
         Vector3 camRot = Player.Camera.Rotation;
-        Vector3 hdRot = Player.Head.Rotation;
-        Vector3 nekRot = Player.Neck.Rotation;
+        // Vector3 hdRot = Player.Head.Rotation;
+        // Vector3 nekRot = Player.Neck.Rotation;
         float lkVMax = Player.Look.LookClampVMax;
         float lkVMin = Player.Look.LookClampVMin;
         float lkH = Player.Look.LookClampH;
@@ -136,8 +137,8 @@ public partial class PlayerAnimator : Node3D
             if (Player.PlayerState != PlayerState.Normal)
             {
                 // Guide player view to object of interest
-                Player.Neck.Rotation = nekRot.Lerp(Vector3.Zero, weight);
-                Player.Head.Rotation = hdRot.Lerp(Vector3.Zero, weight);
+                Player.Neck.Rotation = Player.Neck.Rotation.Lerp(Vector3.Zero, weight);
+                Player.Head.Rotation = Player.Head.Rotation.Lerp(Vector3.Zero, weight);
 
                 if (Player.PlayerState is PlayerState.LimitedViewOnly or PlayerState.ForwardOnly)
                 {
