@@ -14,6 +14,7 @@ func _play_natural(samples: Array[AudioStream]):
 	var sample = samples.pick_random()
 	# pitch
 	pitch_scale = randf_range(pitch - pitch_variation, pitch + pitch_variation)
+	print(pitch_scale)
 	stream = sample
 	play()
 	
