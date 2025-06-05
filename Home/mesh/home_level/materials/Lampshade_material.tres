@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xvxxjnh6x6sw"]
+
+[resource]
+resource_name = "Lampshade_material"
+albedo_color = Color(0.906395, 0.812681, 0.555069, 1)
+roughness = 0.55
+backlight_enabled = true
+backlight = Color(0.440336, 0.440336, 0.440336, 1)

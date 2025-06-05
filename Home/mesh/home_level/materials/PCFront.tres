@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fhsgl331r1ie"]
+
+[resource]
+resource_name = "PCFront"
+albedo_color = Color(0.302879, 0.302879, 0.302879, 1)
+roughness = 0.5

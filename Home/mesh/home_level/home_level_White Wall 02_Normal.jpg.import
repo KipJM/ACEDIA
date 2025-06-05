@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://df0p4to1thav1"
+path.s3tc="res://.godot/imported/home_level_White Wall 02_Normal.jpg-fe9296af7485f3208e9911904f2ee376.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "747e2de0d2e319b859dfc13ed55c12cf"
+}
+
+[deps]
+
+source_file="res://Home/mesh/home_level/home_level_White Wall 02_Normal.jpg"
+dest_files=["res://.godot/imported/home_level_White Wall 02_Normal.jpg-fe9296af7485f3208e9911904f2ee376.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Home/mesh/home_level/home_level_White Wall 02_Normal.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

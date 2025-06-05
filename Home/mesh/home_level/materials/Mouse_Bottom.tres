@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dv3tcrhmst1cl"]
+
+[resource]
+resource_name = "Mouse_Bottom"
+albedo_color = Color(0, 0, 0, 1)

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://yef3je4n1lx5"]
+
+[resource]
+resource_name = "bedside_white"
+albedo_color = Color(0.666569, 0.666569, 0.666568, 1)
+roughness = 0.0

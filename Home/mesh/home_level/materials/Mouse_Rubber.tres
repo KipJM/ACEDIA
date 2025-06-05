@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://baj5ljy770mup"]
+
+[resource]
+resource_name = "Mouse_Rubber"
+albedo_color = Color(0, 0, 0, 1)

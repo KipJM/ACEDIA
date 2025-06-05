@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5vdnory8pcfu"]
+
+[resource]
+resource_name = "PCGlass"
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0

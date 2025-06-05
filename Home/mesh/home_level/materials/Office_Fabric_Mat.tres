@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c7iv8uf1rk3ob"]
+
+[ext_resource type="Texture2D" uid="uid://cpwmj4yqdoni2" path="res://Home/mesh/home_level/home_level_Fabric059_2K_Roughness.png" id="1_3j5rd"]
+[ext_resource type="Texture2D" uid="uid://ckcork0q24do3" path="res://Home/mesh/home_level/home_level_Fabric059_2K_NormalDX.jpg" id="2_aetiv"]
+
+[resource]
+resource_name = "Office_Fabric_Mat"
+albedo_color = Color(0.483085, 0.483085, 0.483085, 1)
+metallic_texture = ExtResource("1_3j5rd")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_3j5rd")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("2_aetiv")

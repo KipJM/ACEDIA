@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dhy22gs0gm3y2"]
+
+[ext_resource type="Texture2D" uid="uid://cyl2ygcaro6gv" path="res://Home/mesh/home_level/home_level_plastic-smudge-smoothness copy.png" id="2_0wu1d"]
+[ext_resource type="Texture2D" uid="uid://daqwunfde6ldp" path="res://Home/mesh/home_level/home_level_plastic-texture-normal-4.jpg" id="3_hn1op"]
+
+[resource]
+resource_name = "Plastic White 14"
+metallic = 0.372727
+metallic_texture = ExtResource("2_0wu1d")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_0wu1d")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("3_hn1op")
+uv1_scale = Vector3(5, 5, 5)

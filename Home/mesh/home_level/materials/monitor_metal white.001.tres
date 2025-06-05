@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ce2ymm7qc4p46"]
+
+[ext_resource type="Texture2D" uid="uid://nx5aa8tkt8u2" path="res://Home/mesh/home_level/home_level_Metal010_2K_Normal.jpg" id="1_k4v6v"]
+
+[resource]
+resource_name = "monitor_metal white.001"
+metallic = 0.8
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("1_k4v6v")

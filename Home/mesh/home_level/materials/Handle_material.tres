@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2wddkp3xnnm3"]
+
+[resource]
+resource_name = "Handle_material"
+metallic = 0.797386
+roughness = 0.593051

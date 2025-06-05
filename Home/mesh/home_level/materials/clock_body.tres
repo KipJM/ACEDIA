@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bi0tjuxdiwwqb"]
+
+[resource]
+resource_name = "clock_body"
+albedo_color = Color(0.298774, 0.298774, 0.298774, 1)
+roughness = 0.5

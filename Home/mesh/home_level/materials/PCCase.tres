@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://jmb8hr33176e"]
+
+[resource]
+resource_name = "PCCase"
+albedo_color = Color(0.451914, 0.451914, 0.451914, 1)
+roughness = 0.5

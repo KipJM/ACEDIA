@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dh52ifx4lnse"]
+
+[resource]
+resource_name = "monitor_screen.001"
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.626082, 0.54613, 0.420332, 1)
+emission_energy_multiplier = 3.0

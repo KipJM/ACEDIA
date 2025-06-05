@@ -1,0 +1,254 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c71a41tkk3cgo"
+path="res://.godot/imported/home_level.glb-009a0d4e7259f94d523dc044b2e66468.scn"
+
+[deps]
+
+source_file="res://Home/mesh/home_level/home_level.glb"
+dest_files=["res://.godot/imported/home_level.glb-009a0d4e7259f94d523dc044b2e66468.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"08_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/08_-_Default.tres"
+},
+"BedFabric": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/BedFabric.tres"
+},
+"BedWood": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/BedWood.tres"
+},
+"Desk wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Desk wood.tres"
+},
+"Handle_material": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Handle_material.tres"
+},
+"Lamp_Bulb": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Lamp_Bulb.tres"
+},
+"Lampshade_material": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Lampshade_material.tres"
+},
+"Lampstrings_material": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Lampstrings_material.tres"
+},
+"Light Oak Wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Light Oak Wood.tres"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Material.tres"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Material.001.tres"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Material.002.tres"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Metal.tres"
+},
+"Metal Black Dixon": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Metal Black Dixon.tres"
+},
+"Mouse_B_Plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Mouse_B_Plastic.tres"
+},
+"Mouse_Bottom": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Mouse_Bottom.tres"
+},
+"Mouse_R_Plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Mouse_R_Plastic.tres"
+},
+"Mouse_Rubber": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Mouse_Rubber.tres"
+},
+"Office_Fabric_Mat": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Office_Fabric_Mat.tres"
+},
+"Office_Metal_Mat": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Office_Metal_Mat.tres"
+},
+"Office_Pipe_Mat": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Office_Pipe_Mat.tres"
+},
+"Office_Plastic_Mat": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Office_Plastic_Mat.tres"
+},
+"Outlet Interior": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Outlet Interior.tres"
+},
+"Outlet Plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Outlet Plastic.tres"
+},
+"PCCase": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/PCCase.tres"
+},
+"PCFront": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/PCFront.tres"
+},
+"PCGlass": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/PCGlass.tres"
+},
+"PillowFabric": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/PillowFabric.tres"
+},
+"Plaster": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Plaster.tres"
+},
+"Plastic 2": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Plastic 2.tres"
+},
+"Plastic Desktop": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Plastic Desktop.tres"
+},
+"Plastic White 14": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Plastic White 14.tres"
+},
+"Plastic_Handle_material": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Plastic_Handle_material.tres"
+},
+"SheetFabric": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/SheetFabric.tres"
+},
+"White Wall 02-Freepoly.org": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/White Wall 02-Freepoly.org.tres"
+},
+"Wooden Floor.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/Wooden Floor.001.tres"
+},
+"bedside_white": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/bedside_white.tres"
+},
+"bedside_wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/bedside_wood.tres"
+},
+"clock_body": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/clock_body.tres"
+},
+"clock_button": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/clock_button.tres"
+},
+"clock_display": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/clock_display.tres"
+},
+"clock_display_red": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/clock_display_red.tres"
+},
+"monitor_body texture.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/monitor_body texture.001.tres"
+},
+"monitor_buttons.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/monitor_buttons.001.tres"
+},
+"monitor_led.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/monitor_led.001.tres"
+},
+"monitor_metal 01.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/monitor_metal 01.001.tres"
+},
+"monitor_metal white.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/monitor_metal white.001.tres"
+},
+"monitor_plastic.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/monitor_plastic.001.tres"
+},
+"monitor_screen.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/monitor_screen.001.tres"
+},
+"mountains_001": {
+"use_external/enabled": true,
+"use_external/path": "res://Home/mesh/home_level/materials/mountains_001.tres"
+}
+},
+"nodes": {
+"PATH:Baseboard": {
+"generate/navmesh": 1
+},
+"PATH:Ceiling": {
+"generate/occluder": 1
+},
+"PATH:Floor": {
+"generate/occluder": 1
+},
+"PATH:Walls": {
+"generate/occluder": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ccudeovwj8gwp"]
+
+[ext_resource type="Texture2D" uid="uid://bc64uvct02m6i" path="res://Home/mesh/home_level/home_level_Smear004_2K_Color.png" id="1_jd4cc"]
+[ext_resource type="Texture2D" uid="uid://by0gn718wwe0x" path="res://Home/mesh/home_level/home_level_Grau-Körnung_Normal.jpg" id="2_g2vh1"]
+
+[resource]
+resource_name = "Office_Plastic_Mat"
+albedo_color = Color(0.1004, 0.1004, 0.1004, 1)
+metallic = 0.00454545
+metallic_texture = ExtResource("1_jd4cc")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_jd4cc")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_g2vh1")

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhxbntcivyqpv"]
+
+[resource]
+resource_name = "monitor_plastic.001"
+albedo_color = Color(0.0399927, 0.0399927, 0.0399927, 1)
+roughness = 0.5

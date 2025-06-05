@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b4vnsw3lxdmxl"]
+
+[ext_resource type="Texture2D" uid="uid://urtonrg0ci7e" path="res://Home/mesh/home_level/home_level_White Wall 02_Roughness.png" id="1_yj4lf"]
+[ext_resource type="Texture2D" uid="uid://df0p4to1thav1" path="res://Home/mesh/home_level/home_level_White Wall 02_Normal.jpg" id="2_scdab"]
+
+[resource]
+resource_name = "White Wall 02-Freepoly.org"
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+metallic_texture = ExtResource("1_yj4lf")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_yj4lf")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.05
+normal_texture = ExtResource("2_scdab")
+uv1_scale = Vector3(2, 1, 1)

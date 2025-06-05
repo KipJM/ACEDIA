@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dtenefcrjtvhr"]
+
+[ext_resource type="Texture2D" uid="uid://cfumqwqgdtt1d" path="res://Home/mesh/home_level/home_level_4K-plaster_20_40.jpg" id="1_vy7sh"]
+[ext_resource type="Texture2D" uid="uid://c35gbm2or51p1" path="res://Home/mesh/home_level/home_level_4K-plaster_20_41.png" id="2_5lbuy"]
+[ext_resource type="Texture2D" uid="uid://bqn65173vj2ch" path="res://Home/mesh/home_level/home_level_4K-plaster_20.jpg" id="3_3h0ot"]
+
+[resource]
+resource_name = "Plaster"
+albedo_color = Color(0.760687, 0.864286, 0.899951, 1)
+albedo_texture = ExtResource("1_vy7sh")
+metallic_texture = ExtResource("2_5lbuy")
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_3h0ot")

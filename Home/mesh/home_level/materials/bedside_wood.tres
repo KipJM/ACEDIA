@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cmf1a2uhno3tx"]
+
+[ext_resource type="Texture2D" uid="uid://xvemda3hwjg4" path="res://Home/mesh/home_level/home_level_beech wood_albedo.jpg" id="1_thm1g"]
+[ext_resource type="Texture2D" uid="uid://crn8pj24nf7wc" path="res://Home/mesh/home_level/home_level_beech wood_roughness.png" id="2_pp6s1"]
+[ext_resource type="Texture2D" uid="uid://c68t88dja5wse" path="res://Home/mesh/home_level/home_level_beech wood_normal.jpg" id="3_5a23y"]
+
+[resource]
+resource_name = "bedside_wood"
+albedo_texture = ExtResource("1_thm1g")
+metallic_texture = ExtResource("2_pp6s1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_pp6s1")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_5a23y")

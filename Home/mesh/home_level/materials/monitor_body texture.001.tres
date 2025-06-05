@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b5cq3ynch6pjd"]
+
+[ext_resource type="Texture2D" uid="uid://ckums5yjusif4" path="res://Home/mesh/home_level/home_level_Plastic005_2K_Normal.jpg" id="1_kdvbc"]
+
+[resource]
+resource_name = "monitor_body texture.001"
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("1_kdvbc")

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhk4wpulgfgvu"]
+
+[resource]
+resource_name = "monitor_buttons.001"
+albedo_color = Color(0.318075, 0.318075, 0.318075, 1)
+metallic = 0.7
+roughness = 0.5

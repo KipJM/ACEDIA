@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ddcrkbcv4j5m6"]
+
+[resource]
+resource_name = "Office_Pipe_Mat"
+albedo_color = Color(0.735357, 0.735357, 0.735357, 1)
+metallic = 1.0
+roughness = 0.244222
