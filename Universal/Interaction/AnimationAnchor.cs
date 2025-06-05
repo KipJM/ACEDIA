@@ -36,18 +36,28 @@ public partial class AnimationAnchor : Node3D
         _animator = ((Player.Player)GetNode(new NodePath("%Player"))).Animator;
     }
     
-    public void StartAnimationSequence()
+    public void StartAnimationSequence(bool inverse = false)
     {
         _animator.PrepareForAnimation(_bodyAnchor, 
             _useHeadBone ? _animator.HeadBone : _headAnchor,
-            _playerState, _lerpDuration, OnPreparationFinished, _vLimitMax, _vLimitMin, _hLimit);
+            _playerState, _lerpDuration, () => OnPreparationFinished(inverse), 
+            _vLimitMax, _vLimitMin, _hLimit);
     }
 
     // Auto callback from PlayerAnimator
-    public void OnPreparationFinished()
+    public void OnPreparationFinished(bool inverse)
     {
-        // Timer
-        Timing.RunCoroutine(Timer(_wait, RunAnimation).CancelWith(this));
+        if (inverse)
+        {
+            // Timer
+            Timing.RunCoroutine(Timer(_wait, _animator.UnlockPlayer).CancelWith(this));
+        }
+        else
+        {
+            // Timer
+            Timing.RunCoroutine(Timer(_wait, RunAnimation).CancelWith(this));
+        }
+        
     }
 
     [Signal]
@@ -65,9 +75,11 @@ public partial class AnimationAnchor : Node3D
         action.Invoke();
     }
     
-    //External
+    // External
     public void PlayExternalAnimation()
     {
         _externalPlayer.Play(_externalAnimName);
     }
+
+    
 }

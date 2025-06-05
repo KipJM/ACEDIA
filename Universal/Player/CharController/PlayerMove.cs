@@ -109,6 +109,13 @@ public partial class PlayerMove : Node3D
                               (!_direction.IsZeroApprox());
         
         // GD.PrintRich($@"[b]A:{Player.PlayerState is not (PlayerState.LimitedViewOnly or PlayerState.Locked)}[b]B:{(Player.Body.IsOnFloor())}[b]C:{(Player.Body.Velocity.LengthSquared() > 0.5)}[b]D:{(!_direction.IsZeroApprox())}");
-        Player.Body.MoveAndSlide();
+        
+        
+        // Disable physics when transitioning / animating
+        if (!(Player.Animator.IsAnimationTransitioning || Player.Animator.IsAnimationControlActive))
+        {
+            Player.Body.MoveAndSlide();
+        }
+            
     }
 }

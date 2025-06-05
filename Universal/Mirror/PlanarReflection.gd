@@ -1,3 +1,8 @@
+# Copyright (c) 2025 K
+# Adapted from https://github.com/RisingThumb/gd_planar_reflection
+# Please stayed tuned for an open-source project-agnostic solution
+# DO NOT copy or use this script w/o permission from the author (K)
+
 extends MeshInstance3D
 class_name PlanarReflector
 

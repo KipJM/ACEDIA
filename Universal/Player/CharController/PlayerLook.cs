@@ -116,6 +116,7 @@ public partial class PlayerLook : Node3D
 
     public void View(float horizontal, float vertical)
     {
+        if (Player.Animator.IsAnimationTransitioning) return;
         if (Player.PlayerState == PlayerState.Locked) return;
         
         // Up-down view

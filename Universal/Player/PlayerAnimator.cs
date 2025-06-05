@@ -27,14 +27,16 @@ public partial class PlayerAnimator : Node3D
     private float _lookVMin;
     private float _lookH;
 
-    private bool _isAnimationControlActive = false;
+    public bool IsAnimationControlActive = false;
+    public bool IsAnimationTransitioning = false;
     
     public override void _Process(double delta)
     {
         base._Process(delta);
-
-        if (_isAnimationControlActive)
+        
+        if (IsAnimationControlActive)
         {
+            // GD.Print("UHHHH FUCK");
             UpdateAnchors();
         }
         else
@@ -58,21 +60,14 @@ public partial class PlayerAnimator : Node3D
     private void UpdateAnchors()
     {
         Player.Body.GlobalTransform = _bodyTransform.GlobalTransform;
-        if (_headTransform == HeadBone)
-        {
-            Player.AnimatedHead.GlobalTransform = _headTransform.GlobalTransform;
-            // Player.AnimatedHead.Rotation = -Player.AnimatedHead.Rotation;
-        }
-        else
-        {
-            Player.AnimatedHead.Transform = _headTransform.Transform;
-        }
+        Player.AnimatedHead.GlobalTransform = _headTransform.GlobalTransform;
     }
 
     public void GotoAnimation(StringName key)
     {
         AnimationNodeStateMachinePlayback playback = (AnimationNodeStateMachinePlayback)_playerAnimationTree.Get("parameters/playback");
         playback.Travel(key);
+        GD.Print($"Traveled to {key}"); //DEBUG
     }
     
     // Prep
@@ -97,16 +92,18 @@ public partial class PlayerAnimator : Node3D
         // [IF STATIC] Head (   R) -> 0
         
         // Start transition
+        IsAnimationControlActive = false;
         Timing.RunCoroutine(LerpToAnchor(duration, onPreparationFinished).CancelWith(this));
     }
 
     IEnumerator<double> LerpToAnchor(double duration, Action onPreparationFinished)
     {
+        IsAnimationTransitioning = true;
+        
         double currentTime = 0;
         
-        Transform3D bodySt = _bodyTransform.GlobalTransform;
-        Transform3D headGSt = _headTransform.GlobalTransform;
-        Transform3D headSt = _headTransform.Transform;
+        Transform3D bodySt = Player.Body.GlobalTransform;
+        Transform3D headGSt = Player.AnimatedHead.GlobalTransform;
         Vector3 camRot = Player.Camera.Rotation;
         // Vector3 hdRot = Player.Head.Rotation;
         // Vector3 nekRot = Player.Neck.Rotation;
@@ -114,53 +111,63 @@ public partial class PlayerAnimator : Node3D
         float lkVMin = Player.Look.LookClampVMin;
         float lkH = Player.Look.LookClampH;
         
-        while (currentTime < duration)
+        while (true) // scaryyyyyy
         {
             float weight = LerpCurve.Sample((float)(currentTime / duration));
+            GD.Print(weight);
 
             Player.Body.GlobalTransform =
                 bodySt.InterpolateWith(_bodyTransform.GlobalTransform, weight);
-
-            if (_headTransform == HeadBone)
-            {
-                Player.AnimatedHead.GlobalTransform =
+            
+            Player.AnimatedHead.GlobalTransform =
                     headGSt.InterpolateWith(_headTransform.GlobalTransform, weight);
-            }
-            else
-            {
-                Player.AnimatedHead.Transform =
-                    headSt.InterpolateWith(_headTransform.Transform, weight); // WARN: Local transform
-            }
 
             Player.Camera.Rotation = camRot.Lerp(Vector3.Zero, weight);
 
-            if (Player.PlayerState != PlayerState.Normal)
+            // Guide player view to object of interest
+            Player.Neck.Rotation = Player.Neck.Rotation.Lerp(Vector3.Zero, weight);
+            Player.Head.Rotation = Player.Head.Rotation.Lerp(Vector3.Zero, weight);
+
+            if (Player.PlayerState is PlayerState.LimitedViewOnly or PlayerState.ForwardOnly)
             {
-                // Guide player view to object of interest
-                Player.Neck.Rotation = Player.Neck.Rotation.Lerp(Vector3.Zero, weight);
-                Player.Head.Rotation = Player.Head.Rotation.Lerp(Vector3.Zero, weight);
+                Player.Look.LookClampVMax = float.Lerp(lkVMax, _lookVMax, weight);
+                Player.Look.LookClampVMin = float.Lerp(lkVMin, _lookVMin, weight);
 
-                if (Player.PlayerState is PlayerState.LimitedViewOnly or PlayerState.ForwardOnly)
-                {
-                    Player.Look.LookClampVMax = float.Lerp(lkVMax, _lookVMax, weight);
-                    Player.Look.LookClampVMin = float.Lerp(lkVMin, _lookVMin, weight);
-
-                    Player.Look.LookClampH = float.Lerp(lkH, _lookH, weight);
-                    
-                }
+                Player.Look.LookClampH = float.Lerp(lkH, _lookH, weight);
             }
-
+            
+            if (currentTime >= duration) // Make sure lerp ran at least once
+            {
+                break;
+            }
+            
             yield return Timing.WaitForOneFrame;
             currentTime += GetProcessDeltaTime();
-            GD.Print(weight);
+            // GD.Print(weight);
         }
+
+        IsAnimationTransitioning = false;
         AnimationPrepared(onPreparationFinished);
     }
 
     private void AnimationPrepared(Action onPreparationFinished)
     {
-        _isAnimationControlActive = true;
-        if (onPreparationFinished != null)
-            onPreparationFinished.Invoke();
+        IsAnimationControlActive = true; // if inverse, let animationAnchor unlock
+        onPreparationFinished?.Invoke(); // nullable
+    }
+
+    public void UnlockPlayer()
+    {
+        IsAnimationControlActive = false;
+    }
+    
+    [Signal]
+    public delegate void AnimationEndEventHandler(StringName animationName);
+    
+    // External
+    public void AnimationEndEventReceiver(StringName animationName)
+    {
+        GD.Print("Mixer -> PlayerAnimator");
+        EmitSignalAnimationEnd(animationName);
     }
 }
