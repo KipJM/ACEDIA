@@ -9,7 +9,7 @@ class_name PlanarReflector
 var reflect_camera: Camera3D
 var reflect_viewport: SubViewport
 
-@export var player: CharacterBody3D = null; # Preferred. Will automatically use camera of player is _main_camera is not set.
+var player: CharacterBody3D = null; # Preferred. Will automatically use camera of player is _main_camera is not set.
 @export var camera_override: Camera3D = null # Camera override
 
 @export_group("Display")
@@ -26,6 +26,8 @@ var _main_camera: Camera3D;
 var reflection_enabled:bool = false
 
 func _ready():
+	player = get_node("%Player")
+	
 	init_mirror();
 	reflect_camera.clear_current() # wait for reflection_enabled
 	

@@ -1,6 +1,9 @@
 extends Control
 
 @export
+var ui_base: Control
+
+@export
 var interactionNodes: Array[Control]
 
 #var permanent_hidden: bool = false
@@ -10,7 +13,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	#if not permanent_hidden:
-	set_ui(%Player.IsInteractionHovering)
+	set_ui(ui_base.Player.IsInteractionHovering)
 
 #func on_interaction() -> void:
 	#permanent_hidden = true
