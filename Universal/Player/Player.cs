@@ -52,9 +52,11 @@ public partial class Player : CharacterBody3D
 
 	[Signal]
 	public delegate void InteractionStartEventHandler();
-	
-	public override void _Ready()
+
+	public override void _EnterTree()
 	{
+		base._EnterTree();
+
 		Camera.MakeCurrent();
 		Body = this;
 		

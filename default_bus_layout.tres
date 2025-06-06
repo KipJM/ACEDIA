@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://dx0vr85gnfnaw"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://dx0vr85gnfnaw"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
@@ -6,6 +6,13 @@ room_size = 0.01
 damping = 0.9
 spread = 0.33
 wet = 0.2
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+room_size = 0.01
+damping = 1.0
+spread = 0.0
+wet = 0.05
 
 [resource]
 bus/1/name = &"Prop_SFX"
@@ -26,7 +33,7 @@ bus/3/name = &"Ambience_far"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = 2.647
+bus/3/volume_db = 4.69791
 bus/3/send = &"Master"
 bus/4/name = &"Footsteps"
 bus/4/solo = false
@@ -34,3 +41,11 @@ bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.662756
 bus/4/send = &"Master"
+bus/5/name = &"Prop_SFX_noReverb"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 3.64024
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
+bus/5/effect/0/enabled = true

@@ -113,7 +113,8 @@ public partial class PlayerAnimator : Node3D
         
         while (true) // scaryyyyyy
         {
-            float weight = LerpCurve.Sample((float)(currentTime / duration));
+            float weight = (duration < 0) ? 1f : LerpCurve.Sample((float)(currentTime / duration));
+            
             // GD.Print(weight);
 
             Player.Body.GlobalTransform =
@@ -128,13 +129,12 @@ public partial class PlayerAnimator : Node3D
             Player.Neck.Rotation = Player.Neck.Rotation.Lerp(Vector3.Zero, weight);
             Player.Head.Rotation = Player.Head.Rotation.Lerp(Vector3.Zero, weight);
 
-            if (Player.PlayerState is PlayerState.LimitedViewOnly or PlayerState.ForwardOnly)
-            {
-                Player.Look.LookClampVMax = float.Lerp(lkVMax, _lookVMax, weight);
-                Player.Look.LookClampVMin = float.Lerp(lkVMin, _lookVMin, weight);
 
-                Player.Look.LookClampH = float.Lerp(lkH, _lookH, weight);
-            }
+            Player.Look.LookClampVMax = float.Lerp(lkVMax, _lookVMax, weight);
+            Player.Look.LookClampVMin = float.Lerp(lkVMin, _lookVMin, weight);
+
+            Player.Look.LookClampH = float.Lerp(lkH, _lookH, weight);
+
             
             if (currentTime >= duration) // Make sure lerp ran at least once
             {

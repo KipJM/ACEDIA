@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bv0nvlkcckb02"
+path="res://.godot/imported/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 1.wav-5f47e9a5f1fc308a7b17ba40e59473fa.sample"
+
+[deps]
+
+source_file="res://Home/anim_home_intro/sfx/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 1.wav"
+dest_files=["res://.godot/imported/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 1.wav-5f47e9a5f1fc308a7b17ba40e59473fa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
