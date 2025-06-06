@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pins"
-run/main_scene="res://Testing/CharControllerTest/scn_CharControllerTest.tscn"
+run/main_scene="uid://dita2pnn74sr3"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 

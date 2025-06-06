@@ -65,7 +65,11 @@ public partial class AnimationAnchor : Node3D
     
     public void RunAnimation()
     {
-        _animator.GotoAnimation(_animationName);
+        if (_animationName != "[SKIP]")
+        {
+            _animator.GotoAnimation(_animationName);
+        }
+        
         EmitSignalAnimationStart();
     }
     

@@ -13,7 +13,7 @@ var player: CharacterBody3D = null; # Preferred. Will automatically use camera o
 @export var camera_override: Camera3D = null # Camera override
 
 @export_group("Display")
-@export var resolution_scale: float
+@export var resolution_scale: float = 1
 @export var far: float = 4000
 
 @export_group("Debug")
@@ -25,11 +25,13 @@ var _main_camera: Camera3D;
 
 var reflection_enabled:bool = false
 
+var initialized:bool = false
+
 func _ready():
 	player = get_node("%Player")
 	
-	init_mirror();
-	reflect_camera.clear_current() # wait for reflection_enabled
+# 	init_mirror();
+#	reflect_camera.clear_current() # wait for reflection_enabled
 	
 # Called when the node enters the scene tree for the first time.
 func init_mirror():	
@@ -71,6 +73,7 @@ func init_mirror():
 	
 	reflect_camera.make_current();
 	update_viewport()
+	print("Init mirror")
 
 func update_camera() -> void:
 	if (camera_override == null):
@@ -241,13 +244,16 @@ func update_reflect_cam() -> bool:
 	return true
 	#==
 
-func _on_enabler_entered(body: Node3D) -> void:
+func _on_enabler_entered(_body: Node3D) -> void:
+	if (!initialized):
+		init_mirror()
+		initialized = true;
+	
 	if (!reflection_enabled): # Enable cam
 		print("Seen!")
 		reflection_enabled = true;
-#
-#
-func _on_enabler_exited(body: Node3D) -> void:
+
+func _on_enabler_exited(_body: Node3D) -> void:
 	if(reflection_enabled): 
 		print("Clear")
 		# Stop camera to save compute resources

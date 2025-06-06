@@ -114,7 +114,7 @@ public partial class PlayerAnimator : Node3D
         while (true) // scaryyyyyy
         {
             float weight = LerpCurve.Sample((float)(currentTime / duration));
-            GD.Print(weight);
+            // GD.Print(weight);
 
             Player.Body.GlobalTransform =
                 bodySt.InterpolateWith(_bodyTransform.GlobalTransform, weight);

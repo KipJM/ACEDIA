@@ -55,6 +55,7 @@ public partial class Player : CharacterBody3D
 	
 	public override void _Ready()
 	{
+		Camera.MakeCurrent();
 		Body = this;
 		
 		// PlayerLook init
