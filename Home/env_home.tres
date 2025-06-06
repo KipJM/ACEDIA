@@ -1,13 +1,18 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cugtamu3uc0t3"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://cugtamu3uc0t3"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ev20g"]
+[ext_resource type="Texture2D" uid="uid://de66ooe4axoyk" path="res://Home/skybx_sunrise.exr" id="1_3vfpw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_rabbv"]
+panorama = ExtResource("1_3vfpw")
+energy_multiplier = 0.22
 
 [sub_resource type="Sky" id="Sky_6enyd"]
-sky_material = SubResource("ProceduralSkyMaterial_ev20g")
+sky_material = SubResource("PanoramaSkyMaterial_rabbv")
 
 [resource]
 background_mode = 2
 sky = SubResource("Sky_6enyd")
+sky_rotation = Vector3(0, 0.408407, 0)
 tonemap_mode = 2
 tonemap_exposure = 0.79
 ssao_enabled = true
@@ -15,12 +20,13 @@ ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.186567, 0.147597, 0.136217, 1)
-fog_density = 0.001
+fog_light_color = Color(0.78, 0.919333, 1, 1)
+fog_sun_scatter = 0.05
+fog_density = 0.0002
 fog_aerial_perspective = 0.586
-fog_sky_affect = 0.0
-fog_height = -20.54
-fog_height_density = 0.0144
+fog_sky_affect = 0.192
+fog_height = -13.9
+fog_height_density = 0.0209
 adjustment_enabled = true
 adjustment_brightness = 0.97
 adjustment_contrast = 1.19
