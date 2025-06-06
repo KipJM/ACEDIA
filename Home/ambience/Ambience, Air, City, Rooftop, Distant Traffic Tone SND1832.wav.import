@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqrhjrd7ulu0i"
+path="res://.godot/imported/Ambience, Air, City, Rooftop, Distant Traffic Tone SND1832.wav-26c880dc8cf45882a7e8a36e80c8568f.sample"
+
+[deps]
+
+source_file="res://Home/ambience/Ambience, Air, City, Rooftop, Distant Traffic Tone SND1832.wav"
+dest_files=["res://.godot/imported/Ambience, Air, City, Rooftop, Distant Traffic Tone SND1832.wav-26c880dc8cf45882a7e8a36e80c8568f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

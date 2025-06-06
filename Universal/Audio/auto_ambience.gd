@@ -1,4 +1,4 @@
 extends AudioStreamPlayer3D
 func _ready() -> void:
-	print("WTH")
+	#print("WTH")
 	play()

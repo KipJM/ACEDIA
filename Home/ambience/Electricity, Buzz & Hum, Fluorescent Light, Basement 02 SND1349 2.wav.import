@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccelq12nleorm"
+path="res://.godot/imported/Electricity, Buzz & Hum, Fluorescent Light, Basement 02 SND1349 2.wav-8961a0afe442c85a0f8db688f82e9c23.sample"
+
+[deps]
+
+source_file="res://Home/ambience/Electricity, Buzz & Hum, Fluorescent Light, Basement 02 SND1349 2.wav"
+dest_files=["res://.godot/imported/Electricity, Buzz & Hum, Fluorescent Light, Basement 02 SND1349 2.wav-8961a0afe442c85a0f8db688f82e9c23.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
