@@ -19,17 +19,20 @@ public partial class PlayerInteraction : Node3D
         Player.IsInteractionHovering = false;
         if (InteractorRay.IsColliding())
         {
-            InteractionReceiver receiver = (InteractionReceiver)InteractorRay.GetCollider();
-
-            if (receiver.Listening)
+            // GD.Print(InteractorRay.GetCollider().ToString());
+            if (InteractorRay.GetCollider() is InteractionReceiver receiver)
             {
-                Player.IsInteractionHovering = true;
-
-                if (Input.IsActionJustPressed(InteractAction))
+                // GD.Print("HEHEH");
+                if (receiver.Listening)
                 {
-                    GD.Print("INTERACT");
-                    InteractorRay.GetCollider().Call("Interact"); //TODO
-                    Player.EmitSignal(Player.SignalName.InteractionStart);
+                    Player.IsInteractionHovering = true;
+
+                    if (Input.IsActionJustPressed(InteractAction))
+                    {
+                        GD.Print("INTERACT");
+                        InteractorRay.GetCollider().Call("Interact");
+                        Player.EmitSignal(Player.SignalName.InteractionStart);
+                    }
                 }
             }
         }
