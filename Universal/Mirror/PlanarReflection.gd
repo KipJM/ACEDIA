@@ -244,7 +244,7 @@ func update_reflect_cam() -> bool:
 	return true
 	#==
 
-func _on_enabler_entered(_body: Node3D) -> void:
+func enable_mirror() -> void:
 	if (!initialized):
 		init_mirror()
 		initialized = true;
@@ -252,8 +252,8 @@ func _on_enabler_entered(_body: Node3D) -> void:
 	if (!reflection_enabled): # Enable cam
 		print("Seen!")
 		reflection_enabled = true;
-
-func _on_enabler_exited(_body: Node3D) -> void:
+	
+func disable_mirror() -> void:
 	if(reflection_enabled): 
 		print("Clear")
 		# Stop camera to save compute resources
@@ -261,3 +261,9 @@ func _on_enabler_exited(_body: Node3D) -> void:
 		# Unallocating/allocating takes too much time :|
 		reflect_camera.clear_current()
 		reflection_enabled = false;
+
+func _on_enabler_entered(_body: Node3D) -> void:
+	enable_mirror()
+
+func _on_enabler_exited(_body: Node3D) -> void:
+	disable_mirror()

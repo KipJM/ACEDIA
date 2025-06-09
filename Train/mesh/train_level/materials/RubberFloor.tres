@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://eqqfiihkjc8l"]
+
+[ext_resource type="Texture2D" uid="uid://dk6sjxqsx6ps2" path="res://Train/mesh/train_level/train_level_plane_divided_DefaultMaterial_BaseColor.jpg" id="1_tcpnw"]
+[ext_resource type="Texture2D" uid="uid://cnhl3qefivph2" path="res://Train/mesh/train_level/train_level_plane_divided_DefaultMaterial_Metallic.jpg-plane_divided_DefaultMaterial_Roughness.png" id="2_yd4vu"]
+[ext_resource type="Texture2D" uid="uid://cwf7up7y2iyaw" path="res://Train/mesh/train_level/train_level_plane_divided_DefaultMaterial_Normal.jpg" id="3_2xrw4"]
+
+[resource]
+resource_name = "RubberFloor"
+albedo_texture = ExtResource("1_tcpnw")
+metallic = 1.0
+metallic_texture = ExtResource("2_yd4vu")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_yd4vu")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_2xrw4")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7m0f61hbxxut"]
+
+[resource]
+resource_name = "Divider"
+transparency = 1
+albedo_color = Color(0.6862, 0.80041, 0.94, 0.882353)
+metallic = 0.34
+roughness = 0.31

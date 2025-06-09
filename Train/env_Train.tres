@@ -1,0 +1,32 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://bw0ta1kbnyyoa"]
+
+[ext_resource type="Texture2D" uid="uid://cywu71kvabj3v" path="res://Train/sky_sunset.exr" id="1_rc3a3"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ptsm7"]
+panorama = ExtResource("1_rc3a3")
+energy_multiplier = 0.72
+
+[sub_resource type="Sky" id="Sky_rc3a3"]
+sky_material = SubResource("PanoramaSkyMaterial_ptsm7")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_rc3a3")
+sky_rotation = Vector3(0, -1.028, 0)
+tonemap_mode = 2
+tonemap_exposure = 0.79
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_light_color = Color(0.133, 0.1672, 0.19, 1)
+fog_sun_scatter = 0.05
+fog_density = 0.6612
+fog_aerial_perspective = 0.586
+fog_sky_affect = 0.192
+fog_height = -13.9
+fog_height_density = 0.0209
+adjustment_enabled = true
+adjustment_brightness = 0.89
+adjustment_contrast = 1.04
+adjustment_saturation = 0.65

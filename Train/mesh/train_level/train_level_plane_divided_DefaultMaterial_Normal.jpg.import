@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cwf7up7y2iyaw"
+path.s3tc="res://.godot/imported/train_level_plane_divided_DefaultMaterial_Normal.jpg-27475f5cc9bb9a37e83f4d477c26d63e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a31a1ea0e07de249a9f2f4f33ab67ff5"
+}
+
+[deps]
+
+source_file="res://Train/mesh/train_level/train_level_plane_divided_DefaultMaterial_Normal.jpg"
+dest_files=["res://.godot/imported/train_level_plane_divided_DefaultMaterial_Normal.jpg-27475f5cc9bb9a37e83f4d477c26d63e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Train/mesh/train_level/train_level_plane_divided_DefaultMaterial_Normal.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

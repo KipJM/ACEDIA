@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyxueo2okyfnw"]
+
+[resource]
+resource_name = "Unlit Black"
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)

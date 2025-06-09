@@ -1,0 +1,106 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://lbiq6dt3a0qb"
+path="res://.godot/imported/train_level.glb-4eac21b6cdfb0ebfcc54582f2a36b589.scn"
+
+[deps]
+
+source_file="res://Train/mesh/train_level/train_level.glb"
+dest_files=["res://.godot/imported/train_level.glb-4eac21b6cdfb0ebfcc54582f2a36b589.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Brushed Aluminum": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Brushed Aluminum.tres"
+},
+"CeilingLight": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/CeilingLight.tres"
+},
+"Display": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Display.tres"
+},
+"Divider": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Divider.tres"
+},
+"Frozen white metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Frozen white metal.tres"
+},
+"Plastic Desktop": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Plastic Desktop.tres"
+},
+"Pure Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Pure Metal.tres"
+},
+"Recycled plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Recycled plastic.tres"
+},
+"RubberFloor": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/RubberFloor.tres"
+},
+"Unlit Black": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_level/materials/Unlit Black.tres"
+}
+},
+"nodes": {
+"PATH:Body/Bar_Central": {
+"generate/occluder": 1
+},
+"PATH:Body/Body_ext": {
+"generate/occluder": 1
+},
+"PATH:Body/Doors": {
+"generate/occluder": 1
+},
+"PATH:Body/Doors_ext": {
+"generate/occluder": 1
+},
+"PATH:Body/EntryDoor": {
+"generate/occluder": 1
+},
+"PATH:Body/EntryDoorFrame": {
+"generate/occluder": 1
+},
+"PATH:Body/ExitDoor": {
+"generate/occluder": 1
+},
+"PATH:Body/ExitDoorFrame": {
+"generate/occluder": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
