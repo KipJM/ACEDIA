@@ -11,12 +11,19 @@ public partial class IntroAnchor : Node3D
 
     [ExportCategory("Transition")]
     [Export] private StringName _transitionAnimName;
+
+    [ExportCategory("DEBUG")] 
+    [Export] private bool _skipAnim = false;
     
     private PlayerAnimator _animator;
     
     public override void _Ready()
     {
         base._Ready();
+
+        if (_skipAnim)
+            return;
+        
         _animator = ((Player.Player)GetNode(new NodePath("%Player"))).Animator;
 
         _animator.AnimationEnd += PotentialExitAnim;

@@ -2,4 +2,5 @@
 
 [resource]
 resource_name = "mat_env_buildings"
-albedo_color = Color(0.135617, 0.135617, 0.135617, 1)
+albedo_color = Color(0.236334, 0.236334, 0.236334, 1)
+roughness = 0.94
