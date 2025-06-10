@@ -5,15 +5,15 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_cnor8")
-shader_parameter/speed_mult = 0.2
-shader_parameter/mag_distinct = 0.055
-shader_parameter/mag_organic = 0.02
-shader_parameter/mix_style = 0.295
-shader_parameter/Albedo = Color(0.4774, 0.54157, 0.62, 1)
-shader_parameter/fresnel_color = Color(0.3192, 0.407493, 0.56, 1)
+shader_parameter/speed_mult = 0.385
+shader_parameter/mag_distinct = 0.08
+shader_parameter/mag_organic = 0.085
+shader_parameter/mix_style = 0.416
+shader_parameter/Albedo = Color(0.2272, 0.26896, 0.32, 1)
+shader_parameter/fresnel_color = Color(0.4256, 0.47488, 0.56, 1)
 shader_parameter/fresnel_power = 0.339
-shader_parameter/metallic = 0.537
-shader_parameter/roughness = 0.313
+shader_parameter/metallic = 0.817
+shader_parameter/roughness = 0.2
 shader_parameter/specular = 0.545
-shader_parameter/emission_color = Color(0.1782, 0.21186, 0.27, 1)
+shader_parameter/emission_color = Color(0.3441, 0.353597, 0.37, 1)
 shader_parameter/emission_strength = 0.619
