@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d06umy4ok3k5h"]
+
+[resource]
+resource_name = "mat_env_buildings"
+albedo_color = Color(0.135617, 0.135617, 0.135617, 1)

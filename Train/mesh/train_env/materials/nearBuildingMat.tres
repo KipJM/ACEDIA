@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://br1mhli17ngsg"]
+
+[resource]
+resource_name = "nearBuildingMat"
+albedo_color = Color(0.279967, 0.279967, 0.279967, 1)
+roughness = 0.5

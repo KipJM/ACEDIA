@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cvtol4l02kg0j"]
+
+[ext_resource type="Texture2D" uid="uid://vk8bovewaltv" path="res://Train/mesh/train_env/train_env_PX_Rust_Sheet_01_roughness.png" id="1_xf07r"]
+[ext_resource type="Texture2D" uid="uid://dfkpm528s2640" path="res://Train/mesh/train_env/train_env_PX_Rust_Sheet_01_normal.jpg" id="2_n4njl"]
+
+[resource]
+resource_name = "Rust Sheet White"
+albedo_color = Color(0.647131, 0.647131, 0.647131, 1)
+metallic_texture = ExtResource("1_xf07r")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_xf07r")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_n4njl")

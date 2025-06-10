@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bhg0dxdykuyua"]
+
+[ext_resource type="Texture2D" uid="uid://fmfgy0w20cvp" path="res://Train/mesh/train_env/train_env_Diffuse.jpg" id="1_84ssl"]
+[ext_resource type="Texture2D" uid="uid://dtqg81hnegkfq" path="res://Train/mesh/train_env/train_env_Roughness.png" id="2_swqop"]
+[ext_resource type="Texture2D" uid="uid://clwjcbis4rcwa" path="res://Train/mesh/train_env/train_env_Normal.jpg" id="3_3u5f8"]
+
+[resource]
+resource_name = "Stainless Steel"
+albedo_texture = ExtResource("1_84ssl")
+metallic = 1.0
+metallic_texture = ExtResource("2_swqop")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_swqop")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("3_3u5f8")

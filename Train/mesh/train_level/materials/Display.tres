@@ -4,5 +4,5 @@
 resource_name = "Display"
 roughness = 0.5
 emission_enabled = true
-emission = Color(0.7, 0.815, 1, 1)
-emission_energy_multiplier = 2.0
+emission = Color(0.611586, 0.781768, 0.987199, 1)
+emission_energy_multiplier = 1.6

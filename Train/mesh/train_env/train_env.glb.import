@@ -1,0 +1,100 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c5eglkvv0nen0"
+path="res://.godot/imported/train_env.glb-934e70eb19bc3c309701b73797abe0bc.scn"
+
+[deps]
+
+source_file="res://Train/mesh/train_env/train_env.glb"
+dest_files=["res://.godot/imported/train_env.glb-934e70eb19bc3c309701b73797abe0bc.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Brushed black metal brass": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Brushed black metal brass.tres"
+},
+"LampPostLight": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/LampPostLight.tres"
+},
+"Metal Rivets": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Metal Rivets.tres"
+},
+"Rust Sheet": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Rust Sheet.tres"
+},
+"Rust Sheet White": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Rust Sheet White.tres"
+},
+"Stainless Steel": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Stainless Steel.tres"
+},
+"Steel brushed scratched": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Steel brushed scratched.tres"
+},
+"Wet gravel with mud": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Wet gravel with mud.tres"
+},
+"Worn Road": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/Worn Road.tres"
+},
+"bridgeConcrete": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/bridgeConcrete.tres"
+},
+"buildingWindow": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/buildingWindow.tres"
+},
+"carMat": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/carMat.tres"
+},
+"groundMat": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/groundMat.tres"
+},
+"mat_env_buildings": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/mat_env_buildings.tres"
+},
+"nearBuildingMat": {
+"use_external/enabled": true,
+"use_external/path": "res://Train/mesh/train_env/materials/nearBuildingMat.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

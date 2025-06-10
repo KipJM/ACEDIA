@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://ckmpdphhkfi42"]
+
+[ext_resource type="Texture2D" uid="uid://ceyios1iqkq4s" path="res://Train/mesh/train_env/train_env_Wet gravel_BaseColor.jpg" id="1_0guw8"]
+[ext_resource type="Texture2D" uid="uid://cc2hdh7nuv3m" path="res://Train/mesh/train_env/train_env_Wet gravel_Roughness.png" id="2_sn1lc"]
+[ext_resource type="Texture2D" uid="uid://dm3lwdd8lrfvk" path="res://Train/mesh/train_env/train_env_Wet gravel_Normal.jpg" id="3_sqfuk"]
+
+[resource]
+resource_name = "Wet gravel with mud"
+albedo_texture = ExtResource("1_0guw8")
+metallic_texture = ExtResource("2_sn1lc")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_sn1lc")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 1.4
+normal_texture = ExtResource("3_sqfuk")

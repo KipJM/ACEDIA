@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://djl8dhb6m3l06"]
+
+[resource]
+resource_name = "carMat"
+albedo_color = Color(0.185981, 0.185981, 0.185981, 1)
+metallic = 0.31
+roughness = 0.7
