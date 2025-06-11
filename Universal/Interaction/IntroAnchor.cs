@@ -11,7 +11,7 @@ public partial class IntroAnchor : Node3D
 
     [ExportCategory("Transition")]
     [Export] private StringName _transitionAnimName;
-
+    
     [ExportCategory("DEBUG")] 
     [Export] private bool _skipAnim = false;
     

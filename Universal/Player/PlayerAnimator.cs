@@ -15,6 +15,7 @@ public partial class PlayerAnimator : Node3D
     [ExportGroup("Animation")]
     [Export] private AnimationTree _playerAnimationTree;
     [Export] public Node3D HeadBone;
+    [Export] public Node3D EyeBone;
     [Export] public Curve LerpCurve;
     [ExportGroup("Locomotion")]
     [Export] private CharacterBody3D _playerBody;

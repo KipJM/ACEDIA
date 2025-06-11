@@ -12,6 +12,7 @@ public partial class AnimationAnchor : Node3D
     [Export] private Node3D _bodyAnchor;
     [Export] private Node3D _headAnchor;
     [Export] private bool _useHeadBone;
+    [Export] private bool _isTrainAnim;
     [ExportGroup("Look")] 
     [Export] private float _vLimitMax;
     [Export] private float _vLimitMin;
@@ -38,10 +39,20 @@ public partial class AnimationAnchor : Node3D
     
     public void StartAnimationSequence(bool inverse = false)
     {
-        _animator.PrepareForAnimation(_bodyAnchor, 
-            _useHeadBone ? _animator.HeadBone : _headAnchor,
-            _playerState, _lerpDuration, () => OnPreparationFinished(inverse), 
-            _vLimitMax, _vLimitMin, _hLimit);
+        if (_isTrainAnim)
+        {
+            _animator.Player.Camera.SetCullMaskValue(20, true); // unhide player
+            _animator.PrepareForAnimation(_bodyAnchor, _animator.EyeBone,
+                _playerState, _lerpDuration, () => OnPreparationFinished(inverse), 
+                _vLimitMax, _vLimitMin, _hLimit);
+        }
+        else
+        {
+            _animator.PrepareForAnimation(_bodyAnchor, 
+                _useHeadBone ? _animator.HeadBone : _headAnchor,
+                _playerState, _lerpDuration, () => OnPreparationFinished(inverse), 
+                _vLimitMax, _vLimitMin, _hLimit);
+        }
     }
 
     // Auto callback from PlayerAnimator
