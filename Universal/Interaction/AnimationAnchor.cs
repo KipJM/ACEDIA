@@ -60,13 +60,28 @@ public partial class AnimationAnchor : Node3D
     {
         if (inverse)
         {
-            // Timer
-            Timing.RunCoroutine(Timer(_wait, _animator.UnlockPlayer).CancelWith(this));
+            if (_wait < 0.01)
+            {
+                _animator.UnlockPlayer();
+            }
+            else
+            {
+                // Timer
+                Timing.RunCoroutine(Timer(_wait, _animator.UnlockPlayer).CancelWith(this));
+            }
+            
         }
         else
         {
-            // Timer
-            Timing.RunCoroutine(Timer(_wait, RunAnimation).CancelWith(this));
+            if (_wait < 0.01)
+            {
+                RunAnimation();
+            }
+            else
+            {
+                // Timer
+                Timing.RunCoroutine(Timer(_wait, RunAnimation).CancelWith(this));
+            }
         }
         
     }

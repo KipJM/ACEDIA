@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ces4kis0hs5n5"
+path="res://.godot/imported/Mechanical, Click, Button, Small, Plastic 01 SND11350.wav-bb85093ecb95ac9d35e62d04f1f5e350.sample"
+
+[deps]
+
+source_file="res://Train/anim/sfx/Mechanical, Click, Button, Small, Plastic 01 SND11350.wav"
+dest_files=["res://.godot/imported/Mechanical, Click, Button, Small, Plastic 01 SND11350.wav-bb85093ecb95ac9d35e62d04f1f5e350.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

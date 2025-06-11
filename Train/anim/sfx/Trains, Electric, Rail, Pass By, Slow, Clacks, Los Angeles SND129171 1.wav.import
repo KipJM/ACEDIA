@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgs8ftftaty06"
+path="res://.godot/imported/Trains, Electric, Rail, Pass By, Slow, Clacks, Los Angeles SND129171 1.wav-2b519b1467ee59ed118145f3a2357d37.sample"
+
+[deps]
+
+source_file="res://Train/anim/sfx/Trains, Electric, Rail, Pass By, Slow, Clacks, Los Angeles SND129171 1.wav"
+dest_files=["res://.godot/imported/Trains, Electric, Rail, Pass By, Slow, Clacks, Los Angeles SND129171 1.wav-2b519b1467ee59ed118145f3a2357d37.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
