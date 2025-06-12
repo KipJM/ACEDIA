@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b15bhgg3imy2j"
+path="res://.godot/imported/Tools, Pneumatic, Potato Cannon, Air Burst, Perspective 1 SND64683.wav-aaeda4c1dc42dbe6af683cd28d920326.sample"
+
+[deps]
+
+source_file="res://Train/anim/sfx/Tools, Pneumatic, Potato Cannon, Air Burst, Perspective 1 SND64683.wav"
+dest_files=["res://.godot/imported/Tools, Pneumatic, Potato Cannon, Air Burst, Perspective 1 SND64683.wav-aaeda4c1dc42dbe6af683cd28d920326.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

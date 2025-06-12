@@ -1,10 +1,11 @@
-# Copyright (c) 2025 K
-# Inspired by https://github.com/RisingThumb/gd_planar_reflection
-# Please stayed tuned for an open-source project-independent solution
-# This script is NOT open-source.
-
 extends MeshInstance3D
-class_name PlanarReflector
+class_name Portal
+
+var environment: Environment
+var camera_attributes: CameraAttributes
+
+# From PlanarReflection
+# TODO: EDIT
 
 var reflect_camera: Camera3D
 var reflect_viewport: SubViewport
