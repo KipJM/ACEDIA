@@ -1,0 +1,5 @@
+[gd_resource type="CameraAttributesPractical" format=3 uid="uid://cya84s4un3o0m"]
+
+[resource]
+auto_exposure_enabled = true
+auto_exposure_min_sensitivity = 200.0
