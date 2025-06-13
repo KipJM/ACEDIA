@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bokrh3em2h1oq"]
+
+[ext_resource type="Shader" uid="uid://d01gs1m62dhf6" path="res://Chase/Portal/shdr_portal.tres" id="1_0jhgo"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0jhgo")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/reflection_mix = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/Emmission = 1.0

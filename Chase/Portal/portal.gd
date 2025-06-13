@@ -1,8 +1,8 @@
+# tbh I have no idea how this worked
 extends MeshInstance3D
 class_name Portal
 
 var environment: Environment
-var camera_attributes: CameraAttributes
 
 # From PlanarReflection
 # TODO: EDIT
@@ -14,6 +14,7 @@ var player: CharacterBody3D; # Preferred. Will automatically use camera of playe
 @export var camera_override: Camera3D = null # Camera override
 
 @export_group("Display")
+@export var portal_target: Node3D
 @export var resolution_scale: float = 1
 @export var far: float = 4000
 
@@ -22,7 +23,7 @@ var player: CharacterBody3D; # Preferred. Will automatically use camera of playe
 @export var debug_ui: TextureRect
 @export var debug_frustum_script: GDScript
 
-var _main_camera: Camera3D;
+var _main_camera: Camera3D
 
 var reflection_enabled:bool = false
 
@@ -30,30 +31,31 @@ var initialized:bool = false
 
 func _ready():
 	player = get_node("%Player")
-	
-# 	init_mirror();
-#	reflect_camera.clear_current() # wait for reflection_enabled
+
 	
 # Called when the node enters the scene tree for the first time.
 func init_mirror():	
 	update_camera()
 	
 	reflect_viewport = SubViewport.new();
-	add_child(reflect_viewport);
+	portal_target.add_child(reflect_viewport);
 	reflect_camera = Camera3D.new();
 	reflect_viewport.add_child(reflect_camera);
 	reflect_viewport.audio_listener_enable_3d = false
 	
 	reflect_camera.cull_mask = _main_camera.cull_mask;
 	
-	# Hidden for Mirror
-	reflect_camera.set_cull_mask_value(19, false)
+	# ONLY for portal
+	reflect_camera.set_cull_mask_value(18, true)
 	
-	# Hidden for Player
+	# HIDE for Mirror
+	reflect_camera.set_cull_mask_value(19, true)
+	
+	# ONLY for Mirror
 	reflect_camera.set_cull_mask_value(20, true)
 	
 	
-	reflect_camera.environment = _main_camera.environment
+	reflect_camera.environment = environment # Custom env
 	
 	reflect_camera.doppler_tracking = Camera3D.DOPPLER_TRACKING_DISABLED
 	reflect_camera.keep_aspect = Camera3D.KEEP_HEIGHT
@@ -74,7 +76,7 @@ func init_mirror():
 	
 	reflect_camera.make_current();
 	update_viewport()
-	print("Init mirror")
+	print("Init portal")
 
 func update_camera() -> void:
 	if (camera_override == null):
@@ -112,28 +114,18 @@ func _process(_delta: float) -> void:
 
 
 func update_reflect_cam() -> bool:
-	# Mirror position
-	var reflection_transform = global_transform;
+	# Target
+	var reflection_transform = portal_target.global_transform;
 	var plane_origin = reflection_transform.origin;
 	var plane_normal = reflection_transform.basis.z.normalized();
 	var reflection_plane = Plane(plane_normal, plane_origin.dot(plane_normal))
 	
-	var cam_pos = _main_camera.global_position
+	reflect_camera.global_position = portal_target.to_global(to_local(_main_camera.global_position))
+	reflect_camera.global_basis = portal_target.basis * global_basis.inverse() * _main_camera.global_basis
 	
-	var proj_pos := reflection_plane.project(cam_pos)
-	var mirrored_pos = cam_pos + (proj_pos - cam_pos) * 2.0
-	
-	# loc
-	reflect_camera.global_transform.origin = mirrored_pos;
-	
-	# rot
-	reflect_camera.global_transform.origin = mirrored_pos
-
-	reflect_camera.basis = Basis(
-		_main_camera.global_basis.x.normalized().bounce(reflection_plane.normal).normalized(),
-		_main_camera.global_basis.y.normalized().bounce(reflection_plane.normal).normalized(),
-		_main_camera.global_basis.z.normalized().bounce(reflection_plane.normal).normalized()
-	)
+# 	# DEBUG
+# 	reflect_camera.near = 0.01
+# 	return true
 	
 	#==  Dynamic near plane calculation a.k.a. Hell
 		
@@ -145,10 +137,10 @@ func update_reflect_cam() -> bool:
 	
 	# mesh points (for high accuracy dynamic near and frustum culling)
 	var mesh_size_half = Vector3(mesh.size.x/2, mesh.size.y/2, 0)
-	var mesh_bl = to_global(Vector3(-mesh_size_half.x, -mesh_size_half.y, 0)) # yaoi
-	var mesh_br = to_global(Vector3( mesh_size_half.x, -mesh_size_half.y, 0))
-	var mesh_tl = to_global(Vector3(-mesh_size_half.x,  mesh_size_half.y, 0))
-	var mesh_tr = to_global(Vector3( mesh_size_half.x,  mesh_size_half.y, 0))
+	var mesh_bl = portal_target.to_global(Vector3(-mesh_size_half.x, -mesh_size_half.y, 0)) # yaoi
+	var mesh_br = portal_target.to_global(Vector3( mesh_size_half.x, -mesh_size_half.y, 0))
+	var mesh_tl = portal_target.to_global(Vector3(-mesh_size_half.x,  mesh_size_half.y, 0))
+	var mesh_tr = portal_target.to_global(Vector3( mesh_size_half.x,  mesh_size_half.y, 0))
 	
 	# plane points (arghh I don't even) 
 	var point_bl = bottom_plane.intersects_segment(mesh_bl, mesh_tl)
@@ -184,7 +176,7 @@ func update_reflect_cam() -> bool:
 		return true;
 		
 	var check_point_in_mesh = func(point: Vector3):
-		var point_local = to_local(point)
+		var point_local = portal_target.to_local(point)
 		return ((-mesh_size_half.x < point_local.x && point_local.x < mesh_size_half.x) &&
 		(-mesh_size_half.y < point_local.y && point_local.y < mesh_size_half.y))
 	

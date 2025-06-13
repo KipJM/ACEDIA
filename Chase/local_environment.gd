@@ -41,8 +41,6 @@ func portal_setup() -> void:
 	# TODO
 	#if (environment != null):
 		#entry_portal.environment = environment
-	#if (camera_attributes != null):
-		#entry_portal.camera_attributes = camera_attributes
 	
 	# Set directional light to appear to portal only
 	directional_light.set_layer_mask_value(18, false)
