@@ -2,8 +2,6 @@
 extends MeshInstance3D
 class_name Portal
 
-var environment: Environment
-
 # From PlanarReflection
 # TODO: EDIT
 
@@ -12,6 +10,10 @@ var reflect_viewport: SubViewport
 
 var player: CharacterBody3D; # Preferred. Will automatically use camera of player is _main_camera is not set.
 @export var camera_override: Camera3D = null # Camera override
+
+@export_group("Environment")
+@export var environment: Environment
+@export var attributes: CameraAttributes
 
 @export_group("Display")
 @export var portal_target: Node3D
@@ -56,6 +58,7 @@ func init_mirror():
 	
 	
 	reflect_camera.environment = environment # Custom env
+	reflect_camera.attributes = attributes
 	
 	reflect_camera.doppler_tracking = Camera3D.DOPPLER_TRACKING_DISABLED
 	reflect_camera.keep_aspect = Camera3D.KEEP_HEIGHT
