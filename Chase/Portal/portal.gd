@@ -2,18 +2,20 @@
 extends MeshInstance3D
 class_name Portal
 
+signal portal_seen
+
 # From PlanarReflection
 # TODO: EDIT
 
 var reflect_camera: Camera3D
 var reflect_viewport: SubViewport
 
+@export_group("Rendering")
 var player: CharacterBody3D; # Preferred. Will automatically use camera of player is _main_camera is not set.
 @export var camera_override: Camera3D = null # Camera override
 
-@export_group("Environment")
-@export var environment: Environment
-@export var attributes: CameraAttributes
+var environment: Environment
+var attributes: CameraAttributes
 
 @export_group("Display")
 @export var portal_target: Node3D
@@ -47,15 +49,17 @@ func init_mirror():
 	
 	reflect_camera.cull_mask = _main_camera.cull_mask;
 	
+	# HIDE for portal
+	reflect_camera.set_cull_mask_value(17, false)
+	
 	# ONLY for portal
 	reflect_camera.set_cull_mask_value(18, true)
 	
 	# HIDE for Mirror
-	reflect_camera.set_cull_mask_value(19, true)
+	reflect_camera.set_cull_mask_value(19, false)
 	
 	# ONLY for Mirror
 	reflect_camera.set_cull_mask_value(20, true)
-	
 	
 	reflect_camera.environment = environment # Custom env
 	reflect_camera.attributes = attributes
@@ -80,6 +84,11 @@ func init_mirror():
 	reflect_camera.make_current();
 	update_viewport()
 	print("Init portal")
+
+func set_environment(env: Environment) -> void:
+	environment = env
+	if (initialized):
+		reflect_camera.environment = env
 
 func update_camera() -> void:
 	if (camera_override == null):
@@ -248,6 +257,8 @@ func enable_mirror() -> void:
 	if (!reflection_enabled): # Enable cam
 		print("Seen!")
 		reflection_enabled = true;
+	
+	portal_seen.emit()
 	
 func disable_mirror() -> void:
 	if(reflection_enabled): 

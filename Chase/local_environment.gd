@@ -6,14 +6,16 @@ class_name LocalEnvironment
 
 @export_group("Rendering")
 @export var environment: Environment
-@export var camera_attributes: CameraAttributes
+# @export var camera_attributes: CameraAttributes
 @export var directional_light: DirectionalLight3D
 
 @export_group("Reflectors")
+@export var preload_mirrors: Array[PlanarReflector]
 @export var mirrors: Array[PlanarReflector]
 
 @export_group("Portal")
-@export var entry_portal: Portal #TODO
+@export var no_portal: bool
+@export var entry_portal: Portal
 
 var seen = false;
 
@@ -26,6 +28,9 @@ func body_exited(_body: Node3D) -> void:
 func _ready() -> void:
 	portal_setup()
 	prehide_area()
+	
+	if (no_portal):
+		portal_seen()
 
 
 func prehide_area() -> void:
@@ -38,37 +43,49 @@ func show_area() -> void:
 
 
 func portal_setup() -> void:
-	# TODO
-	#if (environment != null):
-		#entry_portal.environment = environment
+	if (no_portal):
+		return
+	
+	entry_portal.set_environment(environment)
+	entry_portal.portal_seen.connect(portal_seen)
 	
 	# Set directional light to appear to portal only
-	directional_light.set_layer_mask_value(18, false)
-	directional_light.set_layer_mask_value(1, true)
+	directional_light.set_layer_mask_value(18, true)
+	directional_light.set_layer_mask_value(1, false)
 
 func portal_seen() -> void:
 	if (seen): # one-shot
 		return
 	seen = true
 	
+	if (!no_portal):
+		entry_portal.set_environment(environment)
+	
 	# Resume scene
 	show_area()
+	
+	# Preload mirrors to prevent lag spike
+	# WARNING: Don't overload VRAM!
+	for mir in preload_mirrors:
+		mir.init_mirror()
 
 func player_entered() -> void:
-	if (environment != null):
-		%GlobalEnv.environment = environment
-	if (camera_attributes != null):
-		%GlobalEnv.camera_attributes = camera_attributes
+	%GlobalEnv.environment = environment
+# 	if (camera_attributes != null):
+# 		%GlobalEnv.camera_attributes = camera_attributes
 	
-	# Set directional light to appear to player only
-	directional_light.set_layer_mask_value(18, false)
-	directional_light.set_layer_mask_value(1, true)
+	if (!no_portal):
+		print("UHHH")
+		# Set directional light to appear to player only
+		directional_light.set_layer_mask_value(18, false)
+		directional_light.set_layer_mask_value(1, true)
 	
 	# Resume scene (failsafe)
 	show_area()
 	
-	# dispose entry portal
-	#entry_portal.destroy_mirror() # TODO
+	if (!no_portal):
+		# dispose entry portal
+		entry_portal.destroy_mirror()
 
 func player_exited() -> void:
 	# destroy everything :)

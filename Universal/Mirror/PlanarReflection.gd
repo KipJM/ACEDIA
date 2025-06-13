@@ -74,6 +74,7 @@ func init_mirror():
 	reflect_camera.make_current();
 	update_viewport()
 	print("Init mirror")
+	initialized = true;
 
 func update_camera() -> void:
 	if (camera_override == null):
@@ -247,7 +248,6 @@ func update_reflect_cam() -> bool:
 func enable_mirror() -> void:
 	if (!initialized):
 		init_mirror()
-		initialized = true;
 	
 	if (!reflection_enabled): # Enable cam
 		print("Seen!")

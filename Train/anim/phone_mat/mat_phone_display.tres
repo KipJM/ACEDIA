@@ -4,4 +4,4 @@
 resource_name = "Material.001"
 albedo_color = Color(0, 0, 0, 1)
 emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 10.0
+emission_energy_multiplier = 15.0
