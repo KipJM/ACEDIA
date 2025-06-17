@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://77vt0nr7teiu"]
+
+[resource]
+resource_name = "Reflective_SPECIAL"
+albedo_color = Color(0.762678, 0.762678, 0.762678, 1)
+metallic = 0.995575
+roughness = 0.0

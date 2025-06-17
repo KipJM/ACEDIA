@@ -1,0 +1,142 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://h8r8fu4evau5"
+path="res://.godot/imported/level_hall.glb-cf579ae3101d8144773be3784df782a9.scn"
+
+[deps]
+
+source_file="res://Chase/level/level_hall.glb"
+dest_files=["res://.godot/imported/level_hall.glb-cf579ae3101d8144773be3784df782a9.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"AR3DMat PBR Gypsum Ceiling Board": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/AR3DMat PBR Gypsum Ceiling Board.tres"
+},
+"Blue painted metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Blue painted metal.tres"
+},
+"Concrete Wall": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Concrete Wall.tres"
+},
+"Frozen white metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Frozen white metal.tres"
+},
+"Furniture wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Furniture wood.tres"
+},
+"Grey Plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Grey Plastic.tres"
+},
+"Grey Plastic.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Grey Plastic.001.tres"
+},
+"Linoleum old": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Linoleum old.tres"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Metal.tres"
+},
+"Painted Plaster Wall.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Painted Plaster Wall.001.tres"
+},
+"Plastic white material": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Plastic white material.tres"
+},
+"Reflective": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Reflective.tres"
+},
+"Reflective_SPECIAL": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Reflective_SPECIAL.tres"
+},
+"Scratched wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Scratched wood.tres"
+},
+"White office wall": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/White office wall.tres"
+},
+"Wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/level/material/Wood.tres"
+}
+},
+"nodes": {
+"PATH:Ceiling": {
+"generate/occluder": 1
+},
+"PATH:FCeiling": {
+"generate/occluder": 1
+},
+"PATH:FWall_1": {
+"generate/occluder": 1
+},
+"PATH:Floor": {
+"generate/occluder": 1
+},
+"PATH:Fwall_2": {
+"generate/occluder": 1
+},
+"PATH:Fwall_3": {
+"generate/occluder": 1
+},
+"PATH:Fwall_4": {
+"generate/occluder": 1
+},
+"PATH:Wall_B": {
+"generate/occluder": 1
+},
+"PATH:Wall_F": {
+"generate/occluder": 1
+},
+"PATH:Wall_L": {
+"generate/occluder": 1
+},
+"PATH:Wall_R": {
+"generate/occluder": 1
+},
+"PATH:Wall_R_ext": {
+"generate/occluder": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

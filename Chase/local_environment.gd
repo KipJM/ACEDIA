@@ -52,6 +52,7 @@ func portal_setup() -> void:
 	# Set directional light to appear to portal only
 	directional_light.set_layer_mask_value(18, true)
 	directional_light.set_layer_mask_value(1, false)
+	directional_light.set_layer_mask_value(17, false)
 
 func portal_seen() -> void:
 	if (seen): # one-shot
@@ -78,7 +79,7 @@ func player_entered() -> void:
 		print("UHHH")
 		# Set directional light to appear to player only
 		directional_light.set_layer_mask_value(18, false)
-		directional_light.set_layer_mask_value(1, true)
+		directional_light.set_layer_mask_value(17, true)
 	
 	# Resume scene (failsafe)
 	show_area()

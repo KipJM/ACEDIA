@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1pg4aq0o5t35"]
+
+[resource]
+resource_name = "Reflective"
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.04

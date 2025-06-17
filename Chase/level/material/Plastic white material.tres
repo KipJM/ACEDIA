@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://6xd3r8evawt5"]
+
+[ext_resource type="Texture2D" uid="uid://dpg2w3o7fvt2s" path="res://Chase/level/level_hall_plastic07_diffuse.jpg" id="1_7i2f6"]
+[ext_resource type="Texture2D" uid="uid://d2ybcc3ht80sr" path="res://Chase/level/level_hall_plastic_metallic-plastic_glossiness.png" id="2_hb3ff"]
+[ext_resource type="Texture2D" uid="uid://cyplhexxs5yxd" path="res://Chase/level/level_hall_plastic_normal_opengl.jpg" id="3_byws2"]
+
+[resource]
+resource_name = "Plastic white material"
+albedo_texture = ExtResource("1_7i2f6")
+metallic = 1.0
+metallic_texture = ExtResource("2_hb3ff")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_hb3ff")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_byws2")

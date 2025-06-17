@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cdt40fuip4g26"]
+
+[ext_resource type="Texture2D" uid="uid://bt36jg4uncbr6" path="res://Chase/level/level_hall_painted_plaster_wall_03_roughness.png" id="2_33f8f"]
+[ext_resource type="Texture2D" uid="uid://bufe4p2wxaos6" path="res://Chase/level/level_hall_painted_plaster_wall_03_normal.jpg" id="3_njyed"]
+
+[resource]
+resource_name = "Painted Plaster Wall.001"
+albedo_color = Color(0.82, 0.7872, 0.697, 1)
+metallic_texture = ExtResource("2_33f8f")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_33f8f")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_njyed")

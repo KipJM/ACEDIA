@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://buspr44wx0uxs"]
+
+[ext_resource type="Texture2D" uid="uid://1yb30khdgwa3" path="res://Chase/level/level_hall_White office wall roughness.png" id="1_7lad1"]
+[ext_resource type="Texture2D" uid="uid://ic2lyxdrf2e6" path="res://Chase/level/level_hall_White office wall normals.jpg" id="2_o0qxb"]
+
+[resource]
+resource_name = "White office wall"
+albedo_color = Color(0.7812, 0.82334, 0.84, 1)
+metallic_texture = ExtResource("1_7lad1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_7lad1")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_o0qxb")

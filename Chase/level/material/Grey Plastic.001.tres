@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bexgov8he0655"]
+
+[ext_resource type="Texture2D" uid="uid://d2ybcc3ht80sr" path="res://Chase/level/level_hall_plastic_metallic-plastic_glossiness.png" id="1_kmg0m"]
+[ext_resource type="Texture2D" uid="uid://cyplhexxs5yxd" path="res://Chase/level/level_hall_plastic_normal_opengl.jpg" id="2_w40or"]
+
+[resource]
+resource_name = "Grey Plastic.001"
+albedo_color = Color(0.544818, 0.544818, 0.544818, 1)
+metallic = 1.0
+metallic_texture = ExtResource("1_kmg0m")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_kmg0m")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_w40or")

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cw42i4dpj58bd"]
+
+[ext_resource type="Texture2D" uid="uid://bpjasvw8djwyc" path="res://Chase/level/level_hall_AR3Dmat_Gypsum_Board_4X8FT_8K_Diffuse.jpg" id="1_j8m1d"]
+[ext_resource type="Texture2D" uid="uid://bkkuxi8kfxoq1" path="res://Chase/level/level_hall_AR3Dmat_Gypsum_Board_4X8FT_8K_Metalness.png" id="2_q6oca"]
+[ext_resource type="Texture2D" uid="uid://dc463dc16tiur" path="res://Chase/level/level_hall_AR3Dmat_Gypsum_Board_4X8FT_8K_Normal.jpg" id="3_hxu1j"]
+
+[resource]
+resource_name = "AR3DMat PBR Gypsum Ceiling Board"
+albedo_color = Color(0.84, 0.83272, 0.8064, 1)
+albedo_texture = ExtResource("1_j8m1d")
+metallic = 1.0
+metallic_texture = ExtResource("2_q6oca")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_q6oca")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_hxu1j")
