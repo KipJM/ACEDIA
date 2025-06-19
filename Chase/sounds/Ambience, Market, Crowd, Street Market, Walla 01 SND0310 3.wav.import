@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bb0cw6oa44ijh"
+path="res://.godot/imported/Ambience, Market, Crowd, Street Market, Walla 01 SND0310 3.wav-804500a109bd97b17037580c927bb766.sample"
+
+[deps]
+
+source_file="res://Chase/sounds/Ambience, Market, Crowd, Street Market, Walla 01 SND0310 3.wav"
+dest_files=["res://.godot/imported/Ambience, Market, Crowd, Street Market, Walla 01 SND0310 3.wav-804500a109bd97b17037580c927bb766.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
