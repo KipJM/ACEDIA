@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4jqqpqhharqc"
+path="res://.godot/imported/Ambience, School, High School, Hallway, Distant Big Crowd, Walla 02 SND47647.wav-378575b24a1c134ce447bd042071fe2f.sample"
+
+[deps]
+
+source_file="res://Chase/sounds/Ambience, School, High School, Hallway, Distant Big Crowd, Walla 02 SND47647.wav"
+dest_files=["res://.godot/imported/Ambience, School, High School, Hallway, Distant Big Crowd, Walla 02 SND47647.wav-378575b24a1c134ce447bd042071fe2f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

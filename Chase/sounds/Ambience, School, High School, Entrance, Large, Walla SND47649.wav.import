@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://croqlfy8gdqkb"
+path="res://.godot/imported/Ambience, School, High School, Entrance, Large, Walla SND47649.wav-23df5f8efdd3360e7e7c31c3e80664aa.sample"
+
+[deps]
+
+source_file="res://Chase/sounds/Ambience, School, High School, Entrance, Large, Walla SND47649.wav"
+dest_files=["res://.godot/imported/Ambience, School, High School, Entrance, Large, Walla SND47649.wav-23df5f8efdd3360e7e7c31c3e80664aa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

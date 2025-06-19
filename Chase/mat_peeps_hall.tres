@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://3rgoux8486v6"]
+
+[ext_resource type="Shader" uid="uid://11xb830uaw04" path="res://Universal/Person/shdr_peeps.tres" id="1_xoifm"]
+
+[sub_resource type="Gradient" id="Gradient_3egf4"]
+offsets = PackedFloat32Array(0, 0.396476, 0.726872, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.419549, 0.385346, 0.411815, 1, 0.3465, 0.3603, 0.45, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c8d0e"]
+gradient = SubResource("Gradient_3egf4")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xoifm")
+shader_parameter/speed_mult = 3.599
+shader_parameter/mag_distinct = 0.135
+shader_parameter/mag_organic = 0.178
+shader_parameter/mix_min = -1.0
+shader_parameter/mix_max = 1.0
+shader_parameter/albedo_gradient = SubResource("GradientTexture1D_c8d0e")
+shader_parameter/fresnel_color = Color(0.674815, 0.674815, 0.674815, 1)
+shader_parameter/fresnel_power = 1.42
+shader_parameter/metallic = 0.57
+shader_parameter/roughness = 0.0
+shader_parameter/specular = 0.87
+shader_parameter/emission_color = Color(0, 0, 0, 1)
+shader_parameter/emission_strength = 0.162
