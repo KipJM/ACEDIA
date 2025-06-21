@@ -25,5 +25,10 @@ public partial class InteractionReceiver : Area3D
             Listening = false;
         EmitSignalInteraction();
     }
+
+    public void InteractProxy(Node3D _)
+    {
+        Interact();
+    }
     
 }

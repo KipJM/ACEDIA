@@ -71,27 +71,29 @@ public partial class PlayerMove : Node3D
         
         if (_direction != Vector3.Zero)
         {
-            if (Player.PlayerState != PlayerState.ForwardOnly || (-Player.Body.GlobalBasis.Z).Dot(_direction)>=0)
+            Player.Body.Velocity = Player.Body.Velocity with
             {
-                Player.Body.Velocity = Player.Body.Velocity with
-                {
-                    X = _direction.X * CurrentSpeed,
-                    Z = _direction.Z * CurrentSpeed
-                };
-            }
-            else
-            {
-                // Only allow moving forward
-                var localDirection = Player.Body.GetGlobalBasis().Inverse() * (_direction * CurrentSpeed);
-                localDirection.Z = 0;
-                var finalDirection = Player.Body.GlobalBasis * localDirection;
-                
-                Player.Body.Velocity = Player.Body.Velocity with
-                {
-                    X = finalDirection.X,
-                    Z = finalDirection.Z
-                };
-            }
+                X = _direction.X * CurrentSpeed,
+                Z = _direction.Z * CurrentSpeed
+            };
+            
+            // if (Player.PlayerState != PlayerState.ForwardOnly || (-Player.Body.GlobalBasis.Z).Dot(_direction)>=0)
+            // {
+            //     
+            // }
+            // else
+            // {
+            //     // Only allow moving forward
+            //     var localDirection = Player.Body.GetGlobalBasis().Inverse() * (_direction * CurrentSpeed);
+            //     localDirection.Z = 0;
+            //     var finalDirection = Player.Body.GlobalBasis * localDirection;
+            //     
+            //     Player.Body.Velocity = Player.Body.Velocity with
+            //     {
+            //         X = finalDirection.X,
+            //         Z = finalDirection.Z
+            //     };
+            // }
         }
         else
         {

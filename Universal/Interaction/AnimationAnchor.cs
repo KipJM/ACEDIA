@@ -28,6 +28,12 @@ public partial class AnimationAnchor : Node3D
     [ExportGroup("Additional Animation")] 
     [Export] private AnimationPlayer _externalPlayer;
     [Export] private StringName _externalAnimName;
+
+    [ExportGroup("Bag Sibling")] 
+    [Export] private bool _isFovReset;
+    [Export] private bool _isBagSiblingIntro;
+    [Export] private Node3D _lookAtAnchor;
+    [Export] private float _fov;
     
     private PlayerAnimator _animator;
 
@@ -39,7 +45,19 @@ public partial class AnimationAnchor : Node3D
     
     public void StartAnimationSequence(bool inverse = false)
     {
-        if (_isTrainAnim)
+        if (_isFovReset)
+        {
+            _animator.PrepareForAnimation(_bodyAnchor, _animator.EyeBone,
+                _playerState, _lerpDuration, () => OnPreparationFinished(true), 
+                _vLimitMax, _vLimitMin, _hLimit, true);
+        }
+        else if (_isBagSiblingIntro)
+        {
+            _animator.PrepareForAnimation(_bodyAnchor, _animator.EyeBone,
+                _playerState, _lerpDuration, () => OnPreparationFinished(false), 
+                _vLimitMax, _vLimitMin, _hLimit, false, true, _lookAtAnchor, _fov);
+        }
+        else if (_isTrainAnim)
         {
             _animator.Player.Camera.SetCullMaskValue(20, true); // unhide player
             _animator.PrepareForAnimation(_bodyAnchor, _animator.EyeBone,
@@ -95,7 +113,6 @@ public partial class AnimationAnchor : Node3D
         {
             _animator.GotoAnimation(_animationName);
         }
-        
         EmitSignalAnimationStart();
     }
     
