@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxmu4pfsyt1h3"]
+
+[resource]
+resource_name = "White"
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+metallic = 0.16
+roughness = 0.388
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.65

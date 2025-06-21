@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://kd1h8od4hmah"]
+
+[resource]
+resource_name = "Pink"
+albedo_color = Color(0.960782, 0.666667, 0.72549, 1)
+metallic = 0.3
+roughness = 0.39
+emission_enabled = true
+emission = Color(0.960782, 0.666667, 0.72549, 1)
+emission_energy_multiplier = 0.45
+clearcoat_roughness = 0.8
+backlight = Color(0.802474, 0.629781, 0.612779, 1)

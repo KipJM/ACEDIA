@@ -36,7 +36,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/post_processing/plugin.cfg")
+enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/jigglebones/plugin.cfg", "res://addons/post_processing/plugin.cfg")
 
 [global_group]
 

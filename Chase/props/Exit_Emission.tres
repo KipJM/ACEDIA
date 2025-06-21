@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dirqoi825luir"]
+
+[resource]
+resource_name = "Exit_Emission"
+albedo_color = Color(0, 0.817416, 0.392565, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.220788, 0.968944, 0.483003, 1)
+backlight_enabled = true
+backlight = Color(0.851769, 0.851769, 0.851769, 1)
