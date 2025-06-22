@@ -47,13 +47,13 @@ public partial class AnimationAnchor : Node3D
     {
         if (_isFovReset)
         {
-            _animator.PrepareForAnimation(_bodyAnchor, _animator.EyeBone,
+            _animator.PrepareForAnimation(_bodyAnchor, _useHeadBone ? _animator.HeadBone : _headAnchor,
                 _playerState, _lerpDuration, () => OnPreparationFinished(true), 
                 _vLimitMax, _vLimitMin, _hLimit, true);
         }
         else if (_isBagSiblingIntro)
         {
-            _animator.PrepareForAnimation(_bodyAnchor, _animator.EyeBone,
+            _animator.PrepareForAnimation(_bodyAnchor, _useHeadBone ? _animator.HeadBone : _headAnchor,
                 _playerState, _lerpDuration, () => OnPreparationFinished(false), 
                 _vLimitMax, _vLimitMin, _hLimit, false, true, _lookAtAnchor, _fov);
         }

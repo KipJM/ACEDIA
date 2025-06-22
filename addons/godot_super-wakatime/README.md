@@ -11,43 +11,43 @@
 <!-- HEADER -->
 <br />
 <div align="center">
-    <a href="https://github.com/BudzioT/Godot_Super-Wakatime">
-        <img src="https://cloud-bo1ln2br1-hack-club-bot.vercel.app/0godotwaka22.png"  alt="Godot Wakatime"/>
-    </a>
-    <h3 align="center"> Godot Super Wakatime </h3>
-    <p align="center">
-        Tool to measure time spent in loved by many people game engine - Godot
-        <br />
-        Officially approved to use in High Seas event created by Hack Club
-        <br />
-        <br />
-        <a href="">Get from Asset Lib</a>
-        ·
-        <a href="https://youtu.be/rqAc-YdVXyM">View Demo</a>
-        ·
-        <a href="https://github.com/BudzioT/Godot_Super-Wakatime/issues/new">Report Bug / Request Feature</a>
-    </p>
+	<a href="https://github.com/BudzioT/Godot_Super-Wakatime">
+		<img src="https://cloud-bo1ln2br1-hack-club-bot.vercel.app/0godotwaka22.png"  alt="Godot Wakatime"/>
+	</a>
+	<h3 align="center"> Godot Super Wakatime </h3>
+	<p align="center">
+		Tool to measure time spent in loved by many people game engine - Godot
+		<br />
+		Officially approved to use in High Seas event created by Hack Club
+		<br />
+		<br />
+		<a href="">Get from Asset Lib</a>
+		·
+		<a href="https://youtu.be/rqAc-YdVXyM">View Demo</a>
+		·
+		<a href="https://github.com/BudzioT/Godot_Super-Wakatime/issues/new">Report Bug / Request Feature</a>
+	</p>
 </div>
 
 <!-- CONTENTS -->
 <details>
-    <summary>Table of Contents</summary>
-    <ol>
-        <li>
-            <a href="#about">About The Project</a>
-            <ul>
-                <li><a href="#built-with">Built Using</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#getting-started">Getting Started</a>
-            <ul>
-                <li><a href="#installation">Installation</a></li>
-            </ul>
-        </li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#license">License</a></li>
-    </ol>
+	<summary>Table of Contents</summary>
+	<ol>
+		<li>
+			<a href="#about">About The Project</a>
+			<ul>
+				<li><a href="#built-with">Built Using</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#getting-started">Getting Started</a>
+			<ul>
+				<li><a href="#installation">Installation</a></li>
+			</ul>
+		</li>
+		<li><a href="#usage">Usage</a></li>
+		<li><a href="#license">License</a></li>
+	</ol>
 </details>
 
 
@@ -93,9 +93,9 @@ How to install and use this software? It's easy!
 You can either download it from asset lib (will provide a link, once it gets accepted)
 <br />Or you can manually install it, here's how to do it!
 1. Clone the repository
-    ```sh
-    git clone https://github.com/BudzioT/Godot_Super-Wakatime.git
-    ```
+	```sh
+	git clone https://github.com/BudzioT/Godot_Super-Wakatime.git
+	```
 2. Go into your project
 3. Insert the entire `./addons` folder into your project `res://` directory
 
@@ -107,18 +107,18 @@ Don't know how to use this plugin? Here are the steps:
 1. Turn on the plugin in your plugins. In your `Project -> Project Settings -> Plugins -> `Click the `Enable` checkbox near this plugin
 2. If prompted for API key, provide it from Wakatime website
 3. if there is an issue with it, please manually create `~/.wakatime.cfg` file with these contents:
-    ```sh
-    [settings]
-    api_key=xxxx
-    ```
-    Where xxxx is your api key
+	```sh
+	[settings]
+	api_key=xxxx
+	```
+	Where xxxx is your api key
 <br /><br />
 If you are coming from High Seas used this:
-    ```sh
-    [settings]
-    api_url = https://waka.hackclub.com/api
-    api_key=xxxx
-    ```
+	```sh
+	[settings]
+	api_url = https://waka.hackclub.com/api
+	api_key=xxxx
+	```
 4. Wakatime CLI should have been installed automatically along with Ouch! Decompression library
 5. Work on your project! You should see your results on either Wakatime or Hackatime!
 6. You can also see your time at the bottom panel

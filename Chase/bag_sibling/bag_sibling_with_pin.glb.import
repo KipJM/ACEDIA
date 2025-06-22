@@ -35,9 +35,9 @@ import_script/path=""
 _subresources={
 "animations": {
 "sibling_walk_001": {
-"save_to_file/enabled": false,
+"save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "",
+"save_to_file/path": "res://Chase/bag_sibling/anim_bag_sibling_walk.res",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

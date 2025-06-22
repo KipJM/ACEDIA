@@ -20,6 +20,8 @@ func _play_natural(samples: Array[AudioStream]):
 	
 func play_naturally_a():
 	_play_natural(sounds_a)
+	InputHelper.rumble_small()
 	
 func play_naturally_b():
 	_play_natural(sounds_b)
+	InputHelper.rumble_medium()

@@ -35,14 +35,13 @@ public partial class PlayerAnimator : Node3D
     
     public bool IsAnimationControlActive = false;
     public bool IsAnimationTransitioning = false;
-    
+
     public override void _Process(double delta)
     {
         base._Process(delta);
-        
+
         if (IsAnimationControlActive)
         {
-            // GD.Print("UHHHH FUCK");
             UpdateAnchors();
         }
         else
@@ -68,13 +67,9 @@ public partial class PlayerAnimator : Node3D
         Player.Body.GlobalTransform = _bodyTransform.GlobalTransform;
         Player.AnimatedHead.GlobalTransform = _headTransform.GlobalTransform;
 
-        if (_lookAtTransform != null)
-        {
-            Player.AnimatedHead.GlobalTransform = Player.AnimatedHead.GlobalTransform.LookingAt(_lookAtTransform.GlobalPosition, Vector3.Up);
-        }
-
         if (_isSiblingIntro)
         {
+            Player.AnimatedHead.GlobalTransform = Player.AnimatedHead.GlobalTransform.LookingAt(_lookAtTransform.GlobalPosition, Vector3.Up);
             Player.Camera.SetFov(_fov);
         }
     }
@@ -107,6 +102,7 @@ public partial class PlayerAnimator : Node3D
         if (resetFov)
         {
             _fov = _fovMemory;
+            _lookAtTransform = null;
         }
 
         if (isSibling)
