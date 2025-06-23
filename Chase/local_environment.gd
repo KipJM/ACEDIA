@@ -19,11 +19,17 @@ class_name LocalEnvironment
 
 var seen = false;
 
+signal environment_entered
+signal environment_seen
+signal environment_exited
+
 func body_entered(_body: Node3D) -> void:
 	player_entered()
+	environment_entered.emit()
 
 func body_exited(_body: Node3D) -> void:
 	player_exited()
+	environment_exited.emit()
 
 func _ready() -> void:
 	portal_setup()
@@ -69,6 +75,8 @@ func portal_seen() -> void:
 	# WARNING: Don't overload VRAM!
 	for mir in preload_mirrors:
 		mir.init_mirror()
+	
+	environment_seen.emit()
 
 func player_entered() -> void:
 	%GlobalEnv.environment = environment
