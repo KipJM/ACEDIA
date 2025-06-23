@@ -21,6 +21,9 @@ public partial class InteractionReceiver : Area3D
 
     public void Interact()
     {
+        if (Listening == false)
+            return;
+        
         if (_oneShot)
             Listening = false;
         EmitSignalInteraction();
