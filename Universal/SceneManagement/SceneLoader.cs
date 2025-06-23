@@ -51,7 +51,11 @@ public partial class SceneLoader : Node
         {
             Array arr = [];
             ResourceLoader.LoadThreadedGetStatus(_loadingPath, arr);
-            GD.Print("progress: ", arr[0]);
+            // GD.Print("progress: ", arr[0]);
+            if ((float)arr[0] < 0.999)
+            {
+                GD.Print("progress: ", arr[0]);
+            }
         }
     }
 }
