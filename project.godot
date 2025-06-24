@@ -112,6 +112,7 @@ pause={
 
 [layer_names]
 
+3d_render/layer_2="Occlusion"
 3d_render/layer_17="HideToPortal"
 3d_render/layer_18="PortalOnly"
 3d_render/layer_19="HideToMirror"
