@@ -1,0 +1,39 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://cjhkhnvcmtj1x"]
+
+[ext_resource type="Texture2D" uid="uid://cw8p13l4lauwe" path="res://Office/Sky/overcast_yellow.exr" id="1_s4lbf"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_klufg"]
+panorama = ExtResource("1_s4lbf")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_h8hxr"]
+sky_material = SubResource("PanoramaSkyMaterial_klufg")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_h8hxr")
+sky_rotation = Vector3(0, 2.07694, 0)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+tonemap_white = 1.5
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.0836, 0.08668, 0.11, 1)
+fog_light_energy = 0.83
+fog_density = 0.235
+fog_aerial_perspective = 0.011
+fog_sky_affect = 0.888
+fog_height = 8.54
+fog_height_density = -0.0626
+fog_depth_curve = 0.732042
+fog_depth_begin = 50.0
+fog_depth_end = 55.0
+adjustment_enabled = true
+adjustment_brightness = 0.97
+adjustment_contrast = 1.19
+adjustment_saturation = 0.9

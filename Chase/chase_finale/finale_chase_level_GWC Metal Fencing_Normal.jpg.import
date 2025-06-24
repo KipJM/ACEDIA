@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cyykdcj1gn0nq"
+path.s3tc="res://.godot/imported/finale_chase_level_GWC Metal Fencing_Normal.jpg-2da8276e0636ebd92526c4e9280629d2.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1e0c2e03209503dce3ae4f22d40f3c87"
+}
+
+[deps]
+
+source_file="res://Chase/chase_finale/finale_chase_level_GWC Metal Fencing_Normal.jpg"
+dest_files=["res://.godot/imported/finale_chase_level_GWC Metal Fencing_Normal.jpg-2da8276e0636ebd92526c4e9280629d2.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Chase/chase_finale/finale_chase_level_GWC Metal Fencing_Normal.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,0 +1,69 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://heasrjh0svyk"
+path="res://.godot/imported/finale_chase_level.glb-ac02ef210a0e1617f06941ec94f9ca7e.scn"
+
+[deps]
+
+source_file="res://Chase/chase_finale/finale_chase_level.glb"
+dest_files=["res://.godot/imported/finale_chase_level.glb-ac02ef210a0e1617f06941ec94f9ca7e.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Hurricane Wire Fence": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/chase_finale/materials/Hurricane Wire Fence.tres"
+},
+"glow": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/chase_finale/materials/glow.tres"
+},
+"ground": {
+"use_external/enabled": true,
+"use_external/path": "uid://qyqn1mw231pc"
+},
+"mat_env_buildings": {
+"use_external/enabled": true,
+"use_external/path": "uid://ctjtk3erivhq1"
+},
+"red": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/chase_finale/materials/red.tres"
+},
+"window": {
+"use_external/enabled": true,
+"use_external/path": "res://Chase/chase_finale/materials/window.tres"
+}
+},
+"nodes": {
+"PATH:ground": {
+"generate/occluder": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
