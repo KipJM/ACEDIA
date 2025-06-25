@@ -42,6 +42,11 @@ public partial class AnimationAnchor : Node3D
         base._Ready();
         _animator = ((Player.Player)GetNode(new NodePath("%Player"))).Animator;
     }
+
+    public void StartAnimProxy()
+    {
+        StartAnimationSequence();
+    }
     
     public void StartAnimationSequence(bool inverse = false)
     {

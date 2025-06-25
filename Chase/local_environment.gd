@@ -24,6 +24,7 @@ signal environment_seen
 signal environment_exited
 
 func body_entered(_body: Node3D) -> void:
+	print("entered")
 	player_entered()
 	environment_entered.emit()
 
@@ -37,7 +38,7 @@ func _ready() -> void:
 	
 	if (no_portal):
 		portal_seen()
-
+	print("ready")
 
 func prehide_area() -> void:
 	area_root.process_mode = Node.PROCESS_MODE_DISABLED

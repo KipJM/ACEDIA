@@ -271,9 +271,10 @@ func disable_mirror() -> void:
 
 func destroy_mirror() -> void:
 	disable_mirror()
-	print("DESTROY MIRROR")
-	reflect_camera.queue_free()
-	reflect_viewport.queue_free()
+	if (initialized):
+		print("DESTROY MIRROR")
+		reflect_camera.queue_free()	
+		reflect_viewport.queue_free()
 	
 	
 
