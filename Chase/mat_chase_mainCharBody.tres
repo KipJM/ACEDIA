@@ -16,4 +16,4 @@ shader_parameter/metallic = 5.286
 shader_parameter/roughness = 0.575
 shader_parameter/specular = 0.961
 shader_parameter/emission_color = Color(0.4895, 0.63635, 0.89, 1)
-shader_parameter/emission_strength = 1.495
+shader_parameter/emission_strength = 1.6
