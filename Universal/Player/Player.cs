@@ -88,4 +88,10 @@ public partial class Player : CharacterBody3D
 		InputHelper.StopRumble(int.Parse(InputHelper.LastKnownJoypadIndex));
 		MovementState = MovementState.Walking;
 	}
+
+	public void UnhideToCamera()
+	{
+		// Add player mesh back to layer 1
+		PlayerMesh.SetLayerMaskValue(1, true);
+	}
 }
