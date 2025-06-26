@@ -24,6 +24,8 @@ InputHelper="*res://addons/input_helper/input_helper.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/extend_to_title=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 

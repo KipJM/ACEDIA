@@ -2,25 +2,71 @@ using Godot;
 
 namespace Pins.Universal;
 
-public partial class Pause : RichTextLabel
+public partial class Pause : Control
 {
-    [Export]
-    private RichTextLabel _pausedLabel;
+    private bool _paused;
+
+    [Export] 
+    private Control _exitGamePanel;
+    
+    
     public override void _Ready()
     {
         // TODO: Modularize
         Input.SetMouseMode(Input.MouseModeEnum.Captured);
-        _pausedLabel.Visible = false;
+        Visible = false;
+        _paused = false;
     }
     
     public override void _Input(InputEvent @event)
     {
         if (Input.IsActionJustPressed("pause"))
         {
-            Input.SetMouseMode(Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured);
-            GetTree().Paused = !GetTree().Paused;
-            _pausedLabel.Visible = !_pausedLabel.Visible;
+            TogglePause();
         }
     }
 
+    public void TogglePause()
+    {
+        if (_paused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
+        }
+    }
+
+    public void PauseGame()
+    {
+        Input.SetMouseMode(Input.MouseModeEnum.Visible);
+
+        Visible = true;
+        GetTree().Paused = true;
+        _paused = true;
+        
+        HideExitPanel();
+    }
+
+    public void ResumeGame()
+    {
+        Input.SetMouseMode(Input.MouseModeEnum.Captured);
+        
+        Visible = false;
+        GetTree().Paused = false;
+        _paused = false;
+        
+        HideExitPanel();
+    }
+
+    public void ShowExitPanel()
+    {
+        _exitGamePanel.Visible = true;
+    }
+
+    public void HideExitPanel()
+    {
+        _exitGamePanel.Visible = false;
+    }
 }
