@@ -8,6 +8,9 @@ public partial class Pause : Control
 
     [Export] 
     private Control _exitGamePanel;
+
+    [Export]
+    private Control _settingsPanel;
     
     
     public override void _Ready()
@@ -16,6 +19,9 @@ public partial class Pause : Control
         Input.SetMouseMode(Input.MouseModeEnum.Captured);
         Visible = false;
         _paused = false;
+        
+        HideExitPanel();
+        HideSettingsPanel();
     }
     
     public override void _Input(InputEvent @event)
@@ -46,7 +52,6 @@ public partial class Pause : Control
         GetTree().Paused = true;
         _paused = true;
         
-        HideExitPanel();
     }
 
     public void ResumeGame()
@@ -60,13 +65,23 @@ public partial class Pause : Control
         HideExitPanel();
     }
 
-    public void ShowExitPanel()
-    {
-        _exitGamePanel.Visible = true;
-    }
-
     public void HideExitPanel()
     {
         _exitGamePanel.Visible = false;
+    }
+
+    public void ToggleExitPanel()
+    {
+        _exitGamePanel.Visible = !_exitGamePanel.Visible;
+    }
+
+    public void HideSettingsPanel()
+    {
+        _settingsPanel.Visible = false;
+    }
+    
+    public void ToggleSettingsPanel()
+    {
+        _settingsPanel.Visible = !_settingsPanel.Visible;
     }
 }

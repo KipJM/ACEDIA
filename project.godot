@@ -18,6 +18,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 [autoload]
 
 InputHelper="*res://addons/input_helper/input_helper.gd"
+GraphicsSettings="*res://Universal/UI/graphics_settings.gd"
 
 [display]
 
