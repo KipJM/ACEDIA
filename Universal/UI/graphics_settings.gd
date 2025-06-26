@@ -27,7 +27,7 @@ func _ready() -> void:
 	msaa_conf     = 2
 	taa_conf      = 0
 	fxaa_conf     = 0
-	window_conf   = 1
+	window_conf   = 2
 	shadow_res    = 3
 	shadow_filter = 2
 	lod_conf      = 2
@@ -104,11 +104,11 @@ func change_window_mode(index: int) -> void:
 	# To change between winow, fullscreen and other window modes,
 	# set the root mode to one of the options of Window.MODE_*.
 	# Other modes are maximized and minimized.
-	if index == 0: # Disabled (default)
+	if index == 0: # Disabled
 		get_tree().root.set_mode(Window.MODE_WINDOWED)
 	elif index == 1: # Fullscreen
 		get_tree().root.set_mode(Window.MODE_FULLSCREEN)
-	elif index == 2: # Exclusive Fullscreen
+	elif index == 2: # Exclusive Fullscreen (default)
 		get_tree().root.set_mode(Window.MODE_EXCLUSIVE_FULLSCREEN)
 
 
@@ -208,15 +208,17 @@ func change_sdfgi(index: int) -> void:
 func change_mirror(index: int) -> void:
 	mirror_conf = index
 	if index == 0:
-		mirror_scale = 0.6
+		mirror_scale = 0.4
 	if index == 1:
-		mirror_scale = 0.75
+		mirror_scale = 0.65
 	if index == 2:
 		mirror_scale = 0.8
 	if index == 3:
 		mirror_scale = 0.9
 	if index == 4:
 		mirror_scale = 1.0
+	if index == 5:
+		mirror_scale = 1.1
 		
 
 func update_everything() -> void:

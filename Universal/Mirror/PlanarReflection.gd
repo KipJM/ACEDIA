@@ -1,7 +1,7 @@
 # Copyright (c) 2025 K
 # Inspired by https://github.com/RisingThumb/gd_planar_reflection
-# Please stayed tuned for an open-source project-independent solution
-# This script is NOT open-source.
+# Please stayed tuned for a separate repository for planar reflection plugin.
+# I advise you not to use this script as of now (It's very bad...)
 
 extends MeshInstance3D
 class_name PlanarReflector
@@ -86,7 +86,7 @@ func update_camera() -> void:
 func update_viewport() -> void:
 	update_camera()
 	
-	reflect_viewport.size = get_viewport().size * resolution_scale
+	reflect_viewport.size = get_viewport().size * resolution_scale * GraphicsSettings.mirror_scale
 	
 	reflect_camera.fov = _main_camera.fov
 	reflect_camera.far = far # Arbitrary

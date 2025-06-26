@@ -1,4 +1,5 @@
 # tbh I have no idea how this worked
+# Copyright (c) 2025 K
 extends MeshInstance3D
 class_name Portal
 
