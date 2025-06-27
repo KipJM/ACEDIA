@@ -11,6 +11,9 @@ public partial class Pause : Control
 
     [Export]
     private Control _settingsPanel;
+
+    [Export] 
+    private Button _resumeButton;
     
     
     public override void _Ready()
@@ -52,6 +55,7 @@ public partial class Pause : Control
         GetTree().Paused = true;
         _paused = true;
         
+        _resumeButton.GrabFocus();
     }
 
     public void ResumeGame()
@@ -61,6 +65,9 @@ public partial class Pause : Control
         Visible = false;
         GetTree().Paused = false;
         _paused = false;
+        
+        
+        _resumeButton.ReleaseFocus();
         
         HideExitPanel();
     }
