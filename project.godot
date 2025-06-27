@@ -19,6 +19,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 
 InputHelper="*res://addons/input_helper/input_helper.gd"
 GraphicsSettings="*res://Universal/UI/graphics_settings.gd"
+SceneReset="*res://Universal/SceneManagement/SceneReset.cs"
 
 [display]
 

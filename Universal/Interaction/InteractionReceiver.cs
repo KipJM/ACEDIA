@@ -2,7 +2,7 @@ using Godot;
 
 namespace Pins.Universal.Interaction;
 
-public partial class InteractionReceiver : Area3D
+public partial class InteractionReceiver : Node
 {
     public bool Listening;
     

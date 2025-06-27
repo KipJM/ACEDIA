@@ -6,7 +6,7 @@ namespace Pins.Universal.SceneManagement;
 public partial class SceneLoader : Node
 {
     [Export] private string _scenePath;
-    [Export] private Node _rootNode;
+    // [Export] private Node _rootNode; //Unused
 
     private string _loadingPath = null;
     
@@ -33,6 +33,10 @@ public partial class SceneLoader : Node
         var scene = RetrieveScene(scenePath);
         
         // Switch
+        // if (SceneReset.MenuBack)
+        // {
+        //     GetTree().ReloadCurrentScene();
+        // }
         GetTree().ChangeSceneToPacked(scene);
         GD.Print("CHANGE SCN");
     }
@@ -44,6 +48,28 @@ public partial class SceneLoader : Node
         return (PackedScene)ResourceLoader.LoadThreadedGet(scenePath);
     }
 
+    
+    public void SwitchSceneMenu()
+    {
+        // if (SceneReset.MenuBack)
+        // {
+        //     GetTree().ReloadCurrentScene();
+        // }
+        GetTree().Paused = false;
+        GetTree().ChangeSceneToFile(_scenePath);
+    }
+
+    // public override void _Ready()
+    // {
+    //     base._Ready();
+    //     if (SceneReset.ResetScene)
+    //     {
+    //         GD.Print("RESET");
+    //         SceneReset.ResetScene = false;
+    //         
+    //     }
+    // }
+    //
     public override void _Process(double delta)
     {
         base._Process(delta);

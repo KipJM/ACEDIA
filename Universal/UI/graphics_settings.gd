@@ -20,6 +20,7 @@ var mirror_conf: int
 
 var mirror_scale: float 
 
+# Not graphics settings but too lazy to make another autoload
 var first_start: bool
 
 func _ready() -> void:
