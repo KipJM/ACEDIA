@@ -20,6 +20,8 @@ var mirror_conf: int
 
 var mirror_scale: float 
 
+var first_start: bool
+
 func _ready() -> void:
 	filter_conf   = 0
 	fsr_conf      = 0.2
@@ -35,6 +37,7 @@ func _ready() -> void:
 	ssil_conf     = 2
 	sdfgi_conf    = 1
 	mirror_conf   = 4
+	first_start = true
 
 func change_filter(index: int) -> void:
 	filter_conf = index
