@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crwjvit1csrix"]
+
+[resource]
+resource_name = "Pink"
+albedo_color = Color(0.960782, 0.666667, 0.72549, 1)
+metallic = 0.088
+roughness = 0.276

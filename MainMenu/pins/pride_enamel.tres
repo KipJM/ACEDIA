@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://qnsl7sm80mhy"]
+
+[ext_resource type="Texture2D" uid="uid://bd0mr0m5okobq" path="res://MainMenu/pins/pride_palette.png" id="1_5eeho"]
+
+[resource]
+resource_name = "pride_enamel"
+albedo_texture = ExtResource("1_5eeho")
+metallic = 0.196078
+roughness = 0.0980392
+texture_filter = 2

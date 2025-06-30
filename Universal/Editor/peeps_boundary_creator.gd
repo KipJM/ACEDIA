@@ -40,4 +40,6 @@ func rotate_rand() -> void:
 	
 	for child in get_children():
 		child = child as Node3D
-		child.rotate_y(rng.randf() * 2 * PI)
+		child.rotate_z(rng.randf() * 2 * PI)
+		child.rotate_y((rng.randf()-0.5) * PI)
+		child.rotate_x((rng.randf()-0.5) * PI)
