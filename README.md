@@ -1,7 +1,9 @@
 # ACEDIA Source Repository
-This repository contains the entirety of the Godot Project of [ACEDIA](https://kip.gay/acedia).
-ACEDIA is a short game for those who are queer.
-For the game, please see the itch.io page: [Link](https://kip.gay/acedia)  
+![ACEDIA Banner Image](https://res.cloudinary.com/dn3o5dlna/image/upload/v1750506502/banners/acedia_banner.png)
+This repository contains the entirety of the Godot Project of [ACEDIA](https://kip.gay/acedia).  
+ACEDIA is a short game for those who are queer.  
+For the game binaries, please see the itch.io page: [Link](https://kip.gay/acedia)  
+For the original soundtrack, please see https://kip.gay/acedia/soundtrack .
 
 ## Planar Reflection
 This game features a custom planar reflection system, I plan to repackage this system in ACEDIA into a standalone open-source Godot plugin in the future.
