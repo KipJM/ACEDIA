@@ -8,6 +8,11 @@ For the original soundtrack, please see https://kip.gay/acedia/soundtrack .
 ## Planar Reflection
 This game features a custom planar reflection system, I plan to repackage this system in ACEDIA into a standalone open-source Godot plugin in the future.
 
+## Editing
+This project is built using Godot 4.4.1 mono. **YOU NEED THE MONO VERSION, THIS PROJECT USES BOTH GDScript AND C#.**  
+You should be able to run the project immediately. All scenes are categorized into their own directory, Universal/ contains assets and code that is designed to be referenced by multiple scenes.
+Testing/ scenes may not all work because of underlying code changes, but it still should give a pretty good idea on how each component of this project works.
+
 ## License
 The author (Kip) retains the copyright for the code and assets of this project. The code is open-source, and all original assets are in the creative commons.
 - The **code** of this project is licensed under the 3-Clause BSD License (see LICENSE in repo)  
