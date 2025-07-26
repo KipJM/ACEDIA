@@ -14,8 +14,8 @@ You should be able to run the project immediately. All scenes are categorized in
 Testing/ scenes may not all work because of underlying code changes, but it still should give a pretty good idea on how each component of this project works.
 
 ## License
-The author (Kip) retains the copyright for the code and assets of this project. The code is open-source, and all original assets are in the creative commons.
-- The **code** of this project is licensed under the 3-Clause BSD License (see LICENSE in repo)  
+I (Kip) am the author of ACEDIA and all of its original assets and code. The code is open-source, and all original assets are in the creative commons.
+- The **code** of this project is licensed under the 3-Clause BSD License (see LICENSE in repo root)  
 - Original assets (any files in the repo not in the syntax of GDScript or C# and is not copyrighted by others) are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 - Original assets include, but is not limited to files with the string "(c) 2025 K" or "(c) 2025 Kip" within its metadata, and all Godot-specific files outside of the addons/ directory.
 - **While the Godot project is open-source and CC, it is strongly discouraged to redistribute the binaries found on itch.io as is. Instead, please consider linking to the itch.io page or https://kip.gay/acedia instead. Thank you!**
