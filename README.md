@@ -6,7 +6,7 @@ For the game binaries, please see the itch.io page: [Link](https://kip.gay/acedi
 For the original soundtrack, please see https://kip.gay/acedia/soundtrack .
 
 ## Planar Reflection
-This game features a custom planar reflection system, I plan to repackage this system in ACEDIA into a standalone open-source Godot plugin in the future.
+This game features a custom planar reflection system. I have converted it into a standalone Godot plugin, available [here](https://github.com/KipJM/smart_planar_reflector) or on the Godot Asset Library, for you to use in your own projects.
 
 ## Editing
 This project is built using Godot 4.4.1 mono. **YOU NEED THE MONO VERSION, THIS PROJECT USES BOTH GDScript AND C#.**  
