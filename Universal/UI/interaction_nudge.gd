@@ -13,8 +13,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	#if not permanent_hidden:
-	set_ui(ui_base.Player.IsInteractionHovering)
-
+	if ui_base.Player != null:
+		set_ui(ui_base.Player.IsInteractionHovering)
+	else:
+		set_ui(false)
 #func on_interaction() -> void:
 	#permanent_hidden = true
 	#set_ui(false)

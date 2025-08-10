@@ -5,8 +5,6 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_0jhgo")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/reflection_mix = 1.0
-shader_parameter/metallic = 0.0
-shader_parameter/roughness = 1.0
-shader_parameter/Emmission = 1.0
+shader_parameter/reflection_strength = 0.0
+shader_parameter/reflection_saturation = 0.0
+shader_parameter/reflection_value = 0.0

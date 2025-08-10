@@ -1,3 +1,1844 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f92c4b6258e8eedeb32b94b0629b70534324d8bebebb34c5a94e85a94975d21
-size 84205
+[gd_scene load_steps=40 format=3 uid="uid://csgna41pu5ysc"]
+
+[ext_resource type="Texture2D" uid="uid://clit6ju4wmwyb" path="res://Testing/General/Prototype Textures/Dark/texture_05.png" id="1_22ssy"]
+[ext_resource type="Texture2D" uid="uid://cw8p13l4lauwe" path="res://Office/Sky/overcast_yellow.exr" id="1_vedyb"]
+[ext_resource type="Texture2D" uid="uid://d1887tmkvdipe" path="res://Testing/General/Prototype Textures/Dark/texture_03.png" id="1_ycbak"]
+[ext_resource type="Texture2D" uid="uid://v2mains6gm02" path="res://Testing/General/Prototype Textures/Orange/texture_01.png" id="3_myvlc"]
+[ext_resource type="Texture2D" uid="uid://csa20gf6ejhn4" path="res://Testing/General/Prototype Textures/Green/texture_08.png" id="4_i4u3q"]
+[ext_resource type="PackedScene" uid="uid://cb1f8qgcy8i0r" path="res://Testing/General/obj_proto_human.tscn" id="5_u6sqo"]
+[ext_resource type="Texture2D" uid="uid://daj85o6m0hddh" path="res://Testing/General/Prototype Textures/Dark/texture_09.png" id="6_ftq2n"]
+[ext_resource type="PackedScene" uid="uid://dntfypmlygggs" path="res://Testing/General/gizmo.glb" id="7_ahqxy"]
+[ext_resource type="PackedScene" uid="uid://8tsney3penc4" path="res://Universal/Squeeze/squeeze_area.tscn" id="7_pkqdl"]
+[ext_resource type="PackedScene" uid="uid://c2xkngj3xhbx5" path="res://Universal/Player/nd_player.tscn" id="8_gcjfx"]
+[ext_resource type="Script" uid="uid://ckfvmj3xwfd2o" path="res://Universal/Pause.cs" id="9_18s2f"]
+[ext_resource type="Script" uid="uid://mf0mv5y6w7sh" path="res://Testing/General/fps_counter.gd" id="11_4ljhf"]
+[ext_resource type="Script" uid="uid://bxb1pp3ckr4i8" path="res://Testing/CharControllerTest/VariableDebugText.cs" id="12_6gnux"]
+[ext_resource type="PackedScene" uid="uid://o3nh71h1l7sv" path="res://Universal/Mirror/planar_reflection.tscn" id="14_hkua3"]
+[ext_resource type="Script" uid="uid://b5km3necxdbpx" path="res://Testing/CharControllerTest/debug_input_method.gd" id="15_qtghn"]
+[ext_resource type="Shader" uid="uid://bhv2rntudqd2g" path="res://Testing/Mirror/mirror_debug.tres" id="15_vskkv"]
+[ext_resource type="Texture2D" uid="uid://b1d620iigspgm" path="res://Testing/General/demo_normal.png" id="16_ahqxy"]
+[ext_resource type="Texture2D" uid="uid://bqvj1j3435el0" path="res://Universal/UI/InputIcons/PC/keyboard.svg" id="16_tbwgc"]
+[ext_resource type="Texture2D" uid="uid://bk28fxymb32et" path="res://Universal/UI/InputIcons/PS/controller_playstation5.svg" id="17_p6v03"]
+[ext_resource type="Script" uid="uid://bmuiy0t48h0e2" path="res://Testing/General/camera_frustum_debug.gd" id="18_bemqi"]
+[ext_resource type="Texture2D" uid="uid://blyu8vkcnawmt" path="res://Universal/UI/InputIcons/Xbox/controller_xboxone.svg" id="18_pbrdx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ftq2n"]
+panorama = ExtResource("1_vedyb")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_6enyd"]
+sky_material = SubResource("PanoramaSkyMaterial_ftq2n")
+
+[sub_resource type="Environment" id="Environment_52tsu"]
+background_mode = 2
+sky = SubResource("Sky_6enyd")
+tonemap_mode = 2
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.186567, 0.147597, 0.136217, 1)
+fog_density = 0.001
+fog_aerial_perspective = 0.586
+fog_sky_affect = 0.0
+fog_height = -20.54
+fog_height_density = 0.0144
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tobn4"]
+auto_exposure_enabled = true
+auto_exposure_min_sensitivity = 200.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhw5g"]
+albedo_texture = ExtResource("4_i4u3q")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm48s"]
+albedo_texture = ExtResource("1_22ssy")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d5o0"]
+albedo_texture = ExtResource("1_ycbak")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b0t6"]
+albedo_texture = ExtResource("3_myvlc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lrgo"]
+albedo_texture = ExtResource("6_ftq2n")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qtghn"]
+size = Vector3(2, 2, 7.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkua3"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.4
+
+[sub_resource type="TorusMesh" id="TorusMesh_bmaa2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vskkv"]
+size = Vector2(24, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkd1t"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("15_vskkv")
+shader_parameter/UV_scale = Vector2(10.667, 1.333)
+shader_parameter/UV_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(0.16, 0.16, 0.16, 0.12549)
+shader_parameter/normal_texture = ExtResource("16_ahqxy")
+shader_parameter/distort_strength = 0.175
+shader_parameter/reflection_strength = 1.0
+shader_parameter/relfection_mix = 0.655
+shader_parameter/metallic = 0.145
+shader_parameter/roughness = 0.01
+shader_parameter/Emmission = 0.0
+shader_parameter/normal_strength = 0.33
+
+[sub_resource type="QuadMesh" id="QuadMesh_p6v03"]
+size = Vector2(1.092, 0.692)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7s5f"]
+render_priority = 0
+shader = ExtResource("15_vskkv")
+shader_parameter/UV_scale = Vector2(1, 1)
+shader_parameter/UV_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/distort_strength = 0.0
+shader_parameter/reflection_strength = 1.0
+shader_parameter/relfection_mix = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/Emmission = 0.0
+shader_parameter/normal_strength = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_dtrfa"]
+size = Vector2(0.7, 1.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftq2n"]
+render_priority = 0
+shader = ExtResource("15_vskkv")
+shader_parameter/UV_scale = Vector2(1, 1)
+shader_parameter/UV_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(0.35, 0.35, 0.35, 0.490196)
+shader_parameter/distort_strength = 0.0
+shader_parameter/reflection_strength = 1.0
+shader_parameter/relfection_mix = 0.935
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 0.459
+shader_parameter/Emmission = 0.0
+shader_parameter/normal_strength = 1.0
+
+[node name="scn_CharControllerTest" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_52tsu")
+camera_attributes = SubResource("CameraAttributesPractical_tobn4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.707107, -0.612372, 0.353553, -9.83849e-09, 0.5, 0.866025, -0.707106, -0.612373, 0.353554, 0, 7, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Level" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="GEO_Cubicle" type="CSGCombiner3D" parent="Level"]
+material_override = SubResource("StandardMaterial3D_fhw5g")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -19.375)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0)
+size = Vector3(0.65, 0.1, 1.75)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -21.225)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D2"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -23.075)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D3"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -24.925)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D4"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D4"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -6.275)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D5"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D5"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -8.125)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D6"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D6"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -9.975)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D7"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D7"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175, 0.85, -11.825)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D8"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D8"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -19.375)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0)
+size = Vector3(0.65, 0.1, 1.75)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D9"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D9"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -21.225)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D10"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D10"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -23.075)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D11"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D11"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -24.925)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D12"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D12"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -6.275)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D13"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D13"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -8.125)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D14"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D14"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -9.975)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D15"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D15"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.175, 0.85, -11.825)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D16"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D16"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.175, 0.85, -19.375)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0)
+size = Vector3(0.65, 0.1, 1.75)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D17"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D17"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.325, 0.85, -21.225)
+size = Vector3(1.95, 1.7, 1.85)
+
+[node name="CSGBox3D49" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275002, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D50" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199997, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D51" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D18"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.489998, 0.4475, 0.142496)
+size = Vector3(0.35, 0.8, 1.25)
+
+[node name="CSGBox3D52" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D18"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.100002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.175, 0.85, -23.075)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D19"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D19"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.175, 0.85, -24.925)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D20"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D20"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.175, 0.85, -6.275)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D21"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D21"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.175, 0.85, -8.125)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D22"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D22"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.175, 0.85, -9.975)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D23"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D23"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.175, 0.85, -11.825)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D24"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D24"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -19.375)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0)
+size = Vector3(0.65, 0.1, 1.75)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D25"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D25"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -21.225)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D26"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D26"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -23.075)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D27"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D27"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -24.925)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D28"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D28"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -6.275)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D29"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D29"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -8.125)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D30"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D30"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -9.975)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D31"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D31"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.175, 0.85, -11.825)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D32"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D32"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -19.375)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0)
+size = Vector3(0.65, 0.1, 1.75)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D33"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D33"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -21.225)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D34"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D34"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -23.075)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D35"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D35"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -24.925)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D36"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D36"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -6.275)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D37"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D37"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -8.125)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D38"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D38"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -9.975)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D39"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D39"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 0.85, -11.825)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D40"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D40"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -19.375)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0)
+size = Vector3(0.65, 0.1, 1.75)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D41"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D41"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -21.225)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D42"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D42"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -23.075)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D43"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D43"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -24.925)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D44"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D44"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D45" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -6.275)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D45"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D45"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -8.125)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D46"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D46"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D47" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -9.975)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D47"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D47"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="CSGBox3D48" type="CSGBox3D" parent="Level/GEO_Cubicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.175, 0.85, -11.825)
+size = Vector3(1.65, 1.7, 1.85)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125001, 0.025, 0)
+operation = 2
+size = Vector3(1.7, 1.8, 1.65)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349999, -0.05, 0.0499992)
+size = Vector3(0.65, 0.1, 1.85)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D48"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.549999, 0.4475, 0.142496)
+size = Vector3(0.15, 0.8, 1.25)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Cubicle/CSGBox3D48"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0500002, -0.05, -0.675003)
+size = Vector3(0.45, 0.1, 1.3)
+
+[node name="GEO_Ground" type="CSGCombiner3D" parent="Level"]
+material_override = SubResource("StandardMaterial3D_rm48s")
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="Level/GEO_Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -22.75, 0)
+material_override = SubResource("StandardMaterial3D_3d5o0")
+size = Vector3(10, 45.5, 5.5)
+
+[node name="Floor2" type="CSGBox3D" parent="Level/GEO_Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.125, -22.75, -10.525)
+material_override = SubResource("StandardMaterial3D_3d5o0")
+size = Vector3(6.75, 45.5, 37.05)
+
+[node name="Floor4" type="CSGBox3D" parent="Level/GEO_Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 11.4864, 0)
+material_override = SubResource("StandardMaterial3D_3d5o0")
+size = Vector3(10, 16, 5.5)
+
+[node name="Floor5" type="CSGBox3D" parent="Level/GEO_Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.125, 11.4864, -10.525)
+material_override = SubResource("StandardMaterial3D_3d5o0")
+size = Vector3(6.75, 16, 37.05)
+
+[node name="Floor3" type="CSGBox3D" parent="Level/GEO_Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, -0.5, -15)
+material_override = SubResource("StandardMaterial3D_3d5o0")
+size = Vector3(21, 1, 25)
+
+[node name="GEO_Wall" type="CSGCombiner3D" parent="Level"]
+material_override = SubResource("StandardMaterial3D_0b0t6")
+use_collision = true
+
+[node name="BR SideWall" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 1.5, -2.5)
+size = Vector3(4.75, 3, 0.5)
+
+[node name="BR DoorWall" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 1.5, 2.5)
+size = Vector3(5.75, 3, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Wall/BR DoorWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.125, -0.5, 0)
+operation = 2
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Wall/BR DoorWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.125, -0.5, 0)
+size = Vector3(1, 2, 0.2)
+
+[node name="BR OuterWall" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 1.75, -0.25)
+size = Vector3(5, 3.5, 4)
+
+[node name="OuterWallA" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 1.5, -15.625)
+size = Vector3(26.75, 3, 0.5)
+
+[node name="OuterWallA2" type="CSGBox3D" parent="Level/GEO_Wall/OuterWallA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.05, 0)
+operation = 2
+size = Vector3(23, 2.4, 1)
+
+[node name="OuterWallB" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 1.5, 4.75)
+size = Vector3(5, 3, 0.5)
+
+[node name="BR Ceil" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 3, -1.19209e-07)
+size = Vector3(5.5, 1, 5.75)
+
+[node name="Ceiling" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.625, 3.25, -10.9)
+size = Vector3(36.3, 0.5, 5.75)
+
+[node name="Ceiling2" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 3.25, -16.8)
+size = Vector3(24.5, 0.5, 20.5)
+
+[node name="RaceEntrance" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.625, 1.5, 7)
+size = Vector3(5.75, 3, 0.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Wall/RaceEntrance"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.125, -0.5, 4.76837e-07)
+operation = 2
+size = Vector3(2.5, 2, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Level/GEO_Wall/RaceEntrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.4, 0)
+size = Vector3(3.5, 2.2, 0.2)
+
+[node name="RaceExit" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.625, 1.5, -28.8)
+size = Vector3(5.75, 3, 0.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Wall/RaceExit"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.125, -0.5, 0)
+operation = 2
+size = Vector3(1.5, 2, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Level/GEO_Wall/RaceExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+size = Vector3(2.5, 2.2, 0.2)
+
+[node name="InnerWall" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.25, 1.5, -11.025)
+size = Vector3(36, 3, 0.5)
+
+[node name="InnerWall2" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18, 1.5, -5.025)
+size = Vector3(19.5, 3, 0.5)
+
+[node name="InnerWall3" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18, 1.5, -26.025)
+size = Vector3(19.5, 3, 0.5)
+
+[node name="InnerWall4" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -27.5, 1.5, -15.525)
+size = Vector3(21.5, 3, 0.5)
+
+[node name="InnerHole" type="CSGBox3D" parent="Level/GEO_Wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.25, 1.25, -15.525)
+operation = 2
+size = Vector3(4, 2.5, 1)
+
+[node name="Table" type="CSGCylinder3D" parent="Level/GEO_Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.4, 0.95)
+height = 0.8
+sides = 32
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Level/GEO_Wall/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+radius = 0.8
+height = 0.1
+sides = 32
+
+[node name="GEO_Buildings" type="CSGCombiner3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -7.5)
+material_override = SubResource("StandardMaterial3D_0lrgo")
+
+[node name="Floor" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.5, -45.5, 10.25)
+size = Vector3(201.5, 1, 316)
+
+[node name="DisplayBuilding" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, 46.0597, -6.25, -49.6109)
+size = Vector3(20, 90.5, 25.5)
+
+[node name="DisplayBuilding2" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(3.8245e-08, 0, -1, 0, 1, 0, 1, 0, 3.8245e-08, 72.0597, -17.75, 28.3891)
+size = Vector3(20, 67.5, 25.5)
+
+[node name="DisplayBuilding3" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 19.3635, -27.75, -60.6488)
+size = Vector3(9.5, 47.5, 25.5)
+
+[node name="DisplayBuilding22" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 38.8635, -21, -130.087)
+size = Vector3(23.5, 61, 25.5)
+
+[node name="DisplayBuilding23" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 20.2223, -26.75, -115.904)
+size = Vector3(14, 49.5, 16)
+
+[node name="DisplayBuilding24" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 55.6001, -26.75, 76.0664)
+size = Vector3(21.5, 49.5, 16)
+
+[node name="DisplayBuilding25" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 121.688, -29, -12.2042)
+size = Vector3(31, 57, 16)
+
+[node name="DisplayBuilding26" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 276.688, -41.75, -68.2042)
+size = Vector3(31, 104.5, 16)
+
+[node name="DisplayBuilding63" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 301.779, -60.75, -34.9542)
+size = Vector3(31, 104.5, 16)
+
+[node name="DisplayBuilding64" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 440.279, -79.25, -70.9542)
+size = Vector3(31, 104.5, 16)
+
+[node name="DisplayBuilding61" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 199.859, -45, -237.902)
+size = Vector3(31, 98, 16)
+
+[node name="DisplayBuilding27" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 251.132, -50.25, -489.875)
+size = Vector3(25, 116.5, 42.5)
+
+[node name="DisplayBuilding62" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 28.8176, -50.25, -424.816)
+size = Vector3(25, 116.5, 42.5)
+
+[node name="DisplayBuilding28" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 107.802, -49.25, -173.329)
+size = Vector3(31, 89.5, 25.5)
+
+[node name="DisplayBuilding41" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 239.961, 94.25, -353.954)
+size = Vector3(31, 419.5, 54)
+
+[node name="DisplayBuilding42" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 374.961, 76.5, -129.954)
+size = Vector3(31, 384, 54)
+
+[node name="DisplayBuilding43" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 520.961, -20.5, 64.5458)
+size = Vector3(31, 384, 54)
+
+[node name="DisplayBuilding44" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 360.112, 100, 276.895)
+size = Vector3(31, 625, 96)
+
+[node name="DisplayBuilding8" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -3.93142, -30.5, -57.2934)
+size = Vector3(9.5, 42, 25.5)
+
+[node name="DisplayBuilding9" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -11.1907, -35, -46.7764)
+size = Vector3(18, 33, 14.5)
+
+[node name="DisplayBuilding7" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 105.677, -31.25, -40.3932)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding14" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 73.6091, -37.5, 2.0892)
+size = Vector3(20.5, 51, 11.5)
+
+[node name="DisplayBuilding15" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 133.962, -22.5, 28.504)
+size = Vector3(24.5, 72, 11.5)
+
+[node name="DisplayBuilding16" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 60.768, -38, 17.2285)
+size = Vector3(13, 20, 11.5)
+
+[node name="DisplayBuilding17" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 111.818, -46.25, 26.8268)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding45" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 262.937, -36.5, 47.2039)
+size = Vector3(31, 57, 16)
+
+[node name="DisplayBuilding46" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 237.677, -38.75, 16.6068)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding47" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 221.38, -39.25, -10.3862)
+size = Vector3(20.5, 68.5, 11.5)
+
+[node name="DisplayBuilding48" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 204.818, -53.75, 29.3268)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding49" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, 318.57, -31, 43.8572)
+size = Vector3(31, 57, 16)
+
+[node name="DisplayBuilding50" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 266.754, -33.25, 3.87898)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding51" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 217.159, -39.5, 78.2171)
+size = Vector3(20.5, 51, 11.5)
+
+[node name="DisplayBuilding52" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.258819, 0, 0.965925, 0, 1, 0, -0.965925, 0, -0.258819, 168.612, -48.25, -1.47459)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding53" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 188.34, -43.5, -129.972)
+size = Vector3(31, 57, 16)
+
+[node name="DisplayBuilding54" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 178.339, -45.75, -65.6369)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding55" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.965925, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965925, 206.787, -60.75, -86.4281)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding56" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(1, 0, -2.78181e-08, 0, 1, 0, 2.78181e-08, 0, 1, 165.835, -49.25, -32.9525)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding57" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(1, 0, -7.25216e-08, 0, 1, 0, 7.25216e-08, 0, 1, 262.018, -55.25, -69.1823)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding18" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 88.952, -47, -39.4305)
+size = Vector3(20.5, 51, 11.5)
+
+[node name="DisplayBuilding19" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 134.015, -58.5, 47.1306)
+size = Vector3(24.5, 72, 11.5)
+
+[node name="DisplayBuilding20" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 90.2318, -40.5, -25.5984)
+size = Vector3(13, 20, 11.5)
+
+[node name="DisplayBuilding37" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 0.4, 0, 0.965926, 0, 0.258819, 33.8633, -35.2, -4.72589)
+size = Vector3(15.5, 57, 16)
+
+[node name="DisplayBuilding38" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-1, 0, 2.98023e-08, 0, 0.4, 0, -2.98023e-08, 0, -1, -17.6462, -47.95, 148.488)
+size = Vector3(31, 104.5, 16)
+
+[node name="DisplayBuilding39" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 0.4, 0, 0.5, 0, -0.866025, 82.1973, -37.45, 6.48516)
+size = Vector3(20.5, 54.5, 15.5)
+
+[node name="DisplayBuilding40" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-1, 0, 5.96046e-08, 0, 0.4, 0, -5.96046e-08, 0, -1, 94.7574, -53.2, -4.60788)
+size = Vector3(20.5, 51, 11.5)
+
+[node name="DisplayBuilding10" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 86.6773, -36, -102.643)
+size = Vector3(15, 45, 30.5)
+
+[node name="DisplayBuilding21" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 89.558, -42, 27.951)
+size = Vector3(15, 33, 23.5)
+
+[node name="DisplayBuilding4" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 55.6211, -27.75, 39.8929)
+size = Vector3(23.5, 47.5, 25.5)
+
+[node name="DisplayBuilding5" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 35.2114, -33.75, 29.7914)
+size = Vector3(23.5, 35.5, 8.5)
+
+[node name="DisplayBuilding6" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 30.7114, -31, 52.2914)
+size = Vector3(17.5, 41, 15.5)
+
+[node name="DisplayBuilding11" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 1.73093, -44.75, 68.3583)
+size = Vector3(23.5, 47.5, 25.5)
+
+[node name="DisplayBuilding12" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 9.27426, -41.25, 33.1323)
+size = Vector3(23.5, 37.5, 8.5)
+
+[node name="DisplayBuilding29" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1.7, 0, -0.965926, 0, 0.258819, 120.628, -23.2938, -74.6007)
+size = Vector3(21.5, 49.5, 16)
+
+[node name="DisplayBuilding30" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1.7, 0, -0.965926, 0, 0.258819, 88.8301, -42.7938, 99.1278)
+size = Vector3(14, 39.5, 20)
+
+[node name="DisplayBuilding31" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1.7, 0, -0.5, 0, -0.866025, 95.1619, -30.5187, 68.2325)
+size = Vector3(17.5, 41, 15.5)
+
+[node name="DisplayBuilding33" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.207055, 0, -0.772741, 0, 0.8, 0, 0.772741, 0, -0.207055, 139.65, -18.2906, 147.036)
+size = Vector3(21.5, 44.5, 16)
+
+[node name="DisplayBuilding34" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.207055, 0, -0.772741, 0, 0.8, 0, 0.772741, 0, -0.207055, 14.0966, -17.0906, 132.552)
+size = Vector3(23.5, 47.5, 25.5)
+
+[node name="DisplayBuilding35" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.565685, 0, 0.565685, 0, 1.36, 0, -0.565685, 0, -0.565685, 68.4194, -29.1256, 133.238)
+size = Vector3(14, 39.5, 20)
+
+[node name="DisplayBuilding60" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.8, 0, 8.9407e-08, 0, 1.36, 0, -8.9407e-08, 0, -0.8, 117.032, -30.8256, 169.725)
+size = Vector3(14, 51, 27)
+
+[node name="DisplayBuilding36" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.69282, 0, -0.4, 0, 1.36, 0, 0.4, 0, -0.69282, 49.5472, -19.3056, 116.493)
+size = Vector3(17.5, 41, 15.5)
+
+[node name="DisplayBuilding58" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.8, 0, 1.19209e-07, 0, 1.36, 0, -1.19209e-07, 0, -0.8, 21.8334, -38.3456, 95.659)
+size = Vector3(22, 41, 15.5)
+
+[node name="DisplayBuilding59" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.565685, 0, -0.565685, 0, 1.36, 0, 0.565685, 0, -0.565685, 64.5696, -37.3256, 209.181)
+size = Vector3(22, 60.5, 15.5)
+
+[node name="DisplayBuilding32" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1.7, 0, -0.965926, 0, 0.258819, 122.473, -47.9437, 59.247)
+size = Vector3(23.5, 37.5, 8.5)
+
+[node name="DisplayBuilding13" type="CSGBox3D" parent="Level/GEO_Buildings"]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -13.9613, -39.5, 37.9851)
+size = Vector3(17.5, 41, 15.5)
+
+[node name="GEO_Prop" type="CSGCombiner3D" parent="Level"]
+material_override = SubResource("StandardMaterial3D_fhw5g")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level/GEO_Prop"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.625, 1, -1.3)
+size = Vector3(1.1, 2, 0.75)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/GEO_Prop/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1, 0.2, -0.15)
+operation = 2
+size = Vector3(0.5, 1.4, 0.7)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/GEO_Prop/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1, -0.725, -0.15)
+operation = 2
+size = Vector3(0.5, 0.25, 0.7)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Level/GEO_Prop/CSGBox3D"]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, 1, -0.707107, 0.707107, 0, -0.707107, -0.707107, -4.37114e-08, 0.1, -0.675, -0.224999)
+size = Vector3(0.05, 0.25, 0.7)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Level/GEO_Prop/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1, -0.548192, -0.0500002)
+operation = 2
+size = Vector3(0.3, 0.15, 0.7)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/GEO_Prop"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.625, 0.75, 0.75)
+size = Vector3(3, 0.5, 0.75)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/GEO_Prop"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.65, 0.875, -2.075)
+size = Vector3(0.35, 1.75, 0.7)
+
+[node name="GEO_Humans" type="Node3D" parent="Level"]
+
+[node name="msh_ReferenceHuman" parent="Level/GEO_Humans" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 0.5, 5.96046e-08, 0.9)
+
+[node name="msh_ReferenceHuman2" parent="Level/GEO_Humans" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.3)
+
+[node name="msh_ReferenceHuman5" parent="Level/GEO_Humans" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0.75, 0, -0.3)
+
+[node name="msh_ReferenceHuman3" parent="Level/GEO_Humans" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(-0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, -1.75, 0, 1.8)
+
+[node name="msh_ReferenceHuman4" parent="Level/GEO_Humans" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, 0.422618, -1.8, 0, 0.35)
+
+[node name="4 peeps" type="Node3D" parent="Level/GEO_Humans"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.5, 0, -10)
+
+[node name="msh_ReferenceHuman10" parent="Level/GEO_Humans/4 peeps" instance=ExtResource("5_u6sqo")]
+
+[node name="msh_ReferenceHuman7" parent="Level/GEO_Humans/4 peeps" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="msh_ReferenceHuman8" parent="Level/GEO_Humans/4 peeps" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="msh_ReferenceHuman9" parent="Level/GEO_Humans/4 peeps" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1.19209e-07)
+
+[node name="4 peeps2" type="Node3D" parent="Level/GEO_Humans"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.5, 0, -18)
+
+[node name="msh_ReferenceHuman10" parent="Level/GEO_Humans/4 peeps2" instance=ExtResource("5_u6sqo")]
+
+[node name="msh_ReferenceHuman7" parent="Level/GEO_Humans/4 peeps2" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="msh_ReferenceHuman8" parent="Level/GEO_Humans/4 peeps2" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="msh_ReferenceHuman9" parent="Level/GEO_Humans/4 peeps2" instance=ExtResource("5_u6sqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 0, 0.050005)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.3, 0)
+light_size = 0.15
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("8_gcjfx")]
+unique_name_in_owner = true
+
+[node name="SqueezeArea" parent="." instance=ExtResource("7_pkqdl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -3.5)
+gravity_point_center = Vector3(0, 1, 0)
+gravity_direction = Vector3(0, 1, 0)
+
+[node name="CollisionShape3D" parent="SqueezeArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3.25)
+shape = SubResource("BoxShape3D_qtghn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 439.0
+grow_vertical = 2
+
+[node name="FPS Counter" type="RichTextLabel" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "123232323232323"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+script = ExtResource("11_4ljhf")
+
+[node name="Variable" type="RichTextLabel" parent="Control/VBoxContainer" node_paths=PackedStringArray("Player")]
+layout_mode = 2
+text = "Is_on_foot:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+script = ExtResource("12_6gnux")
+Player = NodePath("../../../Player")
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Paused Label" type="RichTextLabel" parent="Control"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -30.5
+offset_right = 182.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_font_size = 100
+bbcode_enabled = true
+text = "[b]PAUSED"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_18s2f")
+
+[node name="InputMethod" type="Control" parent="Control" node_paths=PackedStringArray("pc_node", "ps_node", "xbox_node")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("15_qtghn")
+pc_node = NodePath("PC")
+ps_node = NodePath("PlayStation")
+xbox_node = NodePath("Xbox")
+
+[node name="PC" type="TextureRect" parent="Control/InputMethod"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_tbwgc")
+
+[node name="PlayStation" type="TextureRect" parent="Control/InputMethod"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_p6v03")
+
+[node name="Xbox" type="TextureRect" parent="Control/InputMethod"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_pbrdx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13.5, 0.5, 3, -7.5)
+material_override = SubResource("StandardMaterial3D_hkua3")
+mesh = SubResource("TorusMesh_bmaa2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0740741, 0, -0.5, 0.777778)
+light_energy = 5.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0740741, 0, -0.5, -0.0370371)
+light_energy = 5.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0740741, 0, -0.5, -0.666667)
+light_energy = 5.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0740741, 0, -0.5, -1.22222)
+light_energy = 5.0
+
+[node name="PlanarReflection" parent="." node_paths=PackedStringArray("debug_ui") instance=ExtResource("14_hkua3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 1.5, -16)
+mesh = SubResource("QuadMesh_vskkv")
+surface_material_override/0 = SubResource("ShaderMaterial_gkd1t")
+debug_ui = NodePath("../Control/VBoxContainer/TextureRect")
+debug_frustum_script = ExtResource("18_bemqi")
+
+[node name="PlanarReflection3" parent="." node_paths=PackedStringArray("debug_ui") instance=ExtResource("14_hkua3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.6437, 1.29929, -21.0786)
+mesh = SubResource("QuadMesh_p6v03")
+surface_material_override/0 = SubResource("ShaderMaterial_l7s5f")
+debug_ui = NodePath("../Control/VBoxContainer/TextureRect2")
+debug_frustum_script = ExtResource("18_bemqi")
+
+[node name="PlanarReflection5" parent="." node_paths=PackedStringArray("debug_ui") instance=ExtResource("14_hkua3")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.25, 1.2, -1.4)
+mesh = SubResource("QuadMesh_dtrfa")
+surface_material_override/0 = SubResource("ShaderMaterial_ftq2n")
+debug_ui = NodePath("../Control/VBoxContainer/TextureRect2")
+debug_frustum_script = ExtResource("18_bemqi")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, -21.7222)
+light_energy = 5.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 2.5, -21.7222)
+light_energy = 5.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, -16.2222)
+light_energy = 5.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 2.5, -16.2222)
+light_energy = 5.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, -10.7222)
+light_energy = 5.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 2.5, -10.7222)
+light_energy = 5.0
+
+[node name="gizmo" parent="." instance=ExtResource("7_ahqxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, -14)
+
+[editable path="SqueezeArea"]
+[editable path="PlanarReflection"]

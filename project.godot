@@ -13,6 +13,7 @@ config_version=5
 config/name="ACEDIA"
 config/description="A short game about being queer."
 config/version="1.0"
+config/tags=PackedStringArray("3d", "released")
 run/main_scene="uid://cobb73lvtnp2u"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -29,7 +30,6 @@ SceneReset="*res://Universal/SceneManagement/SceneReset.cs"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
 window/size/extend_to_title=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
