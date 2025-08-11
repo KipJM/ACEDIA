@@ -1,6 +1,6 @@
 extends Node
 
-# This script is the main reason I'm hesitant to make the project open source :)
+# This script sucks so badddd
 
 # Video settings.
 var filter_conf: int
@@ -17,6 +17,9 @@ var ssao_conf: int
 var ssil_conf: int
 var sdfgi_conf: int
 var mirror_conf: int
+
+var mouse_conf: float
+var stick_conf: float
 
 var mirror_scale: float 
 
@@ -38,6 +41,8 @@ func _ready() -> void:
 	ssil_conf     = 2
 	sdfgi_conf    = 1
 	mirror_conf   = 4
+	mouse_conf    = 1.0
+	stick_conf    = 1.0
 	first_start = true
 
 func change_filter(index: int) -> void:
@@ -225,6 +230,12 @@ func change_mirror(index: int) -> void:
 		mirror_scale = 1.1
 		
 
+func change_mouse(value: float) -> void:
+	mouse_conf = value
+
+func change_stick(value: float) -> void:
+	stick_conf = value
+
 func update_everything() -> void:
 	change_filter(filter_conf)
 	change_fsr(fsr_conf)
@@ -240,5 +251,7 @@ func update_everything() -> void:
 	change_ssil(ssil_conf)
 	change_sdfgi(sdfgi_conf)
 	change_mirror(mirror_conf)
+	change_mouse(mouse_conf)
+	change_stick(stick_conf)
 
 # hell.

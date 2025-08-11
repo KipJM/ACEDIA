@@ -36,25 +36,38 @@ public partial class PlayerLook : Node3D
     
     private Vector2 _bobbingVector = Vector2.Zero;
     private float _bobbingIndex = 0f;
+
+    private Node _graphicsSettings;
+    
+    public override void _Ready()
+    {
+        base._Ready();
+        // get GraphicsSettings
+        _graphicsSettings = GetNode<Node>("/root/GraphicsSettings");
+    }
     
     public override void _Input(InputEvent inputEvent)
     {
         // Mouse Camera Control
         if (inputEvent is InputEventMouseMotion eventMouseMotion)
         {
-            View(-eventMouseMotion.Relative.X * _mouseSensitivity, 
-                -eventMouseMotion.Relative.Y * _mouseSensitivity);
+            float mMultiplier = (float)_graphicsSettings.Get("mouse_conf");
+            
+            View(-eventMouseMotion.Relative.X * _mouseSensitivity * mMultiplier, 
+                -eventMouseMotion.Relative.Y * _mouseSensitivity * mMultiplier);
         }
     }
     
     private void ProcessGamepadInput(double delta)
     {
+        float sMultiplier = (float)_graphicsSettings.Get("stick_conf");
+        
         // Controller Camera control
         float lookHoriz = Input.GetAxis("look_left", "look_right");
         float lookVert = Input.GetAxis("look_down", "look_up");
 		
-        View((float)(-lookHoriz * _stickSensitivity * delta),
-            (float)(lookVert * _stickSensitivity * delta));
+        View((float)(-lookHoriz * _stickSensitivity * sMultiplier * delta),
+            (float)(lookVert * _stickSensitivity * sMultiplier * delta));
     }
     
     public override void _Process(double delta)

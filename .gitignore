@@ -5,3 +5,7 @@
 .promo/
 .builds/
 .git_backup/
+.idea/
+Pins.sln.DotSettings.user
+**/*_film.tscn
+Office/scn_Office_mirror_demo.tscn

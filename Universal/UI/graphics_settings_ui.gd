@@ -17,6 +17,9 @@ extends Control
 @export var mirror: OptionButton
 @export_group("FSR")
 @export var fsr_label: Label
+@export_group("Input")
+@export var mouse: Slider
+@export var stick: Slider
 
 func _ready() -> void:
 	# update all values (hell :))
@@ -34,6 +37,8 @@ func _ready() -> void:
 	ssao.selected      = GraphicsSettings.ssao_conf
 	ssil.selected      = GraphicsSettings.ssil_conf
 	mirror.selected    = GraphicsSettings.mirror_conf
+	mouse.value        = GraphicsSettings.mouse_conf
+	stick.value        = GraphicsSettings.stick_conf
 	
 	# attach signals (ahhhhh)
 	screen.item_selected.connect(GraphicsSettings.change_window_mode)
@@ -50,6 +55,8 @@ func _ready() -> void:
 	ssao.item_selected.connect(GraphicsSettings.change_ssao)
 	ssil.item_selected.connect(GraphicsSettings.change_ssil)
 	mirror.item_selected.connect(GraphicsSettings.change_mirror)
+	mouse.value_changed.connect(GraphicsSettings.change_mouse)
+	stick.value_changed.connect(GraphicsSettings.change_stick)
 
 	GraphicsSettings.update_everything()
 
