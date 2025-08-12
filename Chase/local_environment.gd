@@ -17,6 +17,9 @@ class_name LocalEnvironment
 @export var no_portal: bool
 @export var entry_portal: Portal
 
+@export_group("New Game+")
+@export var egg_env: Environment
+
 var seen = false;
 
 signal environment_entered
@@ -33,6 +36,8 @@ func body_exited(_body: Node3D) -> void:
 	environment_exited.emit()
 
 func _ready() -> void:
+	if egg_env != null and GraphicsSettings.new_game_plus:
+		environment = egg_env
 	portal_setup()
 	prehide_area()
 	

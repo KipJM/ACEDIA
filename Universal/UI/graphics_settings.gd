@@ -25,6 +25,7 @@ var mirror_scale: float
 
 # Not graphics settings but too lazy to make another autoload
 var first_start: bool
+var new_game_plus: bool
 
 func _ready() -> void:
 	filter_conf   = 0
