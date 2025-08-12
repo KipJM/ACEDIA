@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d7dbcip1htbg"
+path="res://.godot/imported/Wind, General, Heavy, Sand Storm 01  SND0046.wav-4ba5edfff791ec4c2e44bcce9d0e8708.sample"
+
+[deps]
+
+source_file="res://Intermission/sounds/Wind, General, Heavy, Sand Storm 01  SND0046.wav"
+dest_files=["res://.godot/imported/Wind, General, Heavy, Sand Storm 01  SND0046.wav-4ba5edfff791ec4c2e44bcce9d0e8708.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

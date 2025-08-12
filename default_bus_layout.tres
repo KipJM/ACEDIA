@@ -9,9 +9,10 @@ wet = 0.2
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_cenje"]
 resource_name = "Reverb"
-room_size = 1.0
-damping = 0.0
-wet = 1.0
+damping = 0.3
+spread = 0.9
+hipass = 0.21
+wet = 0.75
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
 resource_name = "Reverb"
@@ -31,7 +32,7 @@ wet = 0.3
 resource_name = "Reverb"
 room_size = 0.2
 spread = 0.6
-wet = 0.3
+wet = 0.2
 
 [resource]
 bus/1/name = &"Prop_SFX"
