@@ -17,8 +17,9 @@ config/tags=PackedStringArray("3d", "released")
 run/main_scene="uid://cobb73lvtnp2u"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="uid://qdmung4kywbl"
+boot_splash/image="uid://csmnw2t2fbtir"
 config/icon="uid://b4rxxqyro6qj6"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
