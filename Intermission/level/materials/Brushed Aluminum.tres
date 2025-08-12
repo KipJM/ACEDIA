@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dt7b6qlf6f0a3"]
+
+[ext_resource type="Texture2D" uid="uid://dbf3ps84w15jc" path="res://Intermission/level/intermission_level_Brushed_Aluminium_basecolor.jpg" id="1_yhhv5"]
+[ext_resource type="Texture2D" uid="uid://dtv210jmfng0t" path="res://Intermission/level/intermission_level_Brushed_Aluminium_metallic-Brushed_Aluminium_roughness.png" id="2_phr8c"]
+[ext_resource type="Texture2D" uid="uid://cucuecsb4syvi" path="res://Intermission/level/intermission_level_Brushed_Aluminium_normal.jpg" id="3_8y0kd"]
+
+[resource]
+resource_name = "Brushed Aluminum"
+albedo_texture = ExtResource("1_yhhv5")
+metallic = 1.0
+metallic_texture = ExtResource("2_phr8c")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_phr8c")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("3_8y0kd")

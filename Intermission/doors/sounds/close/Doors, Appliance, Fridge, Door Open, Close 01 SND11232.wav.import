@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cab3rv0kiokac"
+path="res://.godot/imported/Doors, Appliance, Fridge, Door Open, Close 01 SND11232.wav-ccd2107f3019e305dddebe5a5f5e9c4f.sample"
+
+[deps]
+
+source_file="res://Intermission/doors/sounds/close/Doors, Appliance, Fridge, Door Open, Close 01 SND11232.wav"
+dest_files=["res://.godot/imported/Doors, Appliance, Fridge, Door Open, Close 01 SND11232.wav-ccd2107f3019e305dddebe5a5f5e9c4f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

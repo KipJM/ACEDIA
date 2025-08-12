@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://brrj11kif1g18"]
+
+[ext_resource type="Texture2D" uid="uid://c3ehs5al2pjl" path="res://Intermission/level/intermission_level_white plaster_BaseColor.jpg" id="1_v16gt"]
+[ext_resource type="Texture2D" uid="uid://doc62arm7ie6g" path="res://Intermission/level/intermission_level_white plaster_Roughness.png" id="2_eivgn"]
+[ext_resource type="Texture2D" uid="uid://b4cgmsvp3l06n" path="res://Intermission/level/intermission_level_white plaster_Normal.jpg" id="3_fsbgs"]
+
+[resource]
+resource_name = "White plaster"
+albedo_texture = ExtResource("1_v16gt")
+metallic_texture = ExtResource("2_eivgn")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_eivgn")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_fsbgs")

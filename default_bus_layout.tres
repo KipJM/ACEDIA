@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://dx0vr85gnfnaw"]
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://dx0vr85gnfnaw"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
@@ -6,6 +6,12 @@ room_size = 0.01
 damping = 0.9
 spread = 0.33
 wet = 0.2
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_cenje"]
+resource_name = "Reverb"
+room_size = 1.0
+damping = 0.0
+wet = 1.0
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
 resource_name = "Reverb"
@@ -19,6 +25,12 @@ resource_name = "Reverb"
 room_size = 0.2
 damping = 0.69
 hipass = 0.5
+wet = 0.3
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_5t1r3"]
+resource_name = "Reverb"
+room_size = 0.2
+spread = 0.6
 wet = 0.3
 
 [resource]
@@ -76,3 +88,19 @@ bus/8/mute = false
 bus/8/bypass_fx = false
 bus/8/volume_db = -6.46709
 bus/8/send = &"Master"
+bus/9/name = &"REVERB"
+bus/9/solo = false
+bus/9/mute = false
+bus/9/bypass_fx = false
+bus/9/volume_db = 0.0
+bus/9/send = &"Master"
+bus/9/effect/0/effect = SubResource("AudioEffectReverb_5t1r3")
+bus/9/effect/0/enabled = true
+bus/10/name = &"VERY REVERB"
+bus/10/solo = false
+bus/10/mute = false
+bus/10/bypass_fx = false
+bus/10/volume_db = 0.0
+bus/10/send = &"Master"
+bus/10/effect/0/effect = SubResource("AudioEffectReverb_cenje")
+bus/10/effect/0/enabled = true

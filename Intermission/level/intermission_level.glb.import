@@ -32,6 +32,80 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Brushed Aluminum": {
+"use_external/enabled": true,
+"use_external/path": "res://Intermission/level/materials/Brushed Aluminum.tres"
+},
+"Concrete": {
+"use_external/enabled": true,
+"use_external/path": "res://Intermission/level/materials/Concrete.tres"
+},
+"Light Floor Tiling": {
+"use_external/enabled": true,
+"use_external/path": "res://Intermission/level/materials/Light Floor Tiling.tres"
+},
+"Marble": {
+"use_external/enabled": true,
+"use_external/path": "res://Intermission/level/materials/Marble.tres"
+},
+"Marble Dark": {
+"use_external/enabled": true,
+"use_external/path": "res://Intermission/level/materials/Marble Dark.tres"
+},
+"Office Ceiling": {
+"use_external/enabled": true,
+"use_external/path": "res://Intermission/level/materials/Office Ceiling.tres"
+},
+"White plaster": {
+"use_external/enabled": true,
+"use_external/path": "res://Intermission/level/materials/White plaster.tres"
+}
+},
+"nodes": {
+"PATH:Scene Collection/Cleanup/2F/2f_arch/2f_hall": {
+"generate/occluder": 1,
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/c_office": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/c_office_001": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/l_room_005": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/l_room_006": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/l_room_007": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/l_room_008": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/l_room_009": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/long_room_001": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/r_room_003": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/2F/2f_arch/r_room_004": {
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/7F/2f_leaves": {
+"generate/occluder": 1,
+"generate/physics": true
+},
+"PATH:Scene Collection/Cleanup/7F/2f_stairs": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

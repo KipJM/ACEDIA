@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1hjkfhl0rvrv"
+path="res://.godot/imported/Doors, Wood, Open, Close 01 SND0542.wav-cda3babee468534c1e30aead73b0f9e3.sample"
+
+[deps]
+
+source_file="res://Intermission/doors/sounds/Doors, Wood, Open, Close 01 SND0542.wav"
+dest_files=["res://.godot/imported/Doors, Wood, Open, Close 01 SND0542.wav-cda3babee468534c1e30aead73b0f9e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc5gtxegcyqfk"
+path="res://.godot/imported/Doors, Antique, Kids Room, Open, Close SND43323.wav-9cb301291e80c7ca42a677e0071fe5b5.sample"
+
+[deps]
+
+source_file="res://Intermission/doors/sounds/close/Doors, Antique, Kids Room, Open, Close SND43323.wav"
+dest_files=["res://.godot/imported/Doors, Antique, Kids Room, Open, Close SND43323.wav-9cb301291e80c7ca42a677e0071fe5b5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

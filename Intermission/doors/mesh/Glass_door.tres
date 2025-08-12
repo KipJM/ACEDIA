@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c341tqp64unmg"]
+
+[resource]
+resource_name = "Glass_door"
+transparency = 4
+albedo_color = Color(0.350705, 0.361694, 0.384612, 0.232026)
+metallic = 0.228758
+roughness = 0.0
