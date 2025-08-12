@@ -9099,7 +9099,7 @@ unit_size = 0.5
 bus = &"Prop_SFX"
 
 [node name="ANIM_Cows" parent="vendingMachine/Scene Collection/VendingMachine_Body" index="3"]
-transform = Transform3D(0.132128, 0.089576, 0.144354, -0.0692052, 0.19539, -0.0579029, -0.155153, -0.01087, 0.148759, 0.0824397, 1.09771, -0.151893)
+transform = Transform3D(0.132128, 0.089576, 0.144354, -0.0692052, 0.19539, -0.057903, -0.155153, -0.01087, 0.148759, 0.0824397, 1.09771, -0.151893)
 layers = 262144
 gi_mode = 2
 

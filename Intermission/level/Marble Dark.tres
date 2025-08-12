@@ -6,10 +6,12 @@
 
 [resource]
 resource_name = "Marble Dark"
+albedo_color = Color(0.42323, 0.365717, 0.340623, 1)
 albedo_texture = ExtResource("1_ic3tv")
 metallic = 0.3
 metallic_texture = ExtResource("2_0i0om")
 metallic_texture_channel = 2
+roughness = 0.25
 roughness_texture = ExtResource("2_0i0om")
 roughness_texture_channel = 1
 normal_enabled = true

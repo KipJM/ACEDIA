@@ -103,27 +103,27 @@ parameters/locomotion/blend_position = false
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="mainChar/root" index="0"]
-bones/0/position = Vector3(0.00367537, 0.89953, 0.00680918)
-bones/0/rotation = Quaternion(-0.033498, -0.0462347, -0.0278108, 0.997981)
-bones/1/rotation = Quaternion(-0.287471, -0.0593978, 0.953213, -0.0722282)
+bones/0/position = Vector3(-0.00609472, 0.899021, 0.0175074)
+bones/0/rotation = Quaternion(-0.0382292, -0.0409856, -0.0245126, 0.998127)
+bones/1/rotation = Quaternion(-0.289558, -0.0697163, 0.951982, -0.0709025)
 bones/2/rotation = Quaternion(-0.0241203, 0.999218, 0.0312184, -0.00278237)
-bones/3/rotation = Quaternion(0.266399, 0.656083, -0.604423, 0.365047)
-bones/4/rotation = Quaternion(0.00109031, 0.998773, 0.0495023, 0.000305616)
-bones/5/rotation = Quaternion(0.347091, -0.0317895, 0.936838, -0.0291942)
+bones/3/rotation = Quaternion(0.262226, 0.655491, -0.606774, 0.365232)
+bones/4/rotation = Quaternion(0.00150734, 0.998675, 0.0514438, 0.000422369)
+bones/5/rotation = Quaternion(0.339211, -0.0325762, 0.939608, -0.0318216)
 bones/5/scale = Vector3(0.999989, 0.999999, 0.999991)
-bones/6/rotation = Quaternion(-0.0273795, 0.998992, -0.0354349, -0.00315829)
-bones/7/rotation = Quaternion(-0.359606, 0.569685, -0.642612, -0.364955)
+bones/6/rotation = Quaternion(-0.0391183, 0.997941, -0.050628, -0.00451241)
+bones/7/rotation = Quaternion(-0.362294, 0.559557, -0.654639, -0.356493)
 bones/7/scale = Vector3(1.00001, 0.999988, 1)
-bones/8/rotation = Quaternion(2.43879e-06, 0.998024, 0.0628278, -5.62991e-06)
-bones/9/rotation = Quaternion(0.0293853, 0.0129089, 0.0217973, 0.999247)
-bones/10/rotation = Quaternion(0.0102262, 0.00291059, 0.0137183, 0.999849)
-bones/11/rotation = Quaternion(0.00990953, 0.00311354, 0.0136295, 0.999853)
-bones/12/rotation = Quaternion(0.0491025, -0.00110192, 0.00425058, 0.998784)
-bones/13/rotation = Quaternion(-0.0663036, 0.0116797, -0.00142525, 0.99773)
-bones/14/rotation = Quaternion(0.475797, -0.47949, -0.634703, -0.375313)
-bones/15/rotation = Quaternion(-0.151914, 0.827215, -0.497353, 0.212785)
+bones/8/rotation = Quaternion(2.17637e-06, 0.998097, 0.0616714, -5.63096e-06)
+bones/9/rotation = Quaternion(0.0311143, 0.016655, 0.0238238, 0.999093)
+bones/10/rotation = Quaternion(0.0097774, 0.00383965, 0.0142234, 0.999844)
+bones/11/rotation = Quaternion(0.0103632, 0.00412432, 0.01387, 0.999842)
+bones/12/rotation = Quaternion(0.0518941, -0.00238142, 0.00371587, 0.998643)
+bones/13/rotation = Quaternion(-0.0719656, 0.0063973, -0.00145271, 0.997386)
+bones/14/rotation = Quaternion(0.474968, -0.47955, -0.637419, -0.371664)
+bones/15/rotation = Quaternion(-0.146402, 0.827681, -0.497664, 0.214107)
 bones/16/rotation = Quaternion(0.0412814, 0.705901, -0.0412813, 0.705901)
-bones/17/rotation = Quaternion(0.0447837, -0.571201, 0.0369471, 0.818754)
+bones/17/rotation = Quaternion(0.0422017, -0.56999, 0.0363008, 0.819764)
 bones/18/rotation = Quaternion(-0.24052, -0.67193, -0.184746, 0.675669)
 bones/19/rotation = Quaternion(0.238227, -0.209856, 0.0511825, 0.946884)
 bones/19/scale = Vector3(1.00001, 0.999993, 0.999997)
@@ -141,10 +141,10 @@ bones/29/rotation = Quaternion(0.160241, -1.63913e-07, 0.0130537, 0.986992)
 bones/30/rotation = Quaternion(0.0595119, -0.00099121, -0.010976, 0.998167)
 bones/31/rotation = Quaternion(0.151287, 2.23517e-07, 0.0123243, 0.988413)
 bones/32/rotation = Quaternion(0.0702195, -7.45058e-07, 0.00572029, 0.997515)
-bones/33/rotation = Quaternion(0.457266, 0.500134, 0.632081, -0.37583)
-bones/34/rotation = Quaternion(0.123341, 0.803405, -0.56864, -0.126396)
-bones/35/rotation = Quaternion(0.00912555, -0.707048, 0.00912561, 0.707048)
-bones/36/rotation = Quaternion(0.053571, 0.475184, -0.0153374, 0.87812)
+bones/33/rotation = Quaternion(0.458393, 0.498999, 0.631978, -0.376138)
+bones/34/rotation = Quaternion(0.125681, 0.802567, -0.570286, -0.121919)
+bones/35/rotation = Quaternion(0.00947398, -0.707043, 0.00947419, 0.707043)
+bones/36/rotation = Quaternion(0.0519874, 0.476025, -0.0140784, 0.877781)
 bones/37/rotation = Quaternion(-0.230499, 0.682892, 0.171701, 0.671601)
 bones/38/rotation = Quaternion(0.201496, 0.203891, -0.0595909, 0.956178)
 bones/38/scale = Vector3(1.00001, 0.999993, 0.999997)
@@ -169,7 +169,7 @@ extra_cull_margin = 10000.0
 surface_material_override/0 = ExtResource("4_o88k2")
 
 [node name="HeadBone" type="BoneAttachment3D" parent="mainChar/root/Skeleton3D" index="1"]
-transform = Transform3D(0.998055, -0.0515741, -0.0350069, 0.0517941, 0.998643, 0.00540625, 0.0346805, -0.00720889, 0.999372, 0.00160287, 1.58606, 0.00104461)
+transform = Transform3D(0.997806, -0.0608769, -0.0260113, 0.0613116, 0.997986, 0.016255, 0.0249694, -0.0178141, 0.99953, -0.0146509, 1.58516, 0.00742425)
 bone_name = "Head"
 bone_idx = 13
 
@@ -183,7 +183,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(-1, 2.66332e-08, 8.32672e-08, 0, 0.952465, -0.304648, -8.74228e-08, -0.304648, -0.952465, 5.94135e-08, 0.0703823, 0.132437)
 
 [node name="FootL" type="BoneAttachment3D" parent="mainChar/root/Skeleton3D" index="2"]
-transform = Transform3D(-0.970144, 0.24252, 0.00207908, -0.00153053, -0.0146947, 0.999891, 0.242524, 0.970035, 0.0146272, 0.234676, 0.0931391, 0.0938493)
+transform = Transform3D(-0.969967, 0.243224, -0.00236217, -0.0079267, -0.0219022, 0.999729, 0.243106, 0.969723, 0.0231724, 0.234507, 0.0941028, 0.093878)
 bone_name = "LeftFoot"
 bone_idx = 3
 
@@ -197,7 +197,7 @@ sounds_b = Array[AudioStream]([ExtResource("7_x3w6i"), ExtResource("8_52v0l"), E
 pitch_variation = 0.5
 
 [node name="FootR" type="BoneAttachment3D" parent="mainChar/root/Skeleton3D" index="3"]
-transform = Transform3D(-0.892234, -0.451566, -0.000134449, -0.000438392, 0.000567675, 1, -0.451578, 0.892213, -0.000704169, -0.146395, 0.0893254, -0.0158747)
+transform = Transform3D(-0.892411, -0.451218, 0.000278108, -0.000568382, 0.00174016, 0.999999, -0.45123, 0.892388, -0.00180931, -0.146302, 0.0892983, -0.015998)
 bone_name = "RightFoot"
 bone_idx = 7
 

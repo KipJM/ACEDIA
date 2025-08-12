@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://c5hf1l8dj8ebq"]
+[gd_scene load_steps=83 format=4 uid="uid://c5hf1l8dj8ebq"]
 
 [ext_resource type="Environment" uid="uid://c6s1eqn6p6akk" path="res://Intermission/env_intermission.tres" id="1_vqngb"]
 [ext_resource type="PackedScene" uid="uid://ryo7y3glm3lg" path="res://Universal/UI/prefb_ui.tscn" id="3_v6mdg"]
@@ -27,10 +27,45 @@
 [ext_resource type="AudioStream" uid="uid://ccelq12nleorm" path="res://Home/ambience/Electricity, Buzz & Hum, Fluorescent Light, Basement 02 SND1349 2.wav" id="25_1jivi"]
 [ext_resource type="AudioStream" uid="uid://dlddvk6xpntdh" path="res://Intermission/sounds/Ambience, Suburban, Crickets, Night, Distant Traffic, Distant Voices 01 SND0439.wav" id="26_4nw23"]
 [ext_resource type="AudioStream" uid="uid://d7dbcip1htbg" path="res://Intermission/sounds/Wind, General, Heavy, Sand Storm 01  SND0046.wav" id="27_of3qg"]
+[ext_resource type="AudioStream" uid="uid://dctlijv87jbt" path="res://Universal/Player/mainChar/audio/footstep_walk/Footsteps, Human, Linoleum, Sneaker, Medium SND1083 21.wav" id="28_yrgn7"]
+[ext_resource type="Script" uid="uid://dt8elarksjr6v" path="res://Universal/SceneManagement/SceneLoader.cs" id="29_nyl6t"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vqngb"]
 auto_exposure_enabled = true
 auto_exposure_min_sensitivity = 150.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_of3qg"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yrgn7"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nyl6t"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_17420"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6yskr"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fliky"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_co2c7"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1qg01"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qfm8v"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4vp6g"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_28hs5"]
+points = PackedVector3Array(2.71709, 2.22768, -0.375, 2.71709, 1.90124, 0.374927, 2.71749, 0.0512436, 0.374927, 2.71749, 0.0512436, -0.375, -1.35875, 2.22768, -0.375, -1.35875, 1.90124, 0.374927, 2.71749, 0, 0.374927, 2.71749, 0, -0.375, -1.35875, 0, -0.375, -1.35875, 0, 0.374927)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w1y84"]
 size = Vector3(16, 5, 56)
@@ -483,7 +518,22 @@ func play_audio(body: Node3D) -> void:
 
 func stop_audio(body: Node3D) -> void:
 	stop()
+
+func play_noarg() -> void:
+	play()
+
+func stop_forever() -> void:
+	stop()
+	queue_free()
 "
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nyl6t"]
+height = 1.125
+radius = 24.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_17420"]
+height = 119.781
+radius = 45.0
 
 [node name="ScnIntermission" type="Node3D"]
 
@@ -503,6 +553,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -4.5, 0.5)
 
 [node name="2f_hall" parent="intermission_level/Scene Collection/Cleanup/2F/2f_arch" index="0"]
 surface_material_override/3 = ExtResource("6_kexqp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_001/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_of3qg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_002/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_yrgn7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_003" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_003/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_nyl6t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_004" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_004/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_17420")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_005" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_005/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_6yskr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_006" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_006/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fliky")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_007" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_007/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_co2c7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_008" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_008/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1qg01")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_009" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_009/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qfm8v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_010" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_010/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4vp6g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_011" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission_level/Scene Collection/Cleanup/Lockers/Locker_011/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_28hs5")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1.5, -0.4)
@@ -858,27 +963,114 @@ unit_size = 5.0
 autoplay = true
 bus = &"Ambience_far"
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="SFX_Fall" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.5, 0, 0)
 collision_layer = 512
 collision_mask = 256
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="SFX_Fall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -941.113, -20.75)
 shape = SubResource("CylinderShape3D_4nw23")
 debug_color = Color(1, 0.933333, 0, 1)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX_Fall"]
 stream = ExtResource("27_of3qg")
 volume_db = 1.0
 bus = &"Ambience_near"
 script = SubResource("GDScript_of3qg")
 
+[node name="egg" type="Node3D" parent="."]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127, -1789.85, -20.75)
+
+[node name="SFX_Land" type="Area3D" parent="egg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.650024, 0)
+collision_layer = 512
+collision_mask = 256
+monitorable = false
+script = ExtResource("17_of3qg")
+_oneShot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="egg/SFX_Land"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.800003, 0.3125, 0.0499992)
+shape = SubResource("CylinderShape3D_nyl6t")
+debug_color = Color(0.340996, 0.621228, 5.77569e-07, 0.42)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="egg/SFX_Land"]
+stream = ExtResource("28_yrgn7")
+volume_db = 6.0
+pitch_scale = 0.6
+bus = &"VERY REVERB"
+script = SubResource("GDScript_of3qg")
+
+[node name="defaultRoute" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127, -1789.85, -20.75)
+
+[node name="SFX_Land" type="Area3D" parent="defaultRoute"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.849976, 0)
+collision_layer = 512
+collision_mask = 256
+monitorable = false
+script = ExtResource("17_of3qg")
+_oneShot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="defaultRoute/SFX_Land"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.800003, 0.3125, 0.0499992)
+shape = SubResource("CylinderShape3D_nyl6t")
+debug_color = Color(0.340996, 0.621228, 5.77569e-07, 0.42)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="defaultRoute/SFX_Land"]
+stream = ExtResource("28_yrgn7")
+volume_db = 6.0
+pitch_scale = 0.6
+bus = &"VERY REVERB"
+script = SubResource("GDScript_of3qg")
+
+[node name="Land_switch" type="Area3D" parent="defaultRoute"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.150024, 0)
+collision_layer = 512
+collision_mask = 256
+monitorable = false
+script = ExtResource("17_of3qg")
+_oneShot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="defaultRoute/Land_switch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.800003, 0.3125, 0.0499992)
+shape = SubResource("CylinderShape3D_nyl6t")
+debug_color = Color(0.340996, 0.621228, 5.77569e-07, 0.42)
+
+[node name="LoadPrep" type="Area3D" parent="defaultRoute"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 583.85, 0)
+collision_layer = 512
+collision_mask = 256
+monitorable = false
+script = ExtResource("17_of3qg")
+_oneShot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="defaultRoute/LoadPrep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.800003, 56.9844, 0.0499992)
+shape = SubResource("CylinderShape3D_17420")
+debug_color = Color(2.98411e-06, 0.590037, 0.75402, 0.42)
+
+[node name="SceneLoader" type="Node" parent="."]
+script = ExtResource("29_nyl6t")
+_scenePath = "res://Chase/scn_chase.tscn"
+
 [connection signal="body_entered" from="ReflectionActivator" to="PlanarReflector" method="_on_enabler_entered"]
 [connection signal="body_exited" from="ReflectionActivator" to="PlanarReflector" method="_on_enabler_exited"]
 [connection signal="Interaction" from="PrfbDoorGlow/window_doorFrame/Door/Area3D" to="PrfbDoorGlow" method="toggle_door"]
-[connection signal="body_entered" from="Area3D" to="Area3D/AudioStreamPlayer" method="play_audio"]
-[connection signal="body_exited" from="Area3D" to="Area3D/AudioStreamPlayer" method="stop_audio"]
+[connection signal="body_entered" from="SFX_Fall" to="SFX_Fall/AudioStreamPlayer" method="play_audio"]
+[connection signal="body_exited" from="SFX_Fall" to="SFX_Fall/AudioStreamPlayer" method="stop_audio"]
+[connection signal="Interaction" from="egg/SFX_Land" to="SFX_Fall/AudioStreamPlayer" method="stop_forever"]
+[connection signal="Interaction" from="egg/SFX_Land" to="egg/SFX_Land/AudioStreamPlayer" method="play_noarg"]
+[connection signal="body_entered" from="egg/SFX_Land" to="egg/SFX_Land" method="InteractProxy"]
+[connection signal="Interaction" from="defaultRoute/SFX_Land" to="SFX_Fall/AudioStreamPlayer" method="stop_forever"]
+[connection signal="Interaction" from="defaultRoute/SFX_Land" to="defaultRoute/SFX_Land/AudioStreamPlayer" method="play_noarg"]
+[connection signal="body_entered" from="defaultRoute/SFX_Land" to="defaultRoute/SFX_Land" method="InteractProxy"]
+[connection signal="Interaction" from="defaultRoute/Land_switch" to="SceneLoader" method="SwitchScene"]
+[connection signal="body_entered" from="defaultRoute/Land_switch" to="defaultRoute/Land_switch" method="InteractProxy"]
+[connection signal="Interaction" from="defaultRoute/LoadPrep" to="SceneLoader" method="PreloadScene"]
+[connection signal="body_entered" from="defaultRoute/LoadPrep" to="defaultRoute/LoadPrep" method="InteractProxy"]
 
 [editable path="intermission_level"]
 [editable path="Props/PrfbPropExitSign"]

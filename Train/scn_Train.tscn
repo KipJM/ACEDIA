@@ -8839,7 +8839,7 @@ bus = &"Ambience_far"
 
 [node name="SceneLoader" type="Node" parent="."]
 script = ExtResource("67_g2dit")
-_scenePath = "res://Chase/scn_chase.tscn"
+_scenePath = "res://Intermission/scn_Intermission.tscn"
 
 [connection signal="AnimationStart" from="IntroAnchor/StartAnchor" to="IntroAnchor/StartAnchor" method="PlayExternalAnimation"]
 [connection signal="body_entered" from="ReflectionEnabler" to="PlanarReflection" method="_on_enabler_entered"]
