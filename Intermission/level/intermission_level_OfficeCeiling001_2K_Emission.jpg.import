@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ctttask4fddnf"
+path.s3tc="res://.godot/imported/intermission_level_OfficeCeiling001_2K_Emission.jpg-50fd17b65d6e2b4da2a9b51f10ca59d8.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "b5cfa9d6c8febd618f91ac2843d50a1c"
+}
+
+[deps]
+
+source_file="res://Intermission/level/intermission_level_OfficeCeiling001_2K_Emission.jpg"
+dest_files=["res://.godot/imported/intermission_level_OfficeCeiling001_2K_Emission.jpg-50fd17b65d6e2b4da2a9b51f10ca59d8.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

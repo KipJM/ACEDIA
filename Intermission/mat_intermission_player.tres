@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://byxxdc5pknl3u"]
+
+[ext_resource type="Shader" uid="uid://ciihwnfp7omqq" path="res://Universal/Shaders/shader_person.tres" id="1_nih8p"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_nih8p")
+shader_parameter/speed_mult = 0.335
+shader_parameter/mag_distinct = 0.115
+shader_parameter/mag_organic = 0.45
+shader_parameter/mix_style = 0.108
+shader_parameter/Albedo = Color(0.93766, 0.919801, 0.945389, 1)
+shader_parameter/fresnel_color = Color(0.739484, 0.375888, 0.647699, 1)
+shader_parameter/fresnel_power = 0.659
+shader_parameter/metallic = 0.177
+shader_parameter/roughness = 0.553
+shader_parameter/specular = 0.61
+shader_parameter/emission_color = Color(0.822853, 0.719284, 0.648057, 1)
+shader_parameter/emission_strength = 0.139
