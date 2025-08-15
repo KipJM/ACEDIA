@@ -15,6 +15,7 @@ var player: CharacterBody3D; # Preferred. Will automatically use camera of playe
 @export_group("Display")
 @export var resolution_scale: float = 1
 @export var far: float = 4000
+@export var cam_attribute: CameraAttributes
 
 @export_group("Debug")
 @export var debug_enabled: bool = false
@@ -53,6 +54,9 @@ func init_mirror():
 	
 	
 	reflect_camera.environment = _main_camera.environment
+	
+	if cam_attribute != null:
+		reflect_camera.attributes = cam_attribute
 	
 	reflect_camera.doppler_tracking = Camera3D.DOPPLER_TRACKING_DISABLED
 	reflect_camera.keep_aspect = Camera3D.KEEP_HEIGHT
