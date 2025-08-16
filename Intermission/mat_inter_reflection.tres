@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://df7vw2yu2i55f"]
 
-[ext_resource type="Shader" uid="uid://bhv2rntudqd2g" path="res://addons/smart_planar_reflector/Internal/shader_planar_reflector.tres" id="1_j5v18"]
+[ext_resource type="Shader" uid="uid://bhv2rntudqd2g" path="res://Testing/Mirror/mirror_debug.tres" id="1_j5v18"]
 [ext_resource type="Texture2D" uid="uid://lmsxrx5uxas1" path="res://Intermission/level/intermission_level_tiling_24_basecolor-2K.jpg" id="2_yxbq8"]
 [ext_resource type="Texture2D" uid="uid://0qnn4xgdrwro" path="res://Intermission/level/intermission_level_tiling_24_metallic-2K.png" id="3_dbhfc"]
 [ext_resource type="Texture2D" uid="uid://dsxyjrc7rrivr" path="res://Intermission/level/intermission_level_tiling_24_normal-2K.jpg" id="4_hn0wt"]
@@ -14,11 +14,11 @@ shader_parameter/albedo_texture = ExtResource("2_yxbq8")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/normal_texture = ExtResource("4_hn0wt")
 shader_parameter/distort_strength = 1.0
+shader_parameter/reflection_strength = 0.005
 shader_parameter/relfection_mix = 0.5
 shader_parameter/metallic_texture = ExtResource("3_dbhfc")
 shader_parameter/metallic = 0.5
 shader_parameter/roughness_texture = ExtResource("3_dbhfc")
 shader_parameter/roughness = 0.01
-shader_parameter/reflection_strength = 0.005
 shader_parameter/Emmission = 0.0
 shader_parameter/normal_strength = 1.0
