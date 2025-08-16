@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dt4kaqg1ngak2"]
+
+[ext_resource type="Texture2D" uid="uid://nfq3dp70onu2" path="res://Intermission/DeskChair/mesh/desk_chair_Metal rough_BaseColor.jpg" id="1_dka5g"]
+[ext_resource type="Texture2D" uid="uid://i6ji7014reu7" path="res://Intermission/DeskChair/mesh/desk_chair_Metal rough_Emissive.jpg" id="2_cxfoy"]
+[ext_resource type="Texture2D" uid="uid://dmpbbjd8ap5n7" path="res://Intermission/DeskChair/mesh/desk_chair_Metal rough_Metallic-Metal rough_Roughness.png" id="3_6rhj7"]
+[ext_resource type="Texture2D" uid="uid://dl58mx7c43sqx" path="res://Intermission/DeskChair/mesh/desk_chair_Metal rough_Normal.jpg" id="4_bvxbm"]
+
+[resource]
+resource_name = "Metal rough"
+albedo_color = Color(0.650128, 0.650128, 0.650128, 1)
+albedo_texture = ExtResource("1_dka5g")
+metallic = 0.8
+metallic_texture = ExtResource("3_6rhj7")
+metallic_texture_channel = 2
+roughness = 0.5
+roughness_texture = ExtResource("3_6rhj7")
+roughness_texture_channel = 1
+emission_texture = ExtResource("2_cxfoy")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("4_bvxbm")

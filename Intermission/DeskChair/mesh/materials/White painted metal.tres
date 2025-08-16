@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cfpgwmxie2s87"]
+
+[ext_resource type="Texture2D" uid="uid://h688l24mo8wv" path="res://Intermission/DeskChair/mesh/desk_chair_metal01_diffuse.jpg" id="1_ggam1"]
+[ext_resource type="Texture2D" uid="uid://blnnvyqkstbv6" path="res://Intermission/DeskChair/mesh/desk_chair_metal_metallic-metal_glossiness.png" id="2_kdxvc"]
+
+[resource]
+resource_name = "White painted metal"
+albedo_texture = ExtResource("1_ggam1")
+metallic = 1.0
+metallic_texture = ExtResource("2_kdxvc")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_kdxvc")
+roughness_texture_channel = 1

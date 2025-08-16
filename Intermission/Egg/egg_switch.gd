@@ -11,7 +11,7 @@ func _ready() -> void:
 	if GraphicsSettings.new_game_plus:
 		egg = true
 
-	if debug_egg and Engine.is_editor_hint():
+	if debug_egg:
 		egg = true
 
 	print("egg: " + str(egg))
