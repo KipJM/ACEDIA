@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://df7vw2yu2i55f"]
 
-[ext_resource type="Shader" uid="uid://bhv2rntudqd2g" path="res://Testing/Mirror/mirror_debug.tres" id="1_j5v18"]
+[ext_resource type="Shader" uid="uid://bhv2rntudqd2g" path="res://Testing/Mirror/mirror_debug_o.tres" id="1_j5v18"]
 [ext_resource type="Texture2D" uid="uid://lmsxrx5uxas1" path="res://Intermission/level/intermission_level_tiling_24_basecolor-2K.jpg" id="2_yxbq8"]
 [ext_resource type="Texture2D" uid="uid://0qnn4xgdrwro" path="res://Intermission/level/intermission_level_tiling_24_metallic-2K.png" id="3_dbhfc"]
 [ext_resource type="Texture2D" uid="uid://dsxyjrc7rrivr" path="res://Intermission/level/intermission_level_tiling_24_normal-2K.jpg" id="4_hn0wt"]
