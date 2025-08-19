@@ -10,6 +10,9 @@ public partial class EggDialogManager : Node
     [ExportGroup("UI")]
     [Export] public EggDialogUi DialogUi;
 
+    [ExportGroup("Audio")] 
+    [Export] public AudioStreamPlayer MusicPlayer;
+    
     [ExportGroup("Dialogs")] 
     [Export] public Array<DialogEntry> Entries;
 
@@ -29,6 +32,7 @@ public partial class EggDialogManager : Node
 
     public void StartSequence()
     {
+        MusicPlayer.Play();
         DialogUi.ShowUi();
         NextEntry();
     }

@@ -11,6 +11,9 @@ public partial class EggDialogUi : Control
     [Export] public RichTextLabel TextLabel;
     [Export] public Control TextShadow;
     [Export] public Control InputHint;
+    [Export] public AudioStreamPlayer TonePlayer;
+    [ExportGroup("Animation")] 
+    [Export] public AnimationTree Animator;
     [ExportGroup("Configs")] 
     [Export] public float ShadowInDuration;
     [Export] public float HintInDuration;
@@ -18,6 +21,8 @@ public partial class EggDialogUi : Control
     private DialogEntry _currentEntry;
 
     private bool _acceptInput = false;
+
+    private AnimationNodeStateMachinePlayback _playback;
     
     [Signal]
     public delegate void EntryFinishedEventHandler();
@@ -26,6 +31,7 @@ public partial class EggDialogUi : Control
     {
         base._Ready();
         Hide();
+        _playback = (AnimationNodeStateMachinePlayback)Animator.Get("parameters/playback");
     }
 
     public void ShowUi()
@@ -45,7 +51,10 @@ public partial class EggDialogUi : Control
         TextLabel.Text = entry.Content;
         
         // Animation
-        // TODO
+        if (entry.HaveAnimation)
+        {
+           _playback.Travel(entry.TargetAnimationKey);
+        }
         
         // Fade in text
         TextLabel.Show();
@@ -108,6 +117,7 @@ public partial class EggDialogUi : Control
         {
             if (Input.IsActionJustPressed("interact"))
             {
+                TonePlayer.Play();
                 HideText();
             }
         }

@@ -1,0 +1,38 @@
+[gd_resource type="Environment" load_steps=6 format=3 uid="uid://brkk3pt6nvh4e"]
+
+[ext_resource type="Texture2D" uid="uid://de66ooe4axoyk" path="res://Home/skybx_sunrise.exr" id="1_elha4"]
+
+[sub_resource type="Gradient" id="Gradient_0ntoh"]
+offsets = PackedFloat32Array(0, 0.492524, 0.992908)
+colors = PackedColorArray(0, 0, 0, 1, 0.3726, 0.392993, 0.46, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_calyv"]
+gradient = SubResource("Gradient_0ntoh")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_oc0f3"]
+panorama = ExtResource("1_elha4")
+energy_multiplier = 0.39
+
+[sub_resource type="Sky" id="Sky_pt7t6"]
+sky_material = SubResource("PanoramaSkyMaterial_oc0f3")
+
+[resource]
+background_mode = 2
+background_color = Color(0.292, 0.3082, 0.4, 1)
+sky = SubResource("Sky_pt7t6")
+sky_rotation = Vector3(0, 4.06662, 0)
+tonemap_mode = 2
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.770855, 0.782258, 0.796234, 1)
+fog_light_energy = 0.54
+fog_sun_scatter = 0.15
+fog_density = 0.0007
+fog_sky_affect = 0.197
+fog_height = -62.9
+fog_height_density = 0.0199
+adjustment_enabled = true
+adjustment_contrast = 1.04
+adjustment_color_correction = SubResource("GradientTexture1D_calyv")
