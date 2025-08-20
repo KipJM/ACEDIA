@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://duex01e62hoj1"]
+
+[ext_resource type="Shader" uid="uid://cgiiw0qv4gt6i" path="res://Intermission/Egg/shdr_sky_bg.tres" id="1_up1of"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_up1of")
+shader_parameter/prox_fade = 0.0
+shader_parameter/dist_fade_min = 0.0
+shader_parameter/dist_fade_max = 0.0
+shader_parameter/sky_strength = 0.0

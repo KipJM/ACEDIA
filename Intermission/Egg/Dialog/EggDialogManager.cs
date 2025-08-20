@@ -13,6 +13,9 @@ public partial class EggDialogManager : Node
     [ExportGroup("Audio")] 
     [Export] public AudioStreamPlayer MusicPlayer;
     
+    [ExportGroup("Misc")]
+    [Export] public Material SiblingMaterial;
+    
     [ExportGroup("Dialogs")] 
     [Export] public Array<DialogEntry> Entries;
 
@@ -27,11 +30,13 @@ public partial class EggDialogManager : Node
 
     public void ShowSibling()
     {
+        SiblingMaterial.Set("flags/depth_test_disabled", false);
         SiblingNode.Show();
     }
 
     public void StartSequence()
     {
+        SiblingMaterial.Set("flags/depth_test_disabled", true);
         MusicPlayer.Play();
         DialogUi.ShowUi();
         NextEntry();

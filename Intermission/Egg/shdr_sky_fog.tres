@@ -1,0 +1,12 @@
+[gd_resource type="VisualShader" format=3 uid="uid://3yr0q68edytg"]
+
+[resource]
+code = "shader_type fog;
+
+
+
+void fog() {
+}
+"
+graph_offset = Vector2(-546, -16.6667)
+mode = 4

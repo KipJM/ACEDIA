@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://4egooiorlj5t"]
+
+[ext_resource type="Shader" uid="uid://jx5q3gs1mruk" path="res://Intermission/Egg/shdr_sibling_egg.tres" id="1_sby7h"]
+
+[resource]
+render_priority = 20
+shader = ExtResource("1_sby7h")
+shader_parameter/speed_mult = 1.015
+shader_parameter/mag_distinct = -0.054
+shader_parameter/mag_organic = 0.19
+shader_parameter/mix_style = 0.225
+shader_parameter/Albedo = Color(0.91, 0.8918, 0.89999, 1)
+shader_parameter/fresnel_color = Color(0.422371, 0.422371, 0.422371, 1)
+shader_parameter/fresnel_power = 1.17
+shader_parameter/sky_mix = 1.0
+shader_parameter/metallic = 0.363
+shader_parameter/roughness = 0.2
+shader_parameter/specular = 1.005
+shader_parameter/emission_color = Color(0.3069, 0.31537, 0.33, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/sky_emission = 1.0
