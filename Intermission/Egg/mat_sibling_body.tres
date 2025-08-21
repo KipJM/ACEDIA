@@ -18,4 +18,4 @@ shader_parameter/roughness = 0.2
 shader_parameter/specular = 1.005
 shader_parameter/emission_color = Color(0.3069, 0.31537, 0.33, 1)
 shader_parameter/emission_strength = 0.0
-shader_parameter/sky_emission = 1.0
+shader_parameter/sky_emission = 15.0

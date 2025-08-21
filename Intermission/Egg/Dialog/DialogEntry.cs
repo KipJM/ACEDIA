@@ -8,6 +8,13 @@ public enum DialogTransType
     Fade
 }
 
+public enum DialogAnimType
+{
+    None,
+    Local,
+    Sky
+}
+
 [GlobalClass]
 public partial class DialogEntry : Resource
 {
@@ -17,6 +24,7 @@ public partial class DialogEntry : Resource
 
     [ExportGroup("Transition")]
     [ExportSubgroup("In")] 
+    [Export] public float InWaitDuration { get; set; }
     [Export] public DialogTransType InType { get; set; }
     [Export] public float InDuration { get; set; }
     [ExportSubgroup("Out")] 
@@ -24,14 +32,15 @@ public partial class DialogEntry : Resource
     [Export] public float OutDuration { get; set; }
     
     [ExportGroup("Animation")] 
-    [Export] public bool HaveAnimation { get; set; }
+    [Export] public DialogAnimType HaveAnimation { get; set; }
     [Export] public string TargetAnimationKey { get; set; }
 
     
-    public DialogEntry() : this("", DialogTransType.Fade, 0, 0, 0, false, "") {}
-    public DialogEntry(string content, DialogTransType inType, float inDuration, float waitDuration, float outDuration, bool haveAnimation, string targetAnimationKey)
+    public DialogEntry() : this("", 0, DialogTransType.Fade, 0, 0, 0, DialogAnimType.None, "") {}
+    public DialogEntry(string content, float inWaitDuration, DialogTransType inType, float inDuration, float waitDuration, float outDuration, DialogAnimType haveAnimation, string targetAnimationKey)
     {
         Content = content;
+        InWaitDuration = inWaitDuration;
         InType = inType;
         InDuration = inDuration;
         WaitDuration = waitDuration;

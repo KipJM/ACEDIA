@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=13 format=3 uid="uid://cgiiw0qv4gt6i"]
+[gd_resource type="VisualShader" load_steps=15 format=3 uid="uid://cgiiw0qv4gt6i"]
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_vxmu5"]
 parameter_name = "dist_fade_min"
@@ -24,6 +24,12 @@ operator = 2
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_sbj6q"]
 parameter_name = "sky_strength"
 
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_vxmu5"]
+default_input_values = [0, 0.0, 1, 1.0]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_uh4xa"]
+operator = 2
+
 [sub_resource type="VisualShaderNodeProximityFade" id="VisualShaderNodeProximityFade_amyuf"]
 
 [sub_resource type="VisualShaderNodeDistanceFade" id="VisualShaderNodeDistanceFade_ru7l5"]
@@ -39,11 +45,11 @@ code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_disabled, unshaded;
 
 uniform sampler2D sky_texture;
+uniform float sky_strength;
 uniform float prox_fade;
 uniform sampler2D depth_tex_frg_6 : hint_depth_texture;
 uniform float dist_fade_min;
 uniform float dist_fade_max;
-uniform float sky_strength;
 
 
 
@@ -55,6 +61,19 @@ void fragment() {
 	vec4 n_out15p0;
 // Texture2D:15
 	n_out15p0 = texture(sky_texture, n_out16p0);
+
+
+// FloatParameter:18
+	float n_out18p0 = sky_strength;
+
+
+// FloatOp:19
+	float n_in19p1 = 1.00000;
+	float n_out19p0 = n_out18p0 + n_in19p1;
+
+
+// VectorOp:20
+	vec3 n_out20p0 = vec3(n_out15p0.xyz) * vec3(n_out19p0);
 
 
 // FloatParameter:9
@@ -91,23 +110,19 @@ void fragment() {
 	float n_out8p0 = n_out6p0 * n_out13p0;
 
 
-// FloatParameter:18
-	float n_out18p0 = sky_strength;
-
-
 // VectorOp:17
 	vec3 n_out17p0 = vec3(n_out15p0.xyz) * vec3(n_out18p0);
 
 
 // Output:0
-	ALBEDO = vec3(n_out15p0.xyz);
+	ALBEDO = n_out20p0;
 	ALPHA = n_out8p0;
 	EMISSION = n_out17p0;
 
 
 }
 "
-graph_offset = Vector2(-491.077, -19.059)
+graph_offset = Vector2(-762.986, 117.665)
 modes/specular = 2
 flags/unshaded = true
 nodes/fragment/0/position = Vector2(860, 140)
@@ -135,4 +150,8 @@ nodes/fragment/17/node = SubResource("VisualShaderNodeVectorOp_buw2t")
 nodes/fragment/17/position = Vector2(-100, 1480)
 nodes/fragment/18/node = SubResource("VisualShaderNodeFloatParameter_sbj6q")
 nodes/fragment/18/position = Vector2(-740, 1780)
-nodes/fragment/connections = PackedInt32Array(6, 0, 8, 0, 8, 0, 0, 1, 9, 0, 6, 0, 10, 0, 7, 0, 11, 0, 7, 1, 7, 0, 13, 0, 13, 0, 8, 1, 14, 0, 15, 2, 16, 0, 15, 0, 15, 0, 17, 0, 18, 0, 17, 1, 17, 0, 0, 5, 15, 0, 0, 0)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFloatOp_vxmu5")
+nodes/fragment/19/position = Vector2(145.764, 2092.84)
+nodes/fragment/20/node = SubResource("VisualShaderNodeVectorOp_uh4xa")
+nodes/fragment/20/position = Vector2(140, 680)
+nodes/fragment/connections = PackedInt32Array(6, 0, 8, 0, 8, 0, 0, 1, 9, 0, 6, 0, 10, 0, 7, 0, 11, 0, 7, 1, 7, 0, 13, 0, 13, 0, 8, 1, 14, 0, 15, 2, 16, 0, 15, 0, 15, 0, 17, 0, 18, 0, 17, 1, 17, 0, 0, 5, 18, 0, 19, 0, 19, 0, 20, 1, 15, 0, 20, 0, 20, 0, 0, 0)

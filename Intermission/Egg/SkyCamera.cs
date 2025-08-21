@@ -20,7 +20,7 @@ public partial class SkyCamera : Node3D
     [Export] public TextureRect Rect;
     
     private Player _player;
-
+    
     public override void _Ready()
     {
         base._Ready();
@@ -34,6 +34,12 @@ public partial class SkyCamera : Node3D
         {
             mat.SetShaderParameter("sky_texture", tex);
         }
+        Camera.ClearCurrent(false);
+    }
+
+    public void StartCamera()
+    {
+        Camera.MakeCurrent();
     }
 
     public override void _Process(double delta)

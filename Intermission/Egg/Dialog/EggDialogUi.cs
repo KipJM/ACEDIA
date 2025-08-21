@@ -14,6 +14,7 @@ public partial class EggDialogUi : Control
     [Export] public AudioStreamPlayer TonePlayer;
     [ExportGroup("Animation")] 
     [Export] public AnimationTree Animator;
+    [Export] public AnimationTree SkyAnimator;
     [ExportGroup("Configs")] 
     [Export] public float ShadowInDuration;
     [Export] public float HintInDuration;
@@ -23,6 +24,7 @@ public partial class EggDialogUi : Control
     private bool _acceptInput = false;
 
     private AnimationNodeStateMachinePlayback _playback;
+    private AnimationNodeStateMachinePlayback _skyPlayback;
     
     [Signal]
     public delegate void EntryFinishedEventHandler();
@@ -32,6 +34,7 @@ public partial class EggDialogUi : Control
         base._Ready();
         Hide();
         _playback = (AnimationNodeStateMachinePlayback)Animator.Get("parameters/playback");
+        _skyPlayback = (AnimationNodeStateMachinePlayback)SkyAnimator.Get("parameters/playback");
     }
 
     public void ShowUi()
@@ -45,31 +48,51 @@ public partial class EggDialogUi : Control
     public void StartEntry(DialogEntry entry)
     {
         _acceptInput = false;
-        
         _currentEntry = entry;
-        // Set text
-        TextLabel.Text = entry.Content;
-        
+
         // Animation
-        if (entry.HaveAnimation)
+        switch (_currentEntry.HaveAnimation)
         {
-           _playback.Travel(entry.TargetAnimationKey);
+            case DialogAnimType.None:
+                break;
+            case DialogAnimType.Local:
+                _playback.Travel(_currentEntry.TargetAnimationKey);
+                break;
+            case DialogAnimType.Sky:
+                _skyPlayback.Travel(_currentEntry.TargetAnimationKey);
+                break;
         }
+        
+        if (entry.InWaitDuration > 0)
+        {
+            Timing.RunCoroutine(Wait(entry.InWaitDuration, EntryIn));
+        }
+        else
+        {
+            // Immediate
+            EntryIn();
+        }
+
+    }
+
+    void EntryIn() {
+        // Set text
+        TextLabel.Text = _currentEntry.Content;
         
         // Fade in text
         TextLabel.Show();
         TextLabel.Modulate = TextLabel.Modulate with { A = 1 };
         TextShadow.Modulate = TextShadow.Modulate with { A = 1 };
         
-        if (entry.InDuration > 0)
+        if (_currentEntry.InDuration > 0)
         {
-            switch (entry.InType)
+            switch (_currentEntry.InType)
             {
                 case DialogTransType.Typewriter:
-                    Timing.RunCoroutine(TypeText(entry.InDuration, 0, 1, TextFadeInFinished));
+                    Timing.RunCoroutine(TypeText(_currentEntry.InDuration, 0, 1, TextFadeInFinished));
                     break;
                 case DialogTransType.Fade:
-                    Timing.RunCoroutine(FadeText(entry.InDuration, 0, 1, TextFadeInFinished));
+                    Timing.RunCoroutine(FadeText(_currentEntry.InDuration, 0, 1, TextFadeInFinished));
                     break;
             }
         }

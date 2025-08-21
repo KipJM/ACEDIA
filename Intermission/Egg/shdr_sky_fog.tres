@@ -8,5 +8,4 @@ code = "shader_type fog;
 void fog() {
 }
 "
-graph_offset = Vector2(-546, -16.6667)
 mode = 4
