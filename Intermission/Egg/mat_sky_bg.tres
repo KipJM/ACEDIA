@@ -7,5 +7,5 @@ render_priority = 40
 shader = ExtResource("1_vswxp")
 shader_parameter/sky_strength = 0.0
 shader_parameter/prox_fade = 5.0
-shader_parameter/dist_fade_min = 15.435
-shader_parameter/dist_fade_max = 29.46
+shader_parameter/dist_fade_min = 0.0
+shader_parameter/dist_fade_max = 0.0

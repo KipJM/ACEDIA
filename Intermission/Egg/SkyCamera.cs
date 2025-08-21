@@ -15,9 +15,10 @@ public partial class SkyCamera : Node3D
     
     [ExportGroup("Display")]
     [Export] public Array<ShaderMaterial> Materials;
+    [Export] public Node3D SkyboxRoot;
 
-    [ExportGroup("DEBUG")]
-    [Export] public TextureRect Rect;
+    // [ExportGroup("DEBUG")]
+    // [Export] public TextureRect Rect;
     
     private Player _player;
     
@@ -28,17 +29,19 @@ public partial class SkyCamera : Node3D
 
         var tex= Viewport.GetTexture();
 
-        Rect.Texture = tex;
+        // Rect.Texture = tex;
 
         foreach (var mat in Materials)
         {
             mat.SetShaderParameter("sky_texture", tex);
         }
         Camera.ClearCurrent(false);
+        SkyboxRoot.Hide();
     }
 
     public void StartCamera()
     {
+        SkyboxRoot.Show();
         Camera.MakeCurrent();
     }
 

@@ -14,7 +14,7 @@ func _ready() -> void:
 		if rng.randi_range(1, 100) <= 40:
 			egg = true	
 	
-	if debug_egg and Engine.is_editor_hint():
+	if debug_egg:
 		egg = true
 	
 	print("egg: " + str(egg))
