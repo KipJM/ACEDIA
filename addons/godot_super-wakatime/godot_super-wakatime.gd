@@ -346,9 +346,9 @@ func _update_panel_label(label: String, content: String):
 		
 func convert_time(complex_time: String):
 	"""Convert time from complex format into basic one, combine times"""
-	var hours: int
-	var minutes: int
+	return complex_time
 	
+	"""
 	# Split times into categories
 	var time_categories = complex_time.split(', ')
 	for category in time_categories:
@@ -364,6 +364,7 @@ func convert_time(complex_time: String):
 		hours += 1
 
 	return str(hours) + " hrs, " + str(minutes) + " mins"
+	"""
 
 #------------------------------- FILE FUNCTIONS -------------------------------
 func open_config() -> void:

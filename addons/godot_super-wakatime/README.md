@@ -21,7 +21,7 @@
 		Officially approved to use in High Seas event created by Hack Club
 		<br />
 		<br />
-		<a href="">Get from Asset Lib</a>
+		<a href="https://godotengine.org/asset-library/asset/3484">Get from Asset Lib</a>
 		·
 		<a href="https://youtu.be/rqAc-YdVXyM">View Demo</a>
 		·

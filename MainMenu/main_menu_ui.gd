@@ -12,3 +12,4 @@ func toggle_credits() -> void:
 func _ready() -> void:
 	settings_menu.visible = false
 	credits_panel.visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
