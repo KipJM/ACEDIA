@@ -7,9 +7,9 @@ extends Node
 @export var debug_override: bool
 
 func _ready() -> void:
-	if debug_override:
-		print("AHAH")
-		GraphicsSettings.new_game_plus = true
+	#if debug_override:
+		#print("AHAH")
+		#GraphicsSettings.new_game_plus = true
 	
 	if not GraphicsSettings.new_game_plus:
 		print("egg intro")
