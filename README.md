@@ -16,11 +16,13 @@ Testing/ scenes may not all work because of underlying code changes, but it stil
 
 ## License
 I (Kip) am the author of ACEDIA and retain copyright of all of its original assets and code. The code is open-source, and all original assets are in the creative commons. The game(binaries) is also in the creative commons.
+- <a href="https://kip.gay/ACEDIA">ACEDIA</a> © 2025 by <a href="https://kip.gay">Kip</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
 - The **code** of this project is licensed under the 3-Clause BSD License (see LICENSE in repo root)  
-- Original assets (any files in the repo not in the syntax of GDScript or C# and is not copyrighted by others(e.g. sound effects)) are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+- Original assets (any files in the repo not in the syntax of GDScript or C# and is not copyrighted by others(e.g. sound effects)) are licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 - Original assets include, but is not limited to files with the string "(c) 2025 K" or "(c) 2025 Kip" within its metadata, and all Godot-specific files outside of the addons/ directory.
 - **While the game is in the creative commons, it is strongly discouraged to redistribute the binaries found on itch.io as is. Instead, please consider linking to the itch.io page or https://kip.gay/acedia instead, for ease of access to any updates. Thank you!**
-- This project uses open-source code and creative commons assets by others. For a full list of credits, please see the credits panel within the main menu of the game.
+- This project uses open-source code and creative commons assets by others. For a full list of credits, please see the credits panel within the main menu of the game.  
+**Please note that the Creative Commons license has changed from CC BY-SA to CC BY. This was an error, apologies for any confusion.)**
 
 ## Credits
 Locker Door Bashing by Czarcazas -- https://freesound.org/s/330799/ -- License: Attribution 3.0
