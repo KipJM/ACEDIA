@@ -21,7 +21,8 @@ I (Kip) am the author of ACEDIA and retain copyright of all of its original asse
 - Original assets (any files in the repo not in the syntax of GDScript or C# and is not copyrighted by others(e.g. sound effects)) are licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 - Original assets include, but is not limited to files with the string "(c) 2025 K" or "(c) 2025 Kip" within its metadata, and all Godot-specific files outside of the addons/ directory.
 - **While the game is in the creative commons, it is strongly discouraged to redistribute the binaries found on itch.io as is. Instead, please consider linking to the itch.io page or https://kip.gay/acedia instead, for ease of access to any updates. Thank you!**
-- This project uses open-source code and creative commons assets by others. For a full list of credits, please see the credits panel within the main menu of the game.  
+- This project uses open-source code and creative commons assets by others. For a full list of credits, please see the credits panel within the main menu of the game.
+- **YOU ARE NOT ALLOWED TO TRAIN ANALYTICAL MACHINE LEARNING SYSTEMS (INCLUDING GENERATIVE AI) USING ACEDIA, OR ITS ASSETS, OR ITS CODE.**
 **Please note that the Creative Commons license has changed from CC BY-SA to CC BY. This was an error, apologies for any confusion.)**
 
 ## Credits
